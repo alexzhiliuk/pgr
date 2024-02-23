@@ -198,7 +198,7 @@
     left: 0;
     right: 0;
     top: 69px;
-    min-height: calc(100vh - 69px);
+    height: calc(100dvh - 69px);
 
     display: none;
     flex-direction: column;
@@ -219,6 +219,7 @@
         flex-direction: column;
         padding-top: 8px;
         margin-bottom: 10px;
+        overflow-y: scroll;
     }
 
     // .mobile-nav__item
@@ -231,6 +232,7 @@
         border-top: 1px solid $borderBase;
         padding-top: 4px;
         padding-bottom: 12px;
+        flex-shrink: 0;
 
         &-container {
             display: flex;

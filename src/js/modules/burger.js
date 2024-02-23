@@ -3,9 +3,5 @@ $(".burger").click(function() {
 
     $(".mobile-nav").toggleClass("mobile-nav_active")
 
-    if ($(".mobile-nav").hasClass("mobile-nav_active")) {
-        $("main").hide()
-    } else {
-        $("main").show()
-    }
+    $("html").toggleClass("lock")
 })

@@ -573,7 +573,7 @@ button {
   left: 0;
   right: 0;
   top: 69px;
-  min-height: calc(100vh - 69px);
+  height: calc(100dvh - 69px);
   display: none;
   flex-direction: column;
   justify-content: space-between;
@@ -591,6 +591,7 @@ button {
   flex-direction: column;
   padding-top: 8px;
   margin-bottom: 10px;
+  overflow-y: scroll;
 }
 .mobile-nav__item {
   width: 100%;
@@ -599,6 +600,7 @@ button {
   border-top: 1px solid #E1E6EF;
   padding-top: 4px;
   padding-bottom: 12px;
+  flex-shrink: 0;
 }
 .mobile-nav__footer-container {
   display: flex;
