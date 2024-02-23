@@ -335,7 +335,7 @@ template {
 *,
 *::after,
 *::before {
-  transition: 0.3s all;
+  transition: 0.5s ease all;
 }
 
 .container {
@@ -573,13 +573,18 @@ button {
   left: 0;
   right: 0;
   top: 69px;
-  min-height: calc(100dvh - 69px);
+  min-height: calc(100vh - 69px);
   display: none;
   flex-direction: column;
   justify-content: space-between;
 }
 .mobile-nav_active {
   display: flex;
+}
+@media screen and (min-width: 1399.98px) {
+  .mobile-nav_active {
+    display: none;
+  }
 }
 .mobile-nav__list {
   display: flex;

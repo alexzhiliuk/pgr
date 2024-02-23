@@ -192,10 +192,6 @@
 }
 
 .mobile-nav {
-
-    @media screen and (min-width: $breakpoint1400) {
-        display: none;
-    }
     
     position: absolute;
     background-color: $surfacePrimary;
@@ -210,6 +206,10 @@
 
     &_active {
         display: flex;
+
+        @media screen and (min-width: $breakpoint1400) {
+            display: none;
+        }
     }
 
 
