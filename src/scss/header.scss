@@ -192,12 +192,17 @@
 }
 
 .mobile-nav {
+
+    @media screen and (min-width: $breakpoint1400) {
+        display: none;
+    }
+    
     position: absolute;
     background-color: $surfacePrimary;
     left: 0;
     right: 0;
     top: 69px;
-    min-height: calc(100dvh - 69px);
+    min-height: calc(100vh - 69px);
 
     display: none;
     flex-direction: column;
