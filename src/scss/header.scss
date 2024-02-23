@@ -1,0 +1,150 @@
+.header {
+
+    border-bottom: 1px solid $borderBase;
+    background-color: $surfacePrimary;
+    position: relative;
+
+    // .header__container
+    &__container {
+        display: flex;
+        gap: 48px;
+        align-items: center;
+        height: 64px;
+    }
+    
+    // .header__logo
+    &__logo {
+        display: flex;
+        align-items: center;
+    }
+
+    // .header__logo-img
+    &__logo-img {
+        width: 50px;
+        margin-right: 8px;
+    }
+
+    // .header__logo-text
+    &__logo-text {
+        font-family: 'Inter Tight';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 12px;
+        line-height: 125%;
+        letter-spacing: 0.02em;
+        text-transform: uppercase;
+        color: $contentPrimary;
+    }
+
+    // .header__nav
+    &__nav {
+        flex-grow: 1;
+        height: 100%;
+    }
+
+    // .header__btns
+    &__btns {
+        display: flex;
+        align-items: center;
+    }
+
+    // .header__phone
+    &__phone {
+        margin-right: 16px;
+    }
+
+    // .header__phone-droplist
+
+    &__phone-droplist {
+    }
+
+    // .header__burger
+
+    &__burger {
+    }
+
+    // .header__mobile-nav
+
+    &__mobile-nav {
+    }
+}
+
+.nav {
+
+    // .nav__list
+    &__list {
+        display: flex;
+        align-items: center;
+        gap: 28px;
+        height: 100%;
+    }
+
+    // .nav__item
+    &__item {
+        height: 100%;
+        color: $contentPrimary;
+    }
+
+    // .nav__link
+    &__link {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        position: relative;
+
+        opacity: 0.6;
+
+        &::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            width: 0px;
+            bottom: -1px;
+            display: block;
+            height: 2px;
+            background-color: $contentPrimary;
+        }
+
+        &:hover {
+            opacity: 1;
+
+            &::before {
+                content: '';
+                width: 100%;
+            }
+        }
+    }
+
+    // .nav__droplist
+    &__droplist {
+        
+    }
+}
+.droplist {
+
+    &-open {
+        &:hover {
+            .droplist {
+                display: flex;
+            }
+        }
+    }
+
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: $surfacePrimary;
+    display: none;
+
+    top: calc(100% + 1px);
+    left: 50%;
+    translate: -50% 0;
+}
+
+
+.burger {
+    display: none;
+}
+.mobile-nav {
+    display: none;
+}

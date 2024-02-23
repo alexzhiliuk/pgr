@@ -2,6 +2,13 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: 'Inter';
+}
+
+*,
+*::after,
+*::before {
+    transition: .3s all;
 }
 
 .container {
@@ -9,6 +16,10 @@
     width: 100%;
     margin: 0 auto;
     padding: 0 $containerPadding;
+}
+
+.container.container_wide {
+    max-width: calc(1344px + 2 * $containerPadding);
 }
 
 html,
@@ -49,5 +60,30 @@ button {
     }
     100% {
         opacity: 1;
+    }
+}
+
+
+// Buttions
+
+.btn {
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &_red {
+        background-color: $redDefault;
+        color: $surfacePrimary;
+
+        @media (hover: hover) {
+            &:hover {
+                background-color: darken($redDefault, 5);
+            }
+        }
+    }
+
+    &_small {
+        padding: 8px 16px;
     }
 }

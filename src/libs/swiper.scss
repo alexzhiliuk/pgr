@@ -192,25 +192,4 @@
   gap: 6px;
 }
 
-.swiper-pagination-bullet {
-  height: 12px;
-  width: 12px;
-  background-color: #fff;
-  border: 1px solid #fff;
-  cursor: pointer;
-
-  &:hover {
-    border-color: $blue;
-    background: $blue;
-  }
-
-  @media (max-width: $breakpoint768) {
-    height: 10px;
-    width: 10px;
-  }
-}
-
-.swiper-pagination-bullet-active {
-  background-color: unset;
-}
 
