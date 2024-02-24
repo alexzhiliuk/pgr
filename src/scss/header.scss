@@ -185,6 +185,7 @@
 .mobile-nav {
     
     position: absolute;
+    z-index: 9;
     background-color: $surfacePrimary;
     left: 0;
     right: 0;

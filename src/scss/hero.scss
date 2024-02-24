@@ -1,0 +1,289 @@
+.hero {
+
+    padding-top: 24px;
+    padding-bottom: 24px;
+
+    @media screen and (max-width: $breakpoint1366) {
+        padding-top: 48px;
+    }
+
+    // .hero_slider
+    &_slider {
+        .hero__container {
+            background: radial-gradient(75.09% 100% at 50% 0%, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0) 100%), #CEDBEA;
+        }
+
+        @media screen and (max-width: $breakpoint1366) {
+            background: radial-gradient(75.09% 100% at 50% 0%, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0) 100%), #CEDBEA;
+            .hero__container {
+                background: none;
+            }
+        }
+    }
+
+    // .hero__container
+    &__container {
+        border-radius: 16px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 480px;
+        position: relative;
+
+        @media screen and (max-width: $breakpoint1366) {
+            flex-direction: column;
+            background: none;
+            height: unset;
+        }
+    }
+
+    // .hero__title
+    &__title {
+        color: $textPrimary;
+        margin-bottom: 16px;
+    }
+
+    // .hero__subtitle
+    &__subtitle {
+        color: $contentPrimary;
+    }
+
+    // .hero__btn
+    &__btn {
+        @media screen and (max-width: $breakpoint1366) {
+            margin-top: 28px;
+        }
+    }
+
+}
+
+.hero_slider {
+
+    // .hero_slider__slider
+    &__slider {
+        flex: 0 1 450px;
+        max-width: 450px;
+        padding: 32px;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        position: relative;
+        z-index: 2;
+
+        @media screen and (max-width: $breakpoint1366) {
+            flex: unset;
+            padding: 0;
+            max-width: 600px;
+        }
+
+        @media screen and (max-width: $breakpoint768) {
+            max-width: 100%;
+        }
+
+    }
+
+    // .hero_slider__nav
+    &__nav {
+        display: flex;
+        @media screen and (max-width: $breakpoint1366) {
+            display: none;
+        }
+
+        &-btn {
+            cursor: pointer;
+            height: 36px;
+            width: 36px;
+            border: 1px solid rgba(0, 0, 0, 0.15);
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            &_prev {
+                border-right: unset;
+                border-radius: 8px 0 0 8px;
+            }
+
+            &_next {
+                border-radius: 0 8px 8px 0;
+            }
+
+            svg {
+                width: 24px;
+            }
+        }
+
+    }
+
+    // .hero_slider__pagination
+    &__pagination {
+        @media screen and (min-width: $breakpoint1366) {
+            display: none;
+        }
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        margin-top: 24px;
+
+        .swiper-pagination-bullet {
+            display: flex;
+            width: 4px;
+            height: 4px;
+            border-radius: 2px;
+            background-color: rgba(0, 0, 0, 0.2);
+          }
+          
+        .swiper-pagination-bullet.swiper-pagination-bullet-active {
+            width: 24px;
+            position: relative;
+            border-radius: 2px;
+            transition: .5s ease width;
+        
+            &::after {
+                content: '';
+                position: absolute;
+                left: 0;
+                top: 0;
+                border-radius: 2px;
+                height: 100%;
+                width: 0%;
+                background: #000;
+                animation: pagination-bullet 17s;
+                animation-iteration-count: 1;
+                animation-fill-mode: both;
+            }
+        }
+    }
+
+    // .hero_slider__img
+    &__img {
+        height: 100%;
+        position: absolute;
+        left: 0;
+        right: 0;
+        z-index: 1;
+
+        @media screen and (max-width: $breakpoint1366) {
+            position: static;
+            height: clamp(303px, 80vw, 500px);
+            margin-top: 16px;
+        }
+
+        img {
+            height: 100%;
+            width: 100%;
+            object-fit: contain;
+            object-position: center;
+            display: block;
+
+            @media screen and (max-width: $breakpoint1366) {
+                width: unset;
+            }
+        }
+    }
+    
+    // .hero_slider__right
+    &__right {
+        flex: 0 1 450px;
+        position: relative;
+        z-index: 2;
+        padding: 32px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        hr {
+            background-color: rgba(0, 0, 0, 0.15);
+            height: 1px;
+            border: none;
+        }
+
+        @media screen and (max-width: $breakpoint1366) {
+            flex: unset;
+            border-radius: 16px;
+            background-color: $surfacePrimary;
+        }
+
+        @media screen and (max-width: $breakpoint768) {
+            padding: 16px 20px;
+            gap: 16px;
+        }
+    }
+
+    // .hero_slider__subtitle
+    &__subtitle {
+        margin-bottom: var(--margin);
+        @media screen and (max-width: $breakpoint1366) {
+            margin-bottom: 0;
+        }
+    }
+
+    // .hero_slider__quote
+    &__quote {
+        color: $textPrimary;
+    }
+
+    // .hero_slider__expert
+    &__expert {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+
+        @media screen and (max-width: $breakpoint768) {
+            gap: 16px;
+        }
+    }
+
+    // .hero_slider__expert-title
+    &__expert-title {
+        color: $textPrimary;
+
+        @media screen and (max-width: $breakpoint768) {
+            font-size: 16px;
+        }
+    }
+
+    // .hero_slider__expert-subtitle
+    &__expert-subtitle {
+        color: $contentDisabled;
+        margin-top: 4px;
+
+        @media screen and (max-width: $breakpoint768) {
+            font-size: 14px;
+        }
+    }
+
+    // .hero_slider__expert-arrow
+    &__expert-arrow {
+        @media screen and (max-width: $breakpoint768) {
+            svg {
+                width: 24px;
+            }
+        }
+    }
+}
+
+.hero-swiper {
+    max-width: 100%;
+    overflow: hidden;
+
+    &__slide {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+
+        @media screen and (max-width: $breakpoint1366) {
+            text-align: center;
+
+            & > * {
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+    }
+}
+  

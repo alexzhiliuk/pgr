@@ -64,6 +64,15 @@ button {
     }
 }
 
+@keyframes pagination-bullet {
+    0% {
+        width: 0%;
+    }
+    100% {
+        width: 100%;
+    }
+}
+
 
 // Buttions
 
@@ -72,6 +81,7 @@ button {
     display: flex;
     align-items: center;
     justify-content: center;
+    max-width: max-content;
 
     &_red {
         background-color: $redDefault;
@@ -84,7 +94,22 @@ button {
         }
     }
 
+    &_black {
+        background-color: $grey;
+        color: $surfacePrimary;
+
+        @media (hover: hover) {
+            &:hover {
+                background-color: lighten($grey, 5);
+            }
+        }
+    }
+
     &_small {
         padding: 8px 16px;
+    }
+
+    &_big {
+        padding: 14px 24px;
     }
 }

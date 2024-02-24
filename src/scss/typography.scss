@@ -8,6 +8,16 @@
 
 }
 
+.paragraph-medium {
+  
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 150%;
+
+}
+
 .body-regular {
 
     font-family: 'Inter';
@@ -25,5 +35,19 @@
     font-weight: 500;
     font-size: 16px;
     line-height: 150%;
+
+}
+
+.h2 {
+
+    font-family: 'Inter Tight';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 40px;
+    line-height: 125%;
+
+    @media screen and (max-width: $breakpoint768) {
+        font-size: 30px;
+    }
 
 }
