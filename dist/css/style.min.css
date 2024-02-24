@@ -443,7 +443,12 @@ button {
   align-items: center;
   height: 64px;
 }
-@media screen and (max-width: 1399.98px) {
+@media screen and (max-width: 1365.98px) {
+  .header__container {
+    gap: 16px;
+  }
+}
+@media screen and (max-width: 1229.98px) {
   .header__container {
     height: 68px;
   }
@@ -470,7 +475,7 @@ button {
   flex-grow: 1;
   height: 100%;
 }
-@media screen and (max-width: 1399.98px) {
+@media screen and (max-width: 1229.98px) {
   .header__nav {
     display: none;
   }
@@ -479,7 +484,7 @@ button {
   display: flex;
   align-items: center;
 }
-@media screen and (max-width: 1399.98px) {
+@media screen and (max-width: 1229.98px) {
   .header__btns {
     display: none;
   }
@@ -487,11 +492,17 @@ button {
 .header__phone {
   margin-right: 16px;
 }
+
 .nav__list {
   display: flex;
   align-items: center;
   gap: 28px;
   height: 100%;
+}
+@media screen and (max-width: 1365.98px) {
+  .nav__list {
+    gap: 16px;
+  }
 }
 .nav__item {
   height: 100%;
@@ -521,6 +532,7 @@ button {
   content: "";
   width: 100%;
 }
+
 .droplist {
   position: absolute;
   width: 100%;
@@ -533,6 +545,7 @@ button {
 }
 .droplist-open:hover .droplist {
   display: flex;
+  animation: fade 400ms;
 }
 
 .burger {
@@ -545,7 +558,7 @@ button {
   justify-content: center;
   gap: 4px;
 }
-@media screen and (max-width: 1399.98px) {
+@media screen and (max-width: 1229.98px) {
   .burger {
     display: flex;
   }
@@ -580,8 +593,9 @@ button {
 }
 .mobile-nav_active {
   display: flex;
+  animation: fade 400ms;
 }
-@media screen and (min-width: 1399.98px) {
+@media screen and (min-width: 1229.98px) {
   .mobile-nav_active {
     display: none;
   }
@@ -590,7 +604,7 @@ button {
   display: flex;
   flex-direction: column;
   padding-top: 8px;
-  margin-bottom: 10px;
+  padding-bottom: 10px;
   overflow-y: scroll;
 }
 .mobile-nav__item {
@@ -620,6 +634,9 @@ button {
 }
 .nav-accordion__arrow {
   margin-right: 8px;
+}
+.nav-accordion__arrow > svg {
+  width: 20px;
 }
 .nav-accordion.nav-accordion_active .nav-accordion__arrow {
   transform: rotate(180deg);

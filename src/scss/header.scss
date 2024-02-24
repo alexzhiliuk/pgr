@@ -11,7 +11,11 @@
         align-items: center;
         height: 64px;
 
-        @media screen and (max-width: $breakpoint1400) {
+        @media screen and (max-width: $breakpoint1366) {
+            gap: 16px;
+        }
+
+        @media screen and (max-width: $breakpoint1230) {
             height: 68px;
         }
     }
@@ -45,7 +49,7 @@
         flex-grow: 1;
         height: 100%;
 
-        @media screen and (max-width: $breakpoint1400) {
+        @media screen and (max-width: $breakpoint1230) {
             display: none;
         }
     }
@@ -55,7 +59,7 @@
         display: flex;
         align-items: center;
 
-        @media screen and (max-width: $breakpoint1400) {
+        @media screen and (max-width: $breakpoint1230) {
             display: none;
         }
     }
@@ -65,20 +69,6 @@
         margin-right: 16px;
     }
 
-    // .header__phone-droplist
-
-    &__phone-droplist {
-    }
-
-    // .header__burger
-
-    &__burger {
-    }
-
-    // .header__mobile-nav
-
-    &__mobile-nav {
-    }
 }
 
 .nav {
@@ -89,6 +79,10 @@
         align-items: center;
         gap: 28px;
         height: 100%;
+
+        @media screen and (max-width: $breakpoint1366) {
+            gap: 16px;
+        }
     }
 
     // .nav__item
@@ -127,10 +121,6 @@
         }
     }
 
-    // .nav__droplist
-    &__droplist {
-        
-    }
 }
 .droplist {
 
@@ -138,6 +128,7 @@
         &:hover {
             .droplist {
                 display: flex;
+                animation: fade 400ms;
             }
         }
     }
@@ -155,7 +146,7 @@
 
 
 .burger {
-    @media screen and (max-width: $breakpoint1400) {
+    @media screen and (max-width: $breakpoint1230) {
         display: flex;
     }
 
@@ -206,8 +197,9 @@
 
     &_active {
         display: flex;
+        animation: fade 400ms;
 
-        @media screen and (min-width: $breakpoint1400) {
+        @media screen and (min-width: $breakpoint1230) {
             display: none;
         }
     }
@@ -218,7 +210,7 @@
         display: flex;
         flex-direction: column;
         padding-top: 8px;
-        margin-bottom: 10px;
+        padding-bottom: 10px;
         overflow-y: scroll;
     }
 
@@ -262,6 +254,10 @@
     // .nav-accordion__arrow
     &__arrow {
         margin-right: 8px;
+
+        & > svg {
+            width: 20px;
+        }
     }
     &.nav-accordion_active {
         .nav-accordion__arrow {
