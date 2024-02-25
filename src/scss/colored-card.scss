@@ -35,6 +35,30 @@
         }
     }
 
+    // .colored-card_simple
+    &_simple {
+        @extend .colored-card;
+
+        .colored-card__title {
+            color: $grey;
+            text-align: left;
+            width: 100%;
+        }
+
+        .colored-card__subtitle {
+            width: 100%;
+            text-align: left;
+        }
+
+        .colored-card__img {
+            height: 280px;
+            @media screen and (max-width: $breakpoint768) {
+                height: 230px;
+            }
+        }
+
+    }
+
     // .colored-card__title
     &__title {
         color: $contentPrimary;

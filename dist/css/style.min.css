@@ -475,7 +475,7 @@ input::placeholder {
   line-height: 150%;
 }
 
-.body-regular {
+.body-regular, .section__subtitle {
   font-family: "Inter";
   font-style: normal;
   font-weight: 400;
@@ -1046,11 +1046,23 @@ input::placeholder {
 .section__title {
   color: #1D2433;
   text-align: center;
-  margin-bottom: 48px;
+}
+.section__subtitle {
+  color: #212121;
+  text-align: center;
+  margin-top: 8px;
 }
 @media screen and (max-width: 767.98px) {
-  .section__title {
-    margin-bottom: 32px;
+  .section__subtitle {
+    font-size: 14px;
+  }
+}
+.section__content {
+  margin-top: 48px;
+}
+@media screen and (max-width: 767.98px) {
+  .section__content {
+    margin-top: 32px;
   }
 }
 .section__btn {
@@ -1066,7 +1078,7 @@ input::placeholder {
   gap: 24px;
 }
 
-.colored-card, .colored-card_big {
+.colored-card, .colored-card_simple, .colored-card_big {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1076,12 +1088,12 @@ input::placeholder {
   flex: 0 0 calc(33.33% - 16px);
 }
 @media screen and (max-width: 991.98px) {
-  .colored-card, .colored-card_big {
+  .colored-card, .colored-card_simple, .colored-card_big {
     flex: 0 0 calc(50% - 12px);
   }
 }
 @media screen and (max-width: 767.98px) {
-  .colored-card, .colored-card_big {
+  .colored-card, .colored-card_simple, .colored-card_big {
     flex: 0 0 100%;
   }
 }
@@ -1091,6 +1103,23 @@ input::placeholder {
 @media screen and (max-width: 767.98px) {
   .colored-card_big {
     flex: 0 0 100%;
+  }
+}
+.colored-card_simple .colored-card__title {
+  color: #212121;
+  text-align: left;
+  width: 100%;
+}
+.colored-card_simple .colored-card__subtitle {
+  width: 100%;
+  text-align: left;
+}
+.colored-card_simple .colored-card__img {
+  height: 280px;
+}
+@media screen and (max-width: 767.98px) {
+  .colored-card_simple .colored-card__img {
+    height: 230px;
   }
 }
 .colored-card__title {

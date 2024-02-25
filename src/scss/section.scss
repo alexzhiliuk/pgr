@@ -10,17 +10,32 @@
     &__title {
         color: $contentPrimary;
         text-align: center;
-        margin-bottom: 48px;
 
         @extend .h2;
 
+    }
+
+    // .section__subtitle
+    &__subtitle {
+        color: $grey;
+        text-align: center;
+        margin-top: 8px;
+
+        @extend .body-regular;
+
         @media screen and (max-width: $breakpoint768) {
-            margin-bottom: 32px;
+            font-size: 14px;
         }
+
     }
 
     // .section__content
     &__content {
+        margin-top: 48px;
+
+        @media screen and (max-width: $breakpoint768) {
+            margin-top: 32px;
+        }
     }
 
     // .section__btn
