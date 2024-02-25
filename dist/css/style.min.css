@@ -449,6 +449,16 @@ button {
   padding: 14px 24px;
 }
 
+input {
+  border-radius: 8px;
+  background-color: #FFF;
+  padding: 10px 16px;
+}
+input::placeholder {
+  color: #2C3136;
+  opacity: 0.4;
+}
+
 .caption-regular, .colored-card__btn {
   font-family: "Inter";
   font-style: normal;
@@ -492,6 +502,14 @@ button {
   .h2, .section__title {
     font-size: 30px;
   }
+}
+
+.h4 {
+  font-family: "Inter Tight";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 125%;
 }
 
 .h5 {
@@ -1161,6 +1179,97 @@ button {
 @media screen and (max-width: 575.98px) {
   .icon-card__subtitle {
     font-size: 14px;
+  }
+}
+
+.consultation-form {
+  position: relative;
+  background-color: #F1F3F9;
+  border-radius: 12px;
+  padding: 28px 32px;
+  overflow: hidden;
+}
+@media screen and (max-width: 767.98px) {
+  .consultation-form {
+    padding: 20px;
+  }
+}
+.consultation-form__content {
+  max-width: 514px;
+  width: 100%;
+  position: relative;
+  z-index: 2;
+}
+@media screen and (max-width: 767.98px) {
+  .consultation-form__content {
+    max-width: 400px;
+  }
+}
+.consultation-form__title {
+  color: #1A1A1A;
+}
+@media screen and (max-width: 767.98px) {
+  .consultation-form__title {
+    font-size: 18px;
+  }
+}
+.consultation-form__subtitle {
+  color: #212121;
+  margin-top: 16px;
+}
+@media screen and (max-width: 767.98px) {
+  .consultation-form__subtitle {
+    margin-top: 12px;
+    font-size: 14px;
+  }
+}
+.consultation-form__form {
+  margin-top: 48px;
+  display: flex;
+  gap: 12px;
+}
+@media screen and (max-width: 767.98px) {
+  .consultation-form__form {
+    flex-wrap: wrap;
+  }
+}
+.consultation-form__form input {
+  flex-grow: 1;
+}
+.consultation-form__caption {
+  margin-top: 16px;
+  color: #0A0D14;
+  opacity: 0.6;
+}
+@media screen and (max-width: 767.98px) {
+  .consultation-form__caption {
+    margin-top: 12px;
+    font-size: 14px;
+  }
+}
+.consultation-form__img {
+  position: absolute;
+  z-index: 1;
+  right: 0;
+  top: 0;
+  width: 500px;
+  height: 500px;
+  opacity: 0.12;
+}
+@media screen and (max-width: 767.98px) {
+  .consultation-form__img {
+    width: 360px;
+    height: 360px;
+    opacity: 0.06;
+  }
+}
+.consultation-form__img img {
+  width: 100%;
+  object-position: 200px -140px;
+}
+@media screen and (max-width: 767.98px) {
+  .consultation-form__img img {
+    object-position: 180px 0;
   }
 }
 

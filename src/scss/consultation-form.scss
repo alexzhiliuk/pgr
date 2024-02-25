@@ -1,0 +1,99 @@
+.consultation-form {
+
+    position: relative;
+    background-color: $surfaceTertiary;
+    border-radius: 12px;
+    padding: 28px 32px;
+    overflow: hidden;
+
+    @media screen and (max-width: $breakpoint768) {
+        padding: 20px;
+    }
+
+    // .consultation-form__content
+    &__content {
+        max-width: 514px;
+        width: 100%;
+        position: relative;
+        z-index: 2;
+
+        @media screen and (max-width: $breakpoint768) {
+            max-width: 400px;
+        }
+    }
+
+    // .consultation-form__title
+    &__title {
+        color: #1A1A1A;
+
+        @media screen and (max-width: $breakpoint768) {
+            font-size: 18px;
+        }
+    }
+
+    // .consultation-form__subtitle
+    &__subtitle {
+        color: $grey;
+        margin-top: 16px;
+
+        @media screen and (max-width: $breakpoint768) {
+            margin-top: 12px;
+            font-size: 14px;
+        }
+    }
+
+    // .consultation-form__form
+    &__form {
+        margin-top: 48px;
+        display: flex;
+        gap: 12px;
+
+        @media screen and (max-width: $breakpoint768) {
+            flex-wrap: wrap;
+        }
+
+        input {
+            flex-grow: 1;
+        }
+
+    }
+
+    // .consultation-form__caption
+    &__caption {
+        margin-top: 16px;
+        color: $surfaceTertiaryInvert;
+        opacity: .6;
+
+        @media screen and (max-width: $breakpoint768) {
+            margin-top: 12px;
+            font-size: 14px;
+        }
+    }
+
+    // .consultation-form__img
+    &__img {
+        position: absolute;
+        z-index: 1;
+        right: 0;
+        top: 0;
+        width: 500px;
+        height: 500px;
+        opacity: .12;
+
+        @media screen and (max-width: $breakpoint768) {
+            width: 360px;
+            height: 360px;
+
+            opacity: .06;
+        }
+
+        img {
+            width: 100%;
+            object-position: 200px -140px;
+
+            @media screen and (max-width: $breakpoint768) {
+                object-position: 180px 0;
+            }
+        }
+    }
+}
