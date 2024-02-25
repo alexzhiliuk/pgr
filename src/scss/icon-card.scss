@@ -1,0 +1,59 @@
+.icon-cards {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 24px;
+
+    @media screen and (max-width: $breakpoint576) {
+        gap: 8px;
+    }
+}
+
+.icon-card {
+
+    background-color: $surfaceTertiary;
+    border-radius: 12px;
+    padding: 24px;
+
+    flex: 0 0 calc(25% - (24px * 3 / 4));
+
+    @media screen and (max-width: $breakpoint992) {
+        flex: 0 0 calc(50% - (24px / 2));
+    }
+
+    @media screen and (max-width: $breakpoint576) {
+        flex: 0 0 100%;
+        padding: 20px;
+    }
+
+    // .icon-card__img
+    &__img {
+        width: 36px;
+        display: flex;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    // .icon-card__title
+    &__title {
+        margin-top: 24px;
+        margin-bottom: 8px;
+        color: $grey;
+
+        @media screen and (max-width: $breakpoint576) {
+            margin-top: 20px;
+            margin-bottom: 4px;
+        }
+    }
+
+    // .icon-card__subtitle
+    &__subtitle {
+        color: $grey;
+
+        @media screen and (max-width: $breakpoint576) {
+            font-size: 14px;
+        }
+    }
+}
