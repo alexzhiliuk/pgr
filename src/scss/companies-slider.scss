@@ -1,0 +1,19 @@
+.companies-slider {
+    height: 50px;
+    overflow: hidden;
+
+    @media screen and (max-width: $breakpoint1366) {
+        padding-top: 24px;
+    }
+
+    .swiper-wrapper{
+        transition-timing-function: linear;
+    }
+
+    &__slide {
+        display: flex;
+        align-items: center;
+        width: fit-content !important;
+    }
+}
+

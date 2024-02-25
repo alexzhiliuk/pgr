@@ -284,6 +284,10 @@
                 margin-right: auto;
             }
         }
+
+        &.swiper-slide-active {
+            animation: fade 2s;
+        }
     }
 }
   

@@ -962,6 +962,27 @@ button {
     margin-right: auto;
   }
 }
+.hero-swiper__slide.swiper-slide-active {
+  animation: fade 2s;
+}
+
+.companies-slider {
+  height: 50px;
+  overflow: hidden;
+}
+@media screen and (max-width: 1365.98px) {
+  .companies-slider {
+    padding-top: 24px;
+  }
+}
+.companies-slider .swiper-wrapper {
+  transition-timing-function: linear;
+}
+.companies-slider__slide {
+  display: flex;
+  align-items: center;
+  width: fit-content !important;
+}
 
 @font-face {
   font-family: "swiper-icons";
