@@ -47,11 +47,20 @@ a {
 
 button {
     cursor: pointer;
+    background: none;
 }
 
 .lock {
     overflow-y: hidden;
     overflow-x: hidden;
+}
+
+.zoom {
+    @media (hover: hover) {
+        &:hover {
+            transform: scale(1.05);
+        }
+    }
 }
 
 // Animation
@@ -72,7 +81,6 @@ button {
         width: 100%;
     }
 }
-
 
 // Buttions
 
@@ -105,8 +113,23 @@ button {
         }
     }
 
+    &_outline {
+        outline: 1px solid rgba(29, 36, 51, 0.2);
+        color: $contentPrimary;
+
+        @media (hover: hover) {
+            &:hover {
+                background-color: rgba(29, 36, 51, 0.2);
+            }
+        }
+    }
+
     &_small {
         padding: 8px 16px;
+    }
+
+    &_medium {
+        padding: 12px 20px;
     }
 
     &_big {
