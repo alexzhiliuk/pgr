@@ -1,0 +1,123 @@
+.calculator {
+
+    padding-top: 40px;
+    padding-bottom: 40px;
+
+    // .calculator__container
+    &__container {
+        border-radius: 16px;
+        border: 1px solid $borderBase;
+        background-color: $surfacePrimary;
+        padding: 16px;
+        display: flex;
+        gap: 16px;
+
+        @media screen and (max-width: $breakpoint768) {
+            padding: 20px;
+            flex-direction: column;
+        }
+    }
+
+    // .calculator__form
+    &__form {
+        flex-grow: 1;
+        padding: 12px 16px;
+
+        @media screen and (max-width: $breakpoint768) {
+            padding: 0;
+        }
+    }
+
+    // .calculator__title
+    &__title {
+        color: #1A1A1A;
+
+        @media screen and (max-width: $breakpoint768) {
+            font-size: 18px;
+        }
+    }
+
+    // .calculator__inputs
+    &__inputs {
+        margin-top: 24px;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+
+        @media screen and (max-width: $breakpoint576) {
+            gap: 16px;
+        }
+    }
+
+    // .calculator__inputs-row
+    &__inputs-row {
+        display: flex;
+        gap: 24px;
+
+        @media screen and (max-width: $breakpoint576) {
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        & > * {
+            flex-grow: 1;
+        }
+    }
+
+    // .calculator__result
+    &__result {
+        flex: 0 0 324px;
+
+        padding: 20px;
+        background-color: $surfaceTertiary;
+        border: 1px solid $borderBase;
+        border-radius: 8px;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+
+        @media screen and (max-width: $breakpoint768) {
+            flex: unset;
+            gap: 24px;
+            padding: 16px 20px;
+        }
+    }
+
+    // .calculator__result-title
+    &__result-title {
+        color: #1A1A1A;
+        text-align: center;
+
+        @media screen and (max-width: $breakpoint768) {
+            font-size: 18px;
+        }
+    }
+
+    // .calculator__result-body
+    &__result-body {
+        text-align: center;
+    }
+
+    // .calculator__result-value
+    &__result-value {
+        color: $textPrimary;
+
+        @media screen and (max-width: $breakpoint576) {
+            font-size: 24px;
+        }
+    }
+
+    // .calculator__result-caption
+    &__result-caption {
+        color: $contentPrimary;
+        opacity: .4;
+        margin-top: 8px;
+    }
+
+    // .calculator__result-btn
+
+    &__result-btn {
+    }
+}

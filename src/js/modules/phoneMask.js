@@ -1,5 +1,3 @@
-let phoneInputs = document.querySelectorAll('input[data-tel-input]')
-
 let getInputNumbersValue = function(input) {
 	return input.value.replace(/\D/g, "")
 }
@@ -49,8 +47,5 @@ let onPhoneKeyDown = function(e) {
 	 }
 }
 
-for (let i = 0; i<phoneInputs.length; i++) {
-	let input = phoneInputs[i];
-	input.addEventListener('input', onPhoneInput)
-	input.addEventListener('keydown', onPhoneKeyDown)
-}
+$('input[data-tel-input]').on("input", onPhoneInput)
+$('input[data-tel-input]').on("keydown", onPhoneKeyDown)
