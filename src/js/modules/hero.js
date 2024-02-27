@@ -9,11 +9,14 @@ const swiperHero = new Swiper('.hero-swiper', {
     speed: 2000,
     allowTouchMove: true,
 
-    autoHeight: true,
+    autoHeight: false,
 
     breakpoints: {
         1366: {
             autoHeight: false,
+        },
+        992: {
+            autoHeight: true,
         }
     },
 

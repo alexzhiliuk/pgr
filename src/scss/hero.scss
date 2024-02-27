@@ -10,11 +10,11 @@
     // .hero_slider
     &_slider {
         .hero__container {
-            background: radial-gradient(75.09% 100% at 50% 0%, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0) 100%), #CEDBEA;
+            background: var(--bg);
         }
 
         @media screen and (max-width: $breakpoint1366) {
-            background: radial-gradient(75.09% 100% at 50% 0%, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0) 100%), #CEDBEA;
+            background: var(--bg);
             .hero__container {
                 background: none;
             }
@@ -31,9 +31,15 @@
         position: relative;
 
         @media screen and (max-width: $breakpoint1366) {
+            height: 416px;
+            gap: 24px;
+        }
+
+        @media screen and (max-width: $breakpoint992) {
             flex-direction: column;
             background: none;
             height: unset;
+            gap: unset;
         }
     }
 
@@ -73,6 +79,13 @@
         z-index: 2;
 
         @media screen and (max-width: $breakpoint1366) {
+            flex: 0 1 512px;
+            max-width: 512px;
+            justify-content: center;
+            padding: 20px 0;
+        }
+
+        @media screen and (max-width: $breakpoint992) {
             flex: unset;
             padding: 0;
             max-width: 600px;
@@ -124,9 +137,12 @@
         }
         display: flex;
         align-items: center;
-        justify-content: center;
         gap: 8px;
         margin-top: 24px;
+
+        @media screen and (max-width: $breakpoint992) {
+            justify-content: center;
+        }
 
         .swiper-pagination-bullet {
             display: flex;
@@ -167,6 +183,13 @@
         z-index: 1;
 
         @media screen and (max-width: $breakpoint1366) {
+            bottom: -24px;
+            height: calc(100% + 24px + 24px);
+            left: -$containerPadding;
+            right: -$containerPadding;
+        }
+
+        @media screen and (max-width: $breakpoint992) {
             position: static;
             height: clamp(303px, 80vw, 500px);
             margin-top: 16px;
@@ -178,9 +201,14 @@
             object-fit: contain;
             object-position: center;
             display: block;
-
+            
             @media screen and (max-width: $breakpoint1366) {
+                object-position: 35vw;
+            }
+
+            @media screen and (max-width: $breakpoint992) {
                 width: unset;
+                object-position: center;
             }
         }
     }
@@ -202,15 +230,18 @@
         }
 
         @media screen and (max-width: $breakpoint1366) {
+            align-self: flex-end;
             flex: unset;
             border-radius: 16px;
             background-color: $surfacePrimary;
-        }
-
-        @media screen and (max-width: $breakpoint768) {
             padding: 16px 20px;
             gap: 16px;
         }
+
+        @media screen and (max-width: $breakpoint992) {
+            align-self: center;
+        }
+
     }
 
     // .hero_slider__subtitle
@@ -276,7 +307,7 @@
         flex-direction: column;
         justify-content: flex-end;
 
-        @media screen and (max-width: $breakpoint1366) {
+        @media screen and (max-width: $breakpoint992) {
             text-align: center;
 
             & > * {
