@@ -16,6 +16,11 @@
     width: 100%;
     margin: 0 auto;
     padding: 0 $containerPadding;
+
+    @media screen and (max-width: $breakpoint992) {
+        max-width: calc($conteinerWidth + 2 * $containerMobilePadding);
+        padding: 0 $containerMobilePadding;
+    }
 }
 
 .container.container_wide {

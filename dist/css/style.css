@@ -339,14 +339,20 @@ template {
 }
 
 .container {
-  max-width: calc(1116px + 2 * 24px);
+  max-width: calc(1116px + 2 * 48px);
   width: 100%;
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 0 48px;
+}
+@media screen and (max-width: 991.98px) {
+  .container {
+    max-width: calc(1116px + 2 * 24px);
+    padding: 0 24px;
+  }
 }
 
 .container.container_wide {
-  max-width: calc(1344px + 2 * 24px);
+  max-width: calc(1344px + 2 * 48px);
 }
 
 html,
@@ -1587,6 +1593,145 @@ input::placeholder {
   .article-slide__title {
     font-size: 16px;
   }
+}
+
+.footer {
+  background-color: #171A1E;
+  padding-top: 52px;
+  padding-bottom: 48px;
+}
+@media screen and (max-width: 575.98px) {
+  .footer {
+    padding: 24px 0;
+  }
+}
+.footer__content {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+}
+@media screen and (max-width: 1023.98px) {
+  .footer__content {
+    flex-direction: column;
+  }
+}
+.footer__nav {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  flex: 0 1 652px;
+}
+@media screen and (max-width: 1023.98px) {
+  .footer__nav {
+    order: 2;
+    flex: unset;
+  }
+}
+@media screen and (max-width: 575.98px) {
+  .footer__nav {
+    flex-direction: column;
+    gap: 40px;
+  }
+}
+.footer__nav-col {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+@media screen and (max-width: 1023.98px) {
+  .footer__nav-col {
+    flex: 0 0 calc(33.33% - 16px);
+  }
+}
+@media screen and (max-width: 575.98px) {
+  .footer__nav-col {
+    flex: unset;
+  }
+}
+.footer__nav-title {
+  color: #FFF;
+  opacity: 0.6;
+}
+.footer__nav-menu {
+  margin-top: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.footer__nav-menu-item {
+  color: #FFF;
+  opacity: 0.4;
+}
+.footer__nav-menu-item:hover {
+  opacity: 0.8;
+}
+.footer__info {
+  flex: 0 1 309px;
+}
+@media screen and (max-width: 1023.98px) {
+  .footer__info {
+    order: 1;
+    flex: unset;
+    padding-bottom: 24px;
+    border-bottom: 1px solid rgba(225, 230, 239, 0.16);
+  }
+}
+.footer__logo {
+  display: flex;
+  align-items: center;
+}
+.footer__logo-img {
+  margin-right: 8px;
+  width: 72px;
+}
+.footer__logo-text {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 122%;
+  color: #FFF;
+  text-transform: uppercase;
+}
+.footer__socials {
+  display: flex;
+  gap: 20px;
+  margin-top: 20px;
+}
+.footer__social-icon {
+  opacity: 0.4;
+  width: 24px;
+}
+.footer__social-icon:hover {
+  opacity: 0.8;
+}
+.footer__text {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  color: #FFF;
+  opacity: 0.4;
+}
+.footer__copy {
+  margin-top: 32px;
+  border-top: 1px solid rgba(225, 230, 239, 0.16);
+  padding-top: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  color: #FFF;
+}
+@media screen and (max-width: 575.98px) {
+  .footer__copy {
+    flex-direction: column;
+    gap: 24px;
+    text-align: center;
+  }
+}
+.footer__copy-item a {
+  text-decoration: underline;
 }
 
 @font-face {
