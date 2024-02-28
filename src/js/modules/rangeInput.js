@@ -1,4 +1,4 @@
-let getNumberValue = function(input) {
+export function getNumberValue(input) {
 	return input.value.replace(/\D/g, "")
 }
 

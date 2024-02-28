@@ -1,8 +1,12 @@
 import * as rangeInput from "./rangeInput.js"
 
-let loanRateRange = $("#loanRateRange")
-let loanTermRange = $("#loanTermRange")
-let loanAmountRange = $("#loanAmountRange")
+let loanRateRange = $("#loanRateRange"),
+    loadRateInput = $("#loanRateInput")
+let loanTermRange = $("#loanTermRange"),
+    loanTermInput = $("#loanTermInput")
+let loanAmountRange = $("#loanAmountRange"),
+    loanAmountInput = $("#loanAmountInput")
+
 
 function calculatingMonthlyPayment(p, r, n) {
     // p - сумма кредита
@@ -11,6 +15,7 @@ function calculatingMonthlyPayment(p, r, n) {
     let monthlyPayment = p * ((r * Math.pow(1 + r, n)) / (Math.pow(1 + r, n) - 1))
     return Math.round(monthlyPayment * 100) / 100
 }
+
 
 function formatMonthlyPayment(monthlyPayment) {
     monthlyPayment += ""
@@ -21,10 +26,22 @@ function formatMonthlyPayment(monthlyPayment) {
     return right ? `${rangeInput.addSpaces(left)},${right}` : `${rangeInput.addSpaces(left)}`
 }
 
+
 $("#loanTermRange, #loanAmountRange, #loanRateRange").on("input", function() {
     let monthlyRate = loanRateRange.val() / 12 / 100
     let paymentsNumber = loanTermRange.val() * 12
     let loanAmount = loanAmountRange.val()
+    
+    let monthlyPayment = calculatingMonthlyPayment(loanAmount, monthlyRate, paymentsNumber)
+    
+    $("#monthlyPayment").html(formatMonthlyPayment(monthlyPayment))
+})
+
+
+$("#loanTermInput, #loanAmountInput, #loanRateInput").on("input", function() {
+    let monthlyRate = Number(loadRateInput.val()) / 12 / 100
+    let paymentsNumber = Number(loanTermInput.val()) * 12
+    let loanAmount = Number(rangeInput.getNumberValue(loanAmountInput[0]))
     
     let monthlyPayment = calculatingMonthlyPayment(loanAmount, monthlyRate, paymentsNumber)
     
