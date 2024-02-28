@@ -6,6 +6,7 @@ import * as companiesSlider from './modules/companiesSlider.js';
 import * as phoneMask from './modules/phoneMask.js';
 import * as rangeInput from './modules/rangeInput.js';
 import * as mediaAbout from './modules/mediaAbout.js';
+import * as calculator from './modules/calculator.js';
 
 
 flsFunctions.isWebp()

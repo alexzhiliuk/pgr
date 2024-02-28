@@ -2,7 +2,7 @@ let getNumberValue = function(input) {
 	return input.value.replace(/\D/g, "")
 }
 
-function addSpaces(nStr) {
+export function addSpaces(nStr) {
     nStr += '';
     var x = nStr.split('.');
     var x1 = x[0];

@@ -8,8 +8,8 @@
                         <div class="range-input">
                             <div class="range-input__label body-regular">Сумма кредита</div>
                             <div class="range-input__input">
-                                <input type="text" class="range-input__number" value="5000000" id="" class="body-regular">
-                                <input type="range" id="" min="0" max="30000000" step="100000">
+                                <input type="text" class="range-input__number" value="5000000" id="loanAmountInput" class="body-regular">
+                                <input type="range" id="loanAmountRange" min="0" max="30000000" step="100000">
                                 <div class="range-input__progress"></div>
                             </div>
                             <div class="range-input__captions">
@@ -22,8 +22,8 @@
                         <div class="range-input">
                             <div class="range-input__label body-regular">Срок кредита</div>
                             <div class="range-input__input">
-                                <input type="text" class="range-input__number" value="10" id="" class="body-regular">
-                                <input type="range" id="" min="0" max="20" >
+                                <input type="text" class="range-input__number" value="10" id="loanTermInput" class="body-regular">
+                                <input type="range" id="loanTermRange" min="1" max="20" >
                                 <div class="range-input__progress"></div>
                             </div>
                             <div class="range-input__captions">
@@ -34,8 +34,8 @@
                         <div class="range-input">
                             <div class="range-input__label body-regular">Ставка</div>
                             <div class="range-input__input">
-                                <input type="text" class="range-input__number" value="10" id="" class="body-regular">
-                                <input type="range" id="" min="0" max="48" >
+                                <input type="text" class="range-input__number" value="10" id="loanRateInput" class="body-regular">
+                                <input type="range" id="loanRateRange" min="1" max="48" >
                                 <div class="range-input__progress"></div>
                             </div>
                             <div class="range-input__captions">
@@ -49,7 +49,7 @@
             <div class="calculator__result">
                 <div class="calculator__result-title h4">Ежемесячный платеж</div>
                 <div class="calculator__result-body">
-                    <div class="calculator__result-value h3">16 000 033,89 ₽</div>
+                    <div class="calculator__result-value h3"><span id="monthlyPayment">16 000 033,89</span> ₽</div>
                     <p class="calculator__result-caption caption-regular">*расчет носит исключительно информационный характер</p>
                 </div>
                 <a href="#" class="calculator__result-btn body-regular btn btn_black">Подать заявку</a>
