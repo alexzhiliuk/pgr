@@ -78,6 +78,15 @@ button {
     }
 }
 
+@keyframes fadeReverse {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
 @keyframes pagination-bullet {
     0% {
         width: 0%;

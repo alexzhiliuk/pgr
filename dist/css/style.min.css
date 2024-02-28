@@ -402,6 +402,14 @@ button {
     opacity: 1;
   }
 }
+@keyframes fadeReverse {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
 @keyframes pagination-bullet {
   0% {
     width: 0%;
@@ -544,6 +552,7 @@ input::placeholder {
   border-bottom: 1px solid #E1E6EF;
   background-color: #FFF;
   position: relative;
+  z-index: 3;
 }
 .header__container {
   display: flex;
@@ -980,6 +989,9 @@ input::placeholder {
   flex-direction: column;
   gap: 20px;
 }
+.hero_slider__right:hover .hero_slider__expert-arrow {
+  translate: 8px 0;
+}
 .hero_slider__right hr {
   background-color: rgba(0, 0, 0, 0.15);
   height: 1px;
@@ -1065,6 +1077,11 @@ input::placeholder {
 }
 .hero-swiper__slide.swiper-slide-active {
   animation: fade 2s;
+}
+.hero-swiper__slide.swiper-slide-prev, .hero-swiper__slide.swiper-slide-next {
+  animation: fadeReverse 1s;
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
 }
 
 .companies-slider {

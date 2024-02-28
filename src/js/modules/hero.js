@@ -8,8 +8,12 @@ const swiperHero = new Swiper('.hero-swiper', {
     spaceBetween: 0,
     speed: 2000,
     allowTouchMove: true,
-
     autoHeight: false,
+
+    effect: 'fade',
+    fadeEffect: {
+        crossFade: true
+    },
 
     breakpoints: {
         1366: {
@@ -48,5 +52,15 @@ $(".hero-swiper .swiper-slide").each(function( index ) {
     $(this).children(".hero__subtitle").attr('style', `--margin: ${margin}px`)
 })
 
+$( ".hero_slider__right, .hero_slider__img" ).hover(function() {
+    $( ".hero_slider__slider" ).css("opacity", ".6").css("filter", "blur(1px)");
+}, function() {
+    $( ".hero_slider__slider" ).css("opacity", "").css("filter", "");
+});
 
 
+$( ".hero_slider__img" ).hover(function() {
+    $( ".hero_slider__right .hero_slider__expert-arrow" ).css("translate", "8px 0");
+}, function() {
+    $( ".hero_slider__right .hero_slider__expert-arrow" ).css("translate", "");
+});

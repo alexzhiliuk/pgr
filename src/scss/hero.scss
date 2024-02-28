@@ -223,6 +223,12 @@
         flex-direction: column;
         gap: 20px;
 
+        &:hover {
+            .hero_slider__expert-arrow {
+                translate: 8px 0;
+            }
+        }
+
         hr {
             background-color: rgba(0, 0, 0, 0.15);
             height: 1px;
@@ -318,6 +324,13 @@
 
         &.swiper-slide-active {
             animation: fade 2s;
+        }
+
+        &.swiper-slide-prev,
+        &.swiper-slide-next {
+            animation: fadeReverse 1s;
+            animation-iteration-count: 1;
+            animation-fill-mode: both;
         }
     }
 }
