@@ -10,6 +10,13 @@
 
     position: relative;
 
+    @media screen and (max-width: $breakpoint1366) {
+        padding: 0 80px;
+    }
+    @media screen and (max-width: $breakpoint992) {
+        padding: 0;
+    }
+
     // .article-slider__btn
     &__btn {
 

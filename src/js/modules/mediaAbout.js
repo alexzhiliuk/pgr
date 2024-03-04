@@ -15,8 +15,11 @@ const swiperHero = new Swiper('.article-slider__container', {
     },
 
     breakpoints: {
-        992: {
+        1366: {
             slidesPerView: 4,
+        },
+        992: {
+            slidesPerView: 3,
         },
         768: {
             slidesPerView: 3.2,

@@ -1,31 +1,13 @@
-import Swiper, {Autoplay, Navigation, Pagination} from 'swiper';
-Swiper.use([Autoplay, Navigation, Pagination]);
+const sliders = $(".companies-slider")
+addAnimation()
 
+function addAnimation() {
+    sliders.each(function(index, elem) {
+        $(this).attr('data-animated', true)
 
-const swiperHero = new Swiper('.companies-slider', {
-    spaceBetween: 60,
-    allowTouchMove: false,
-
-    loop: true,
-    autoplay: {
-        delay: 0,
-        disableOnInteraction: false, 
-    },
-
-    speed: 2500,
-    slidesPerView: 8,
-
-    breakpoints: {
-        768: {
-            speed: 7000,
-        },
-        480: {
-            speed: 4000,
-        },
-        
-    }, 
-    
-});
-
-
-
+        const list = $(this).children(".companies-slider__list")
+        list.children().each(function(index, elem) {
+            $(this).clone().attr("area-hidden", true).appendTo(list)
+        })
+    })
+}
