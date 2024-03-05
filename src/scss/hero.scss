@@ -56,6 +56,7 @@
 
     // .hero__btn
     &__btn {
+        max-width: max-content;
         @media screen and (max-width: $breakpoint1366) {
             margin-top: 28px;
         }
@@ -105,6 +106,7 @@
         }
 
         &-btn {
+            transition: all 60ms ease-out;
             cursor: pointer;
             height: 36px;
             width: 36px;
@@ -125,6 +127,17 @@
 
             svg {
                 width: 24px;
+            }
+
+            @media (hover: hover) {
+                &:hover {
+                    background-color: rgba(0, 0, 0, 0.15);
+                    border-color: transparent;
+                }
+            }
+            &:active {
+                background-color: rgba(0, 0, 0, 0.25);
+                border-color: transparent;
             }
         }
 
@@ -178,6 +191,7 @@
     &__img {
         height: 100%;
         position: absolute;
+        overflow: hidden;
         left: 0;
         right: 0;
         z-index: 1;
@@ -201,6 +215,7 @@
             object-fit: contain;
             object-position: center;
             display: block;
+            transition: all 60ms ease-out;
             
             @media screen and (max-width: $breakpoint1366) {
                 object-position: 35vw;
@@ -223,9 +238,20 @@
         flex-direction: column;
         gap: 20px;
 
-        &:hover {
+        &:hover,
+        &.hovered {
+            .hero_slider__expert-subtitle {
+                color: #000;
+            }
             .hero_slider__expert-arrow {
-                translate: 8px 0;
+                svg {
+                    path {
+                        stroke: #000;
+                    }
+                    g {
+                        opacity: 1;
+                    }
+                }
             }
         }
 
@@ -253,6 +279,7 @@
     // .hero_slider__subtitle
     &__subtitle {
         margin-bottom: var(--margin);
+        transition: all 60ms ease-out;
         @media screen and (max-width: $breakpoint1366) {
             margin-bottom: 0;
         }
@@ -296,6 +323,7 @@
 
     // .hero_slider__expert-arrow
     &__expert-arrow {
+        transition: all 60ms ease-out;
         @media screen and (max-width: $breakpoint768) {
             svg {
                 width: 24px;
@@ -307,6 +335,17 @@
 .hero-swiper {
     max-width: 100%;
     overflow: hidden;
+    position: relative;
+    
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        width: 32px;
+        background: linear-gradient(270deg, transparent, #D7E1EE 0%, rgba(223, 231, 241, 0) 100%, transparent);
+    }
 
     &__slide {
         display: flex;

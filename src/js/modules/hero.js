@@ -3,10 +3,10 @@ Swiper.use([Autoplay, Navigation, Pagination]);
 
 
 const swiperHero = new Swiper('.hero-swiper', {
-    // loop: true,
+    loop: true,
     slidesPerView: 1,
     spaceBetween: 0,
-    speed: 2000,
+    speed: 1000,
     allowTouchMove: true,
     autoHeight: false,
 
@@ -53,14 +53,11 @@ $(".hero-swiper .swiper-slide").each(function( index ) {
 })
 
 $( ".hero_slider__right, .hero_slider__img" ).hover(function() {
-    $( ".hero_slider__slider" ).css("opacity", ".6").css("filter", "blur(1px)");
+    $( ".hero_slider__slider" ).css("opacity", ".2");
+    $( ".hero_slider__img img" ).css("transform", "scale(1.03)")
+    $( ".hero_slider__right" ).addClass("hovered")
 }, function() {
-    $( ".hero_slider__slider" ).css("opacity", "").css("filter", "");
-});
-
-
-$( ".hero_slider__img" ).hover(function() {
-    $( ".hero_slider__right .hero_slider__expert-arrow" ).css("translate", "8px 0");
-}, function() {
-    $( ".hero_slider__right .hero_slider__expert-arrow" ).css("translate", "");
+    $( ".hero_slider__slider" ).css("opacity", "");
+    $( ".hero_slider__img img" ).css("transform", "")
+    $( ".hero_slider__right" ).removeClass("hovered")
 });

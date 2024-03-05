@@ -5,3 +5,9 @@ $(".burger").click(function() {
 
     $("html").toggleClass("lock")
 })
+
+$( ".droplist-open" ).hover(function() {
+    $( ".blackout" ).addClass("blackout-active");
+}, function() {
+    $( ".blackout" ).removeClass("blackout-active");
+});

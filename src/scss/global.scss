@@ -23,6 +23,10 @@
     }
 }
 
+.container.container_full {
+    max-width: 100%;
+}
+
 .container.container_wide {
     max-width: calc(1344px + 2 * $containerPadding);
 }
@@ -68,12 +72,35 @@ button {
     }
 }
 
+.blackout {
+    position: absolute;
+    top: 0; bottom: 0;
+    left: 0; right: 0;
+    pointer-events: none;
+    z-index: 2;
+
+    &.blackout-active {
+        background-color: rgba(0, 0, 0, 0.15);
+    }
+}
+
 // Animation
 @keyframes fade {
     0% {
         opacity: 0;
     }
     100% {
+        opacity: 1;
+    }
+}
+
+@keyframes move-down {
+    0% {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0%);
         opacity: 1;
     }
 }
@@ -103,8 +130,8 @@ button {
     display: flex;
     align-items: center;
     justify-content: center;
-    max-width: max-content;
     padding: 10px 20px;
+    transition: all 60ms ease-out;
 
     &_red {
         background-color: $redDefault;
@@ -112,8 +139,12 @@ button {
 
         @media (hover: hover) {
             &:hover {
-                background-color: darken($redDefault, 5);
+                background-color: #BA2532;
             }
+        }
+
+        &:active {
+            background-color: #981B25;
         }
     }
 
@@ -123,8 +154,12 @@ button {
 
         @media (hover: hover) {
             &:hover {
-                background-color: lighten($grey, 5);
+                background-color: #101010;
             }
+        }
+
+        &:active {
+            background-color: #000000;
         }
     }
 
