@@ -4,6 +4,12 @@
     background-color: $surfaceSecondary;
     border-top: 1px solid $borderBase;
     border-bottom: 1px solid $borderBase;
+
+    @media screen and (min-width: $breakpoint992) {
+        .section__content.container {
+            padding: 0;
+        }
+    }
 }
 
 .article-slider {
@@ -35,6 +41,14 @@
         justify-content: center;
 
         cursor: pointer;
+        transition: all 60ms ease-out;
+
+        &:hover {
+            background-color: $borderBase;
+        }
+        &:active {
+            background-color: #D7DCE5;
+        }
 
         & > * {
             width: 24px;
@@ -42,20 +56,20 @@
 
         // .article-slider__btn_prev
         &_prev {
-            left: -41px;
+            left: 7px;
             translate: -100% 0;
             @media screen and (max-width: $breakpoint1366) {
-                left: 40px;
+                left: 88px;
             }
         }
 
         // .article-slider__btn_next
         &_next {
-            right: -41px;
+            right: 7px;
             translate: 100% 0;
 
             @media screen and (max-width: $breakpoint1366) {
-                right: 40px;
+                right: 88px;
             }
         }
 
@@ -70,6 +84,37 @@
     }
 
     &__container {
+    
+        @media screen and (min-width: $breakpoint992) {
+            padding: 0 48px !important;
+
+            &::after {
+                content: '';
+                position: absolute;
+                z-index: 2;
+                top: 0;
+                bottom: 0;
+                left: -1px;
+                width: 49px;
+                transition: none;
+                background: linear-gradient(270deg, #F8F9FC 50%, rgba(248, 249, 252, 0) 100%);
+                transform: rotate(-180deg);
+    
+    
+            }
+    
+            &::before {
+                content: '';
+                position: absolute;
+                z-index: 2;
+                top: 0;
+                bottom: 0;
+                right: -1px;
+                width: 49px;
+                background: linear-gradient(270deg, #F8F9FC 50%, rgba(248, 249, 252, 0) 100%);
+            }
+        }
+
         @media screen and (max-width: $breakpoint992) {
             &.swiper {
                 overflow: visible;
@@ -113,10 +158,6 @@
     &__name {
         margin-right: 8px;
         color: $surfaceTertiaryInvert;
-
-        @media screen and (max-width: $breakpoint992) {
-            font-size: 14px;
-        }
     }
 
     // .article-slide__type
@@ -125,19 +166,11 @@
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
-
-        @media screen and (max-width: $breakpoint992) {
-            font-size: 14px;
-        }
     }
 
     // .article-slide__title
     &__title {
         margin-top: 8px;
         color: $contentPrimary;
-
-        @media screen and (max-width: $breakpoint992) {
-            font-size: 16px;
-        }
     }
 }

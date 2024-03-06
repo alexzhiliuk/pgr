@@ -50,6 +50,10 @@
 
         @media screen and (max-width: $breakpoint768) {
             flex-wrap: wrap;
+
+            [type="submit"] {
+                flex-grow: 1;
+            }
         }
 
         input {

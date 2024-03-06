@@ -75,6 +75,18 @@
             }
         }
 
+        &:not(.colored-card_big) {
+            @media screen and (max-width: $breakpoint768) {
+                .colored-card__img {
+                    img {
+                        width: 390px;
+                        object-fit: cover;
+                        object-position: center;
+                    }
+                }
+            }
+        }
+
     }
 
     // .colored-card__title

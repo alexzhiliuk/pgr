@@ -43,6 +43,10 @@
         margin-top: 24px;
         margin-left: auto;
         margin-right: auto;
+
+        @media screen and (max-width: $breakpoint576) {
+            margin-top: 8px;
+        }
     }
     
 }

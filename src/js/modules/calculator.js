@@ -47,3 +47,10 @@ $("#loanTermInput, #loanAmountInput, #loanRateInput").on("input", function() {
     
     $("#monthlyPayment").html(formatMonthlyPayment(monthlyPayment))
 })
+
+// Изначальный расчет
+let monthlyRate = loanRateRange.val() / 12 / 100
+let paymentsNumber = loanTermRange.val() * 12
+let loanAmount = loanAmountRange.val()
+let monthlyPayment = calculatingMonthlyPayment(loanAmount, monthlyRate, paymentsNumber)
+$("#monthlyPayment").html(formatMonthlyPayment(monthlyPayment))
