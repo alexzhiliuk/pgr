@@ -394,7 +394,7 @@ button {
 
 @media (hover: hover) {
   .zoom:hover {
-    transform: scale(1.05);
+    transform: scale3d(1.03, 1.03, 1.03);
   }
 }
 
@@ -1270,6 +1270,7 @@ input::placeholder {
   overflow: hidden;
   padding: 28px 32px 0;
   flex: 0 0 calc(33.33% - 16px);
+  transition: transform 0.4s cubic-bezier(0, 0, 0.4, 1);
 }
 @media screen and (max-width: 991.98px) {
   .colored-card, .colored-card_simple, .colored-card_big {
@@ -1281,12 +1282,24 @@ input::placeholder {
     flex: 0 0 100%;
   }
 }
+@media screen and (max-width: 575.98px) {
+  .colored-card, .colored-card_simple, .colored-card_big {
+    padding: 24px 24px 0;
+  }
+}
 .colored-card_big {
   flex: 0 0 calc(50% - 12px);
 }
 @media screen and (max-width: 767.98px) {
   .colored-card_big {
     flex: 0 0 100%;
+  }
+}
+@media screen and (max-width: 767.98px) {
+  .colored-card:not(.colored-card_big) .colored-card__img img, .colored-card_simple:not(.colored-card_big) .colored-card__img img, .colored-card_big:not(.colored-card_big) .colored-card__img img {
+    width: 360px;
+    object-fit: cover;
+    object-position: top;
   }
 }
 .colored-card_simple .colored-card__title {
@@ -1322,6 +1335,21 @@ input::placeholder {
 }
 .colored-card__btn {
   margin-top: 16px;
+  transition: all 60ms ease-out;
+}
+@media (hover: hover) {
+  .colored-card__btn:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+    outline: none;
+  }
+}
+.colored-card__btn:active {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+@media screen and (max-width: 575.98px) {
+  .colored-card__btn {
+    width: 100%;
+  }
 }
 .colored-card__img {
   margin-top: auto;

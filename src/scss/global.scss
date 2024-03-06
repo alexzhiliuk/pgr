@@ -67,7 +67,7 @@ button {
 .zoom {
     @media (hover: hover) {
         &:hover {
-            transform: scale(1.05);
+            transform: scale3d(1.03, 1.03, 1.03);
         }
     }
 }

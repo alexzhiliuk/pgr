@@ -15,6 +15,7 @@
     overflow: hidden;
     padding: 28px 32px 0;
     flex: 0 0 calc(33.33% - (24px * 2 / 3));
+    transition: transform .4s cubic-bezier(0,0,.4,1);
 
     @media screen and (max-width: $breakpoint992) {
         flex: 0 0 calc(50% - (24px / 2));
@@ -22,6 +23,10 @@
 
     @media screen and (max-width: $breakpoint768) {
         flex: 0 0 100%;
+    }
+
+    @media screen and (max-width: $breakpoint576) {
+        padding: 24px 24px 0;
     }
 
     // .colored-card_big
@@ -32,6 +37,19 @@
 
         @media screen and (max-width: $breakpoint768) {
             flex: 0 0 100%;
+        }
+
+    }
+
+    &:not(.colored-card_big) {
+        @media screen and (max-width: $breakpoint768) {
+            .colored-card__img {
+                img {
+                    width: 360px;
+                    object-fit: cover;
+                    object-position: top;
+                }
+            }
         }
     }
 
@@ -79,6 +97,22 @@
     // .colored-card__btn
     &__btn {
         margin-top: 16px;
+        transition: all 60ms ease-out;
+
+        @media (hover: hover) {
+            &:hover {
+                background-color: rgba(#000000, .1);
+                outline: none;
+            }
+        }
+
+        &:active {
+            background-color: rgba(#000000, .2)
+        }
+
+        @media screen and (max-width: $breakpoint576) {
+            width: 100%;
+        }
 
         @extend .caption-regular;
     }
