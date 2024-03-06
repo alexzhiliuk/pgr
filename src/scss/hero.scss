@@ -5,30 +5,29 @@
 
     @media screen and (max-width: $breakpoint1366) {
         padding-top: 48px;
-    }
 
-    // .hero_slider
-    &_slider {
-        .hero__container {
-            background: var(--bg);
-        }
-
-        @media screen and (max-width: $breakpoint1366) {
-            background: var(--bg);
-            .hero__container {
+        background: var(--bg);
+            .hero__bg{
                 background: none;
             }
-        }
+    }
+
+    &__bg {
+        border-radius: 16px;
+        background: var(--bg);
     }
 
     // .hero__container
     &__container {
-        border-radius: 16px;
         display: flex;
         justify-content: space-between;
         align-items: center;
         height: 480px;
         position: relative;
+
+        &.container {
+            padding: 0;
+        }
 
         @media screen and (max-width: $breakpoint1366) {
             height: 416px;
@@ -215,7 +214,7 @@
             object-fit: contain;
             object-position: center;
             display: block;
-            transition: all 60ms ease-out;
+            transition: all 120ms ease-out;
             
             @media screen and (max-width: $breakpoint1366) {
                 object-position: 35vw;
@@ -268,6 +267,12 @@
             background-color: $surfacePrimary;
             padding: 16px 20px;
             gap: 16px;
+
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(27.5274px);
+            -webkit-backdrop-filter: blur(27.5274px);
+            border-radius: 16px;
+
         }
 
         @media screen and (max-width: $breakpoint992) {
@@ -332,42 +337,57 @@
     }
 }
 
+@keyframes sliderFade {
+    0% {
+        opacity: 0;
+    }
+    30% {
+        opacity: 0;
+    }
+    70% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@keyframes sliderFadeReverse {
+    0% {
+        opacity: 1;
+    }
+    10% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
 .hero-swiper {
     max-width: 100%;
     overflow: hidden;
-    position: relative;
-    
-    &::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        right: 0;
-        width: 32px;
-        background: linear-gradient(270deg, transparent, #D7E1EE 0%, rgba(223, 231, 241, 0) 100%, transparent);
-    }
 
     &__slide {
+
         display: flex;
         flex-direction: column;
         justify-content: flex-end;
 
         @media screen and (max-width: $breakpoint992) {
-            text-align: center;
 
-            & > * {
-                margin-left: auto;
-                margin-right: auto;
+            .hero_slider__btn {
+                width: 100%;
+                max-width: 100%;
             }
         }
 
         &.swiper-slide-active {
-            animation: fade 2s;
+            animation: sliderFade 2s ease;
         }
 
         &.swiper-slide-prev,
         &.swiper-slide-next {
-            animation: fadeReverse 1s;
+            animation: sliderFadeReverse 2s ease;
             animation-iteration-count: 1;
             animation-fill-mode: both;
         }

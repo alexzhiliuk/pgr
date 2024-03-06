@@ -5,7 +5,7 @@ Swiper.use([Autoplay, Navigation, Pagination]);
 const swiperHero = new Swiper('.hero-swiper', {
     loop: true,
     slidesPerView: 1,
-    spaceBetween: 0,
+    spaceBetween: 24,
     speed: 1000,
     allowTouchMove: true,
     autoHeight: false,
@@ -18,6 +18,7 @@ const swiperHero = new Swiper('.hero-swiper', {
     breakpoints: {
         1366: {
             autoHeight: false,
+            spaceBetween: 0,
         },
         992: {
             autoHeight: true,
@@ -56,8 +57,10 @@ $( ".hero_slider__right, .hero_slider__img" ).hover(function() {
     $( ".hero_slider__slider" ).css("opacity", ".2");
     $( ".hero_slider__img img" ).css("transform", "scale(1.03)")
     $( ".hero_slider__right" ).addClass("hovered")
+    $( ".hero__bg" ).css("background", "radial-gradient(75.09% 100% at 50% 0%, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0) 100%), #CEDBEA")
 }, function() {
     $( ".hero_slider__slider" ).css("opacity", "");
     $( ".hero_slider__img img" ).css("transform", "")
     $( ".hero_slider__right" ).removeClass("hovered")
+    $( ".hero__bg" ).css("background", "")
 });
