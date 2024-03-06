@@ -367,6 +367,10 @@
     max-width: 100%;
     overflow: hidden;
 
+    @media screen and (max-width: $breakpoint768) {
+        overflow: visible;
+    }
+
     &__slide {
 
         display: flex;

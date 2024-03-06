@@ -818,7 +818,7 @@ input::placeholder {
 }
 .nav-accordion.nav-accordion_active .nav-accordion__body {
   display: block;
-  animation: move-down 60ms ease-out;
+  animation: move-down 120ms ease-out;
 }
 .nav-accordion__body-title {
   opacity: 0.6;
@@ -1166,6 +1166,11 @@ input::placeholder {
   max-width: 100%;
   overflow: hidden;
 }
+@media screen and (max-width: 767.98px) {
+  .hero-swiper {
+    overflow: visible;
+  }
+}
 .hero-swiper__slide {
   display: flex;
   flex-direction: column;
@@ -1262,6 +1267,12 @@ input::placeholder {
   margin-top: 24px;
   margin-left: auto;
   margin-right: auto;
+  max-width: max-content;
+}
+@media screen and (max-width: 767.98px) {
+  .section__btn {
+    max-width: 100%;
+  }
 }
 @media screen and (max-width: 575.98px) {
   .section__btn {
@@ -1391,8 +1402,12 @@ input::placeholder {
 .icon-cards {
   display: flex;
   justify-content: space-between;
-  flex-wrap: wrap;
   gap: 24px;
+}
+@media screen and (max-width: 991.98px) {
+  .icon-cards {
+    flex-wrap: wrap;
+  }
 }
 @media screen and (max-width: 575.98px) {
   .icon-cards {

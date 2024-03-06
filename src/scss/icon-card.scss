@@ -1,8 +1,11 @@
 .icon-cards {
     display: flex;
     justify-content: space-between;
-    flex-wrap: wrap;
     gap: 24px;
+
+    @media screen and (max-width: $breakpoint992) {
+        flex-wrap: wrap;
+    }
 
     @media screen and (max-width: $breakpoint576) {
         gap: 8px;
