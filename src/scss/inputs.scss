@@ -1,0 +1,19 @@
+// Inputs
+
+input {
+
+    border-radius: 8px;
+    background-color: $surfacePrimary;
+    padding: 10px 16px;
+    color: #2C3136;
+    transition: all 60ms ease-out;
+
+    &:hover {
+        background-color: $surfaceSecondary;
+    }
+
+    &::placeholder {
+        color: #2C3136;
+        opacity: .4;
+    }
+}

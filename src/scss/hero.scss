@@ -5,6 +5,8 @@
 
     @media screen and (max-width: $breakpoint1366) {
         padding-top: 48px;
+        overflow: hidden;
+        position: relative;
 
         background: var(--bg);
             .hero__bg{
@@ -12,9 +14,24 @@
             }
     }
 
+    @media screen and (max-width: $breakpoint992) {
+        padding-bottom: 50vw;
+    }
+
+    @media screen and (max-width: $breakpoint576) {
+        padding-bottom: 75vw;
+    }
+
     &__bg {
         border-radius: 16px;
         background: var(--bg);
+        overflow: hidden;
+        position: relative;
+        
+        @media screen and (max-width: $breakpoint1366) {
+            overflow: visible;
+            position: static;
+        }
     }
 
     // .hero__container
@@ -22,8 +39,8 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        height: 480px;
-        position: relative;
+        height: 460px;
+        // position: relative;
 
         &.container {
             padding: 0;
@@ -39,6 +56,38 @@
             background: none;
             height: unset;
             gap: unset;
+        }
+    }
+
+    // .hero__content
+    &__content {
+        height: 100%;
+        padding: 32px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        max-width: 660px;
+        position: relative;
+        z-index: 2;
+
+        .hero__btn {
+            margin-top: 32px;
+
+            @media screen and (max-width: $breakpoint768) {
+                margin-top: 28px;
+            }
+        }
+
+        @media screen and (max-width: $breakpoint1366) {
+            max-width: 500px;
+        }
+
+        @media screen and (max-width: $breakpoint992) {
+            max-width: 100%;
+        }
+
+        @media screen and (max-width: $breakpoint768) {
+            padding: 0;
         }
     }
 
@@ -61,9 +110,62 @@
         }
     }
 
+    // .hero__img
+    &__img {
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        right: 0;
+
+        @media screen and (max-width: $breakpoint992) {
+            height: 100%;
+            top: unset;
+            bottom: 0;
+        }
+
+        img {
+            height: 920px;
+            width: 100%;
+            object-fit: contain;
+            object-position: 40vw -88px;
+
+            @media screen and (max-width: $breakpoint1366) {
+                height: 820px;
+                object-position: 40vw 0;
+            }
+
+            @media screen and (max-width: $breakpoint992) {
+                object-position: 0 170px;
+            }
+
+            @media screen and (max-width: $breakpoint576) {
+                object-position: calc((600px - 104vw) / -2) 250px;
+                width: 600px;
+            }
+        }
+    }
+
 }
 
 .hero_slider {
+
+    .hero__container {
+        height: 480px;
+
+        @media screen and (max-width: $breakpoint1366) {
+            height: 416px;
+            gap: 24px;
+        }
+
+        @media screen and (max-width: $breakpoint992) {
+            flex-direction: column;
+            background: none;
+            height: unset;
+            gap: unset;
+        }
+    }
 
     // .hero_slider__slider
     &__slider {
