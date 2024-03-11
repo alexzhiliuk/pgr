@@ -4,7 +4,8 @@
     padding-bottom: 24px;
 
     @media screen and (max-width: $breakpoint1366) {
-        padding-top: 48px;
+        padding-top: 0;
+        padding-bottom: 0;
         overflow: hidden;
         position: relative;
 
@@ -15,11 +16,11 @@
     }
 
     @media screen and (max-width: $breakpoint992) {
-        padding-bottom: 50vw;
+        
     }
 
     @media screen and (max-width: $breakpoint576) {
-        padding-bottom: 75vw;
+        
     }
 
     &__bg {
@@ -31,6 +32,7 @@
         @media screen and (max-width: $breakpoint1366) {
             overflow: visible;
             position: static;
+            padding-top: 48px;
         }
     }
 
@@ -113,11 +115,18 @@
     // .hero__img
     &__img {
         height: 100%;
-        width: 100%;
-        position: absolute;
-        z-index: 1;
-        top: 0;
-        right: 0;
+        position: relative;
+
+        @media screen and (max-width: $breakpoint1366) and (min-width: $breakpoint992) {
+            max-width: 684px;
+            align-self: flex-end;
+            height: fit-content;
+
+            & > img {
+                height: unset;
+                width: 100%;
+            }
+        }
 
         @media screen and (max-width: $breakpoint992) {
             height: 100%;
@@ -125,24 +134,42 @@
             bottom: 0;
         }
 
-        img {
-            height: 920px;
-            width: 100%;
-            object-fit: contain;
-            object-position: 40vw -88px;
+        &-effect {
+            mix-blend-mode: overlay;
+            position: absolute;
+            left: -14%;
+            top: -19%;
+            width: 134.5%;
+            aspect-ratio: 1;
+            & > img {
+                display: block;
+                width: 100%;
+
+                @media screen and (max-width: $breakpoint576) {
+                    // width: 74%;
+                    // aspect-ratio: 1;
+                    // height: unset;
+                }
+            }
+        }
+
+        & > img {
+            display: block;
+            position: relative;
+            z-index: 1;
+            height: 100%;
 
             @media screen and (max-width: $breakpoint1366) {
-                height: 820px;
-                object-position: 40vw 0;
+
             }
 
             @media screen and (max-width: $breakpoint992) {
-                object-position: 0 170px;
+                max-width: 555px;
+                width: 100%;
             }
 
             @media screen and (max-width: $breakpoint576) {
-                object-position: calc((600px - 104vw) / -2) 250px;
-                width: 600px;
+                width: 405px;
             }
         }
     }

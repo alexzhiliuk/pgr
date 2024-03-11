@@ -18,9 +18,7 @@
         border-radius: 12px;
         padding: 18px 24px;
         background-color: $surfaceTertiary;
-        display: flex;
-        justify-content: space-between;
-        gap: 24px;
+        transition: all 120ms ease-out;
 
         &:hover {
             background-color: $borderBase;
@@ -28,6 +26,36 @@
 
         @media screen and (max-width: $breakpoint576) {
             padding: 20px;
+        }
+
+        &_opened {
+            .faq__item-body {
+                grid-template-rows: 1fr;
+                padding-top: 16px;
+            }
+            .faq__item-icon {
+                transform: rotate(45deg);
+            }
+        }
+    }
+
+    // .faq__item-header
+    &__item-header {
+        display: flex;
+        justify-content: space-between;
+        gap: 24px;
+    }
+
+    // .faq__item-body
+    &__item-body {
+        color: $contentPrimary;
+        display: grid;
+        grid-template-rows: 0fr;
+        transition: all 120ms ease-out;
+        overflow: hidden;
+
+        &-wrapper {
+            overflow: hidden;
         }
     }
 
@@ -39,6 +67,8 @@
     // .faq__item-icon
     &__item-icon {
         width: 24.48px;
+        height: fit-content;
+        transition: all 120ms ease-out;
     }
 
     // .faq__btns

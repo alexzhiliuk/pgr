@@ -842,23 +842,14 @@ input::placeholder {
 }
 @media screen and (max-width: 1365.98px) {
   .hero {
-    padding-top: 48px;
+    padding-top: 0;
+    padding-bottom: 0;
     overflow: hidden;
     position: relative;
     background: var(--bg);
   }
   .hero .hero__bg {
     background: none;
-  }
-}
-@media screen and (max-width: 991.98px) {
-  .hero {
-    padding-bottom: 50vw;
-  }
-}
-@media screen and (max-width: 575.98px) {
-  .hero {
-    padding-bottom: 75vw;
   }
 }
 .hero__bg {
@@ -871,6 +862,7 @@ input::placeholder {
   .hero__bg {
     overflow: visible;
     position: static;
+    padding-top: 48px;
   }
 }
 .hero__container {
@@ -946,11 +938,18 @@ input::placeholder {
 }
 .hero__img {
   height: 100%;
-  width: 100%;
-  position: absolute;
-  z-index: 1;
-  top: 0;
-  right: 0;
+  position: relative;
+}
+@media screen and (max-width: 1365.98px) and (min-width: 991.98px) {
+  .hero__img {
+    max-width: 684px;
+    align-self: flex-end;
+    height: fit-content;
+  }
+  .hero__img > img {
+    height: unset;
+    width: 100%;
+  }
 }
 @media screen and (max-width: 991.98px) {
   .hero__img {
@@ -959,27 +958,33 @@ input::placeholder {
     bottom: 0;
   }
 }
-.hero__img img {
-  height: 920px;
-  width: 100%;
-  object-fit: contain;
-  object-position: 40vw -88px;
+.hero__img-effect {
+  mix-blend-mode: overlay;
+  position: absolute;
+  left: -14%;
+  top: -19%;
+  width: 134.5%;
+  aspect-ratio: 1;
 }
-@media screen and (max-width: 1365.98px) {
-  .hero__img img {
-    height: 820px;
-    object-position: 40vw 0;
-  }
+.hero__img-effect > img {
+  display: block;
+  width: 100%;
+}
+.hero__img > img {
+  display: block;
+  position: relative;
+  z-index: 1;
+  height: 100%;
 }
 @media screen and (max-width: 991.98px) {
-  .hero__img img {
-    object-position: 0 170px;
+  .hero__img > img {
+    max-width: 555px;
+    width: 100%;
   }
 }
 @media screen and (max-width: 575.98px) {
-  .hero__img img {
-    object-position: calc((600px - 104vw) / -2) 250px;
-    width: 600px;
+  .hero__img > img {
+    width: 405px;
   }
 }
 
@@ -2150,9 +2155,7 @@ input::placeholder {
   border-radius: 12px;
   padding: 18px 24px;
   background-color: #F1F3F9;
-  display: flex;
-  justify-content: space-between;
-  gap: 24px;
+  transition: all 120ms ease-out;
 }
 .faq__item:hover {
   background-color: #E1E6EF;
@@ -2162,11 +2165,35 @@ input::placeholder {
     padding: 20px;
   }
 }
+.faq__item_opened .faq__item-body {
+  grid-template-rows: 1fr;
+  padding-top: 16px;
+}
+.faq__item_opened .faq__item-icon {
+  transform: rotate(45deg);
+}
+.faq__item-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+}
+.faq__item-body {
+  color: #1D2433;
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: all 120ms ease-out;
+  overflow: hidden;
+}
+.faq__item-body-wrapper {
+  overflow: hidden;
+}
 .faq__item-title {
   color: #0A0D14;
 }
 .faq__item-icon {
   width: 24.48px;
+  height: fit-content;
+  transition: all 120ms ease-out;
 }
 .faq__btns {
   display: flex;
