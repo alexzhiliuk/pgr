@@ -15,14 +15,6 @@
             }
     }
 
-    @media screen and (max-width: $breakpoint992) {
-        
-    }
-
-    @media screen and (max-width: $breakpoint576) {
-        
-    }
-
     &__bg {
         border-radius: 16px;
         background: var(--bg);
@@ -177,6 +169,10 @@
 }
 
 .hero_slider {
+
+    @media screen and (max-width: $breakpoint1366) {
+        padding-bottom: 28px;
+    }
 
     .hero__container {
         height: 480px;

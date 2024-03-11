@@ -988,6 +988,11 @@ input::placeholder {
   }
 }
 
+@media screen and (max-width: 1365.98px) {
+  .hero_slider {
+    padding-bottom: 28px;
+  }
+}
 .hero_slider .hero__container {
   height: 480px;
 }
