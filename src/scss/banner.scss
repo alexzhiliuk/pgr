@@ -72,6 +72,10 @@
         @media screen and (max-width: $breakpoint992) {
             margin-top: 24px;
         }
+
+        @media screen and (max-width: $breakpoint576) {
+            max-width: 100%;
+        }
     }
 
     // .banner__img

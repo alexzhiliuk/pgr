@@ -2285,6 +2285,11 @@ input::placeholder {
     margin-top: 24px;
   }
 }
+@media screen and (max-width: 575.98px) {
+  .banner__btn {
+    max-width: 100%;
+  }
+}
 .banner__img {
   position: relative;
   flex-grow: 1;
