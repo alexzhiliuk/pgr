@@ -1,0 +1,110 @@
+.banner {
+
+    background-color: $surfaceTertiary;
+    border-radius: 12px;
+    padding: 28px 32px;
+    overflow: hidden;
+
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+
+    @media screen and (max-width: $breakpoint768) {
+        padding: 0;
+        flex-direction: column;
+        gap: 0;
+    }
+
+    // .banner__content
+    &__content {
+        flex: 0 0 514px;
+
+        @media screen and (max-width: $breakpoint1366) {
+            flex: 0 1 514px;
+        }
+
+        @media screen and (max-width: $breakpoint992) {
+            flex: 0 0 380px
+        }
+
+        @media screen and (max-width: $breakpoint768) {
+            padding: 20px;
+            flex: unset;
+        }
+    }
+
+    // .banner__title
+    &__title {
+
+        @media screen and (max-width: 892px) {
+            font-size: 18px;
+        }
+    }
+
+    // .banner__text
+    &__text {
+        color: $grey;
+        margin-top: 16px;
+
+        @media screen and (max-width: 892px) {
+            font-size: 14px;
+        }
+
+        p:not(:last-of-type) {
+            margin-bottom: 12px;
+        }
+
+        ul {
+            list-style: disc;
+            list-style-position: inside;
+
+            li::marker {
+                margin: 0 8px;
+            }
+        }
+    }
+
+    // .banner__btn
+    &__btn {
+        margin-top: 48px;
+        max-width: max-content;
+
+        @media screen and (max-width: $breakpoint992) {
+            margin-top: 24px;
+        }
+    }
+
+    // .banner__img
+    &__img {
+        position: relative;
+        flex-grow: 1;
+        min-width: 360px;
+
+        @media screen and (max-width: $breakpoint992) {
+            min-width: 276px;
+        }
+
+        @media screen and (max-width: $breakpoint768) {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            min-width: unset;
+        }
+
+        img {
+            position: absolute;
+            top: -8px;
+            right: 12px;
+            max-width: 100%;
+            width: 388px;
+            display: block;
+
+            @media screen and (max-width: $breakpoint768) {
+                width: 90%;
+                max-width: 330px;
+                position: static;
+            }
+        }
+    }
+}
+
