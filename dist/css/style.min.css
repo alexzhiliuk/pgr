@@ -1352,10 +1352,20 @@ input::placeholder {
 
 .section {
   margin-top: 100px;
+  margin-bottom: 100px;
+}
+.section.section-mb-0 {
+  margin-bottom: 0;
+}
+@media screen and (max-width: 767.98px) {
+  .section.section-mb-0 {
+    margin-bottom: 0;
+  }
 }
 @media screen and (max-width: 767.98px) {
   .section {
     margin-top: 60px;
+    margin-bottom: 60px;
   }
 }
 .section__title {
@@ -2310,7 +2320,7 @@ input::placeholder {
 }
 .banner__img img {
   position: absolute;
-  top: -8px;
+  bottom: -84px;
   right: 12px;
   max-width: 100%;
   width: 388px;

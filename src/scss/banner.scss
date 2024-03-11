@@ -97,11 +97,15 @@
 
         img {
             position: absolute;
-            top: -8px;
+            bottom: -84px;
             right: 12px;
             max-width: 100%;
             width: 388px;
             display: block;
+
+            @media screen and (max-width: $breakpoint992) {
+
+            }
 
             @media screen and (max-width: $breakpoint768) {
                 width: 90%;

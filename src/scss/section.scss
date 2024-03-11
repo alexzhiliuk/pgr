@@ -1,9 +1,18 @@
 .section {
 
+    &.section-mb-0 {
+        margin-bottom: 0;
+        @media screen and (max-width: $breakpoint768) {
+            margin-bottom: 0;
+        }
+    }
+
     margin-top: 100px;
+    margin-bottom: 100px;
 
     @media screen and (max-width: $breakpoint768) {
         margin-top: 60px;
+        margin-bottom: 60px;
     }
 
     // .section__title
