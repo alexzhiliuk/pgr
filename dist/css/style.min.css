@@ -645,6 +645,7 @@ input::placeholder {
 .header__btns {
   display: flex;
   align-items: center;
+  height: 100%;
 }
 @media screen and (max-width: 1229.98px) {
   .header__btns {
@@ -653,6 +654,9 @@ input::placeholder {
 }
 .header__phone {
   margin-right: 16px;
+  height: 100%;
+  display: flex;
+  align-items: center;
 }
 
 .nav__list {

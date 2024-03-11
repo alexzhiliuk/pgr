@@ -63,6 +63,7 @@
     &__btns {
         display: flex;
         align-items: center;
+        height: 100%;
 
         @media screen and (max-width: $breakpoint1230) {
             display: none;
@@ -72,6 +73,9 @@
     // .header__phone
     &__phone {
         margin-right: 16px;
+        height: 100%;
+        display: flex;
+        align-items: center;
     }
 
 }
