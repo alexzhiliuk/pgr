@@ -1,0 +1,171 @@
+.tabs {
+
+    background: $surfacePrimary;
+    border: 1px solid $borderBase;
+    box-shadow: 0px 36px 56px rgba(54, 70, 99, 0.12), 0px 4.50776px 7.01207px rgba(54, 70, 99, 0.06);
+    border-radius: 16px;
+    padding: 16px;
+    display: flex;
+    height: 352px;
+
+    @media screen and (max-width: $breakpoint768){ 
+        padding: 0;
+    }
+
+    @media screen and (max-width: $breakpoint768){ 
+        height: unset;
+        flex-direction: column;
+        background: unset;
+        border: unset;
+        box-shadow: unset;
+    }
+
+
+    // .tabs__items
+    &__items {
+        flex: 0 0 432px;
+        height: 100%;
+        overflow: scroll;
+        overflow-x: hidden;
+        background-color: $surfaceSecondary;
+        border: 1px solid $borderBase;
+        border-radius: 8px;
+
+        @media screen and (max-width: $breakpoint992){ 
+            flex: 0 0 300px;
+        }
+
+        @media screen and (max-width: $breakpoint768){ 
+            background: $surfacePrimary;
+            border: 1px solid $borderBase;
+            box-shadow: 0px 36px 56px rgba(54, 70, 99, 0.12), 0px 4.50776px 7.01207px rgba(54, 70, 99, 0.06);
+            flex: 0 0 320px;
+            padding: 4px;
+        }
+
+
+        &::-webkit-scrollbar {
+            background: $surfaceTertiary;
+            width: 12px;
+            padding: 0 2px;
+            border-radius: 0 8px 8px 0;
+            border-left: 1px solid $borderBase;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background-color: rgba($contentPrimary, 0.6) ;
+            opacity: .6;
+            width: 8px;
+            border-radius: 8px;
+            border: 2px solid transparent;
+            background-clip: content-box;
+        }
+
+    }
+
+    // .tabs__item
+    &__item {
+        cursor: pointer;
+        padding: 12px 16px;
+        color: $surfaceTertiaryInvert;
+        transition: all 60ms ease-out;
+
+        &_active {
+            background-color: $borderBase;
+        }
+
+        &:not(:last-of-type) {
+            border-bottom: 1px solid $borderBase;
+        }
+
+        &:hover {
+            background-color: $borderBase;
+        }
+
+        @media screen and (max-width: $breakpoint768){ 
+            font-size: 14px;
+        }
+
+        @media screen and (max-width: $breakpoint768){ 
+            background: $surfaceSecondary;
+            border-bottom: 1px solid $borderBase;
+            border-left: 1px solid $borderBase;
+            border-right: 1px solid $borderBase;
+
+            &:first-of-type {
+                border-radius: 8px 8px 0 0;
+                border-top: 1px solid $borderBase;
+            }
+            &:last-of-type {
+                border-radius: 0 0 8px 8px;
+            }
+        }
+
+    }
+
+    // .tabs__body
+    &__body {
+        padding: 12px 52px 12px 28px;
+        overflow: scroll;
+
+        @media screen and (max-width: $breakpoint768){ 
+            background: $surfacePrimary;
+            border: 1px solid $borderBase;
+            box-shadow: 0px 36px 56px rgba(54, 70, 99, 0.12), 0px 4.50776px 7.01207px rgba(54, 70, 99, 0.06);
+            padding: 4px;
+            padding: 20px;
+            overflow: unset;
+            border-radius: 12px;
+            margin-top: 16px;
+        }
+
+    }
+
+    // .tabs__content
+    &__content {
+        height: 100%;
+        display: none;
+        flex-direction: column;
+
+        &_active {
+            display: flex;
+        }
+    }
+
+    // .tabs__content-title
+    &__content-title {
+        color: #1A1A1A;
+
+        @media screen and (max-width: $breakpoint768){ 
+            font-size: 18px;
+        }
+    }
+
+    // .tabs__content-text
+    &__content-text {
+        margin-top: 20px;
+        margin-bottom: 20px;
+
+        p:not(:last-of-type) {
+            margin-bottom: 16px;
+        }
+
+        @media screen and (max-width: $breakpoint768){ 
+            font-size: 14px;
+            p:not(:last-of-type) {
+                margin-bottom: 0;
+            }
+        }
+
+    }
+
+    // .tabs__content-btn
+    &__content-btn {
+        margin-top: auto;
+        max-width: max-content;
+
+        @media screen and (max-width: $breakpoint576){ 
+            max-width: 100%;
+        }
+    }
+}
