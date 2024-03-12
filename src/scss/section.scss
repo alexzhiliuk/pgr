@@ -22,6 +22,11 @@
 
         @extend .h2;
 
+        &_mb-left {
+            @media screen and (max-width: $breakpoint768) {
+                text-align: left;
+            }
+        }
     }
 
     // .section__subtitle
@@ -34,6 +39,10 @@
 
         @media screen and (max-width: $breakpoint768) {
             font-size: 14px;
+        }
+
+        @media screen and (max-width: $breakpoint768) {
+            text-align: left;
         }
 
     }

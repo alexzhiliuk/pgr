@@ -1,0 +1,52 @@
+.num-cards {
+    @extend .icon-cards;
+
+    row-gap: 32px;
+
+    @media screen and (max-width: $breakpoint576) {
+        padding-top: 12px;
+    }
+}
+
+.num-card {
+
+    @extend .icon-card;
+
+    text-align: center;
+    padding: 48px 24px 24px;
+    position: relative;
+
+    @media screen and (max-width: $breakpoint576) {
+        padding: 40px 20px 20px;
+    }
+
+    // .num-card__number
+    &__number {
+        @extend .h4;
+
+        width: 52px;
+        height: 52px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        background-color: $contentPrimary;
+        color: $surfacePrimary;
+
+        position: absolute;
+        left: 50%;
+        top: 0;
+        translate: -50% -50%;
+    }
+
+    // .num-card__title
+    &__title {
+        @extend .icon-card__title;
+        margin-top: 0;
+    }
+
+    // .num-card__subtitle
+    &__subtitle {
+        @extend .icon-card__subtitle;
+    }
+}

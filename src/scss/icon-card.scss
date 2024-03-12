@@ -10,6 +10,10 @@
     @media screen and (max-width: $breakpoint576) {
         gap: 8px;
     }
+
+    &_big {
+        @extend .icon-cards;
+    }
 }
 
 .icon-card {
@@ -27,6 +31,15 @@
     @media screen and (max-width: $breakpoint576) {
         flex: 0 0 100%;
         padding: 20px;
+    }
+
+    &_big {
+        @extend .icon-card;
+        flex: 0 0 calc(33% - (24px * 2 / 3));
+
+        @media screen and (max-width: $breakpoint768) {
+            flex: 0 0 100%;
+        }
     }
 
     // .icon-card__img
@@ -60,3 +73,4 @@
         }
     }
 }
+
