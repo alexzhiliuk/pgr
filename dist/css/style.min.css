@@ -976,23 +976,23 @@ input::placeholder {
     max-width: 100%;
   }
 }
-.hero__img {
+.hero__img, .hero__img_centered {
   height: 100%;
   position: relative;
 }
 @media screen and (max-width: 1365.98px) and (min-width: 991.98px) {
-  .hero__img {
+  .hero__img, .hero__img_centered {
     max-width: 684px;
     align-self: flex-end;
     height: fit-content;
   }
-  .hero__img > img {
+  .hero__img > img, .hero__img_centered > img {
     height: unset;
     width: 100%;
   }
 }
 @media screen and (max-width: 991.98px) {
-  .hero__img {
+  .hero__img, .hero__img_centered {
     height: 100%;
     top: unset;
     bottom: 0;
@@ -1010,21 +1010,41 @@ input::placeholder {
   display: block;
   width: 100%;
 }
-.hero__img > img {
+.hero__img > img, .hero__img_centered > img {
   display: block;
   position: relative;
   z-index: 1;
   height: 100%;
 }
 @media screen and (max-width: 991.98px) {
-  .hero__img > img {
+  .hero__img > img, .hero__img_centered > img {
     max-width: 555px;
     width: 100%;
   }
 }
 @media screen and (max-width: 575.98px) {
-  .hero__img > img {
+  .hero__img > img, .hero__img_centered > img {
     width: 405px;
+  }
+}
+.hero__img_centered .hero__img-effect {
+  width: 120%;
+  left: -8.8%;
+  top: -32%;
+}
+@media screen and (max-width: 1365.98px) and (min-width: 991.98px) {
+  .hero__img_centered {
+    align-self: unset;
+  }
+}
+@media screen and (max-width: 575.98px) {
+  .hero__img_centered .hero__img-effect {
+    width: 592px;
+    left: -20px;
+    top: -100px;
+  }
+  .hero__img_centered > img {
+    width: 535px;
   }
 }
 
@@ -2681,6 +2701,132 @@ input::placeholder {
   .tabs__content-btn {
     max-width: 100%;
   }
+}
+
+@media screen and (max-width: 767.98px) {
+  .certificates-section {
+    margin-bottom: 0;
+  }
+  .certificates-section.container {
+    padding: 0;
+    max-width: 100%;
+  }
+}
+
+.certificates {
+  padding: 40px 32px 0;
+  background-color: #F1F3F9;
+  border-radius: 12px;
+}
+@media screen and (max-width: 767.98px) {
+  .certificates {
+    font-size: 30px;
+    padding: 32px 0 0;
+    border-radius: 0;
+  }
+}
+.certificates__title {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  text-align: center;
+  color: #212121;
+}
+.certificates__title img {
+  height: 80px;
+}
+@media screen and (max-width: 767.98px) {
+  .certificates__title {
+    font-size: 30px;
+    padding: 0 24px;
+  }
+}
+.certificates__slider {
+  margin-top: 52px;
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+@media screen and (max-width: 991.98px) {
+  .certificates__slider {
+    gap: 16px;
+  }
+}
+@media screen and (max-width: 767.98px) {
+  .certificates__slider {
+    margin-top: 40px;
+  }
+  .certificates__slider .swiper-slide {
+    width: fit-content !important;
+  }
+}
+.certificates__slider-btn {
+  flex-shrink: 0;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  transform: translate(0, -16px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: all 60ms ease-out;
+}
+.certificates__slider-btn:not(.swiper-button-disabled):hover {
+  background-color: #E1E6EF;
+}
+.certificates__slider-btn:not(.swiper-button-disabled):active {
+  background-color: #D7DCE5;
+}
+.certificates__slider-btn.swiper-button-disabled {
+  opacity: 0.4;
+}
+@media screen and (max-width: 767.98px) {
+  .certificates__slider-btn {
+    display: none;
+  }
+}
+.certificates__slider-body {
+  padding-bottom: 32px !important;
+}
+@media screen and (max-width: 767.98px) {
+  .certificates__slider-body {
+    padding: 0 24px 32px !important;
+  }
+}
+
+.certificate {
+  height: 232px;
+  aspect-ratio: 165/232;
+  position: relative;
+  border: 2px solid #FFF;
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+  margin: 0 auto;
+}
+.certificate:hover .certificate__blackout {
+  opacity: 1;
+}
+.certificate__blackout {
+  transition: all 60ms ease-out;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+.certificate__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
 @font-face {

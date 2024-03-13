@@ -168,6 +168,7 @@
             bottom: 0;
         }
 
+        // .hero__img-effect
         &-effect {
             mix-blend-mode: overlay;
             position: absolute;
@@ -178,12 +179,6 @@
             & > img {
                 display: block;
                 width: 100%;
-
-                @media screen and (max-width: $breakpoint576) {
-                    // width: 74%;
-                    // aspect-ratio: 1;
-                    // height: unset;
-                }
             }
         }
 
@@ -193,10 +188,6 @@
             z-index: 1;
             height: 100%;
 
-            @media screen and (max-width: $breakpoint1366) {
-
-            }
-
             @media screen and (max-width: $breakpoint992) {
                 max-width: 555px;
                 width: 100%;
@@ -204,6 +195,32 @@
 
             @media screen and (max-width: $breakpoint576) {
                 width: 405px;
+            }
+        }
+
+        &_centered {
+            @extend .hero__img;
+
+            .hero__img-effect {
+                width: 120%;
+                left: -8.8%;
+                top: -32%;
+            }
+
+            @media screen and (max-width: $breakpoint1366) and (min-width: $breakpoint992) {
+                align-self: unset;
+            }
+
+            @media screen and (max-width: $breakpoint576) {
+                .hero__img-effect {
+                    width: 592px;
+                    left: -20px;
+                    top: -100px;
+                }
+
+                & > img {
+                    width: 535px;
+                }
             }
         }
     }
