@@ -1440,6 +1440,32 @@ input::placeholder {
     margin-top: 32px;
   }
 }
+.section__btns {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+@media screen and (max-width: 767.98px) {
+  .section__btns {
+    flex-direction: column-reverse;
+    gap: 0;
+    margin-top: 16px;
+  }
+}
+@media screen and (max-width: 575.98px) {
+  .section__btns {
+    margin-top: 0;
+  }
+}
+.section__btns > .section__btn {
+  margin-left: 0;
+  margin-right: 0;
+}
+@media screen and (max-width: 767.98px) {
+  .section__btns > .section__btn {
+    margin-top: 8px;
+  }
+}
 .section__btn {
   margin-top: 24px;
   margin-left: auto;
@@ -1576,34 +1602,34 @@ input::placeholder {
   height: 100%;
 }
 
-.icon-cards, .num-cards, .icon-cards_big {
+.icon-cards, .num-cards, .num-cards_big, .icon-cards_big {
   display: flex;
   justify-content: space-between;
   gap: 24px;
 }
 @media screen and (max-width: 991.98px) {
-  .icon-cards, .num-cards, .icon-cards_big {
+  .icon-cards, .num-cards, .num-cards_big, .icon-cards_big {
     flex-wrap: wrap;
   }
 }
 @media screen and (max-width: 575.98px) {
-  .icon-cards, .num-cards, .icon-cards_big {
+  .icon-cards, .num-cards, .num-cards_big, .icon-cards_big {
     gap: 8px;
   }
 }
-.icon-card, .num-card, .icon-card_big {
+.icon-card, .num-card, .num-card_big, .icon-card_lg, .icon-card_big {
   background-color: #F1F3F9;
   border-radius: 12px;
   padding: 24px;
   flex: 0 0 calc(25% - 18px);
 }
 @media screen and (max-width: 991.98px) {
-  .icon-card, .num-card, .icon-card_big {
+  .icon-card, .num-card, .num-card_big, .icon-card_lg, .icon-card_big {
     flex: 0 0 calc(50% - 12px);
   }
 }
 @media screen and (max-width: 575.98px) {
-  .icon-card, .num-card, .icon-card_big {
+  .icon-card, .num-card, .num-card_big, .icon-card_lg, .icon-card_big {
     flex: 0 0 100%;
     padding: 20px;
   }
@@ -1613,6 +1639,14 @@ input::placeholder {
 }
 @media screen and (max-width: 767.98px) {
   .icon-card_big {
+    flex: 0 0 100%;
+  }
+}
+.icon-card_lg {
+  flex: 0 0 calc(50% - 12px);
+}
+@media screen and (max-width: 767.98px) {
+  .icon-card_lg {
     flex: 0 0 100%;
   }
 }
@@ -1643,23 +1677,30 @@ input::placeholder {
   }
 }
 
-.num-cards {
+.num-cards, .num-cards_big {
   row-gap: 32px;
 }
 @media screen and (max-width: 575.98px) {
-  .num-cards {
+  .num-cards, .num-cards_big {
     padding-top: 12px;
   }
 }
-
-.num-card {
+.num-card, .num-card_big {
   text-align: center;
   padding: 48px 24px 24px;
   position: relative;
 }
 @media screen and (max-width: 575.98px) {
-  .num-card {
+  .num-card, .num-card_big {
     padding: 40px 20px 20px;
+  }
+}
+.num-card_big {
+  flex: 0 0 calc(33% - 16px);
+}
+@media screen and (max-width: 767.98px) {
+  .num-card_big {
+    flex: 0 0 100%;
   }
 }
 .num-card__number {

@@ -42,6 +42,15 @@
         }
     }
 
+    &_lg {
+        @extend .icon-card;
+        flex: 0 0 calc(50% - (24px / 2));
+
+        @media screen and (max-width: $breakpoint768) {
+            flex: 0 0 100%;
+        }
+    }
+
     // .icon-card__img
     &__img {
         width: 36px;
