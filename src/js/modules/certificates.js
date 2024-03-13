@@ -28,3 +28,11 @@ const swiperHero = new Swiper('#certificatesSlider', {
 
     
 });
+
+$('.certificate a').magnificPopup({
+    type:'image',
+    gallery: {
+        enabled: true,
+        tCounter: '<span class="mfp-counter">%curr% из %total%</span>'
+    }
+});
