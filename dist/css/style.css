@@ -2728,6 +2728,7 @@ input::placeholder {
 .certificates__title {
   display: flex;
   justify-content: center;
+  align-items: center;
   gap: 24px;
   text-align: center;
   color: #212121;
