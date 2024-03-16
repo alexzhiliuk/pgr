@@ -1080,6 +1080,23 @@ input::placeholder {
   justify-content: space-between;
   position: relative;
   z-index: 2;
+  transition: all 180ms ease-out;
+}
+.hero_slider__slider.shade::before {
+  opacity: 1;
+}
+.hero_slider__slider::before {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  background: linear-gradient(180deg, #D8E2EE 0%, #CEDBEA 100%);
+  filter: blur(2px);
+  height: 360px;
+  width: 30px;
+  left: 4px;
+  bottom: 28px;
+  opacity: 0;
+  transition: all 1s ease-out;
 }
 @media screen and (max-width: 1365.98px) {
   .hero_slider__slider {
@@ -1210,7 +1227,7 @@ input::placeholder {
   object-fit: contain;
   object-position: center;
   display: block;
-  transition: all 120ms ease-out;
+  transition: all 180ms ease-out;
 }
 @media screen and (max-width: 1365.98px) {
   .hero_slider__img img {
@@ -1234,6 +1251,9 @@ input::placeholder {
 }
 .hero_slider__right:hover .hero_slider__expert-subtitle, .hero_slider__right.hovered .hero_slider__expert-subtitle {
   color: #000;
+}
+.hero_slider__right:hover .hero_slider__expert-arrow, .hero_slider__right.hovered .hero_slider__expert-arrow {
+  translate: 4px 0;
 }
 .hero_slider__right:hover .hero_slider__expert-arrow svg path, .hero_slider__right.hovered .hero_slider__expert-arrow svg path {
   stroke: #000;
@@ -1305,8 +1325,8 @@ input::placeholder {
     font-size: 14px;
   }
 }
-.hero_slider__expert-arrow {
-  transition: all 60ms ease-out;
+.hero_slider__expert-arrow svg, .hero_slider__expert-arrow svg * {
+  transition: all 180ms ease-out;
 }
 @media screen and (max-width: 767.98px) {
   .hero_slider__expert-arrow svg {
@@ -1363,9 +1383,14 @@ input::placeholder {
   animation: sliderFade 2s ease;
 }
 .hero-swiper__slide.swiper-slide-prev, .hero-swiper__slide.swiper-slide-next {
-  animation: sliderFadeReverse 2s ease;
   animation-iteration-count: 1;
   animation-fill-mode: both;
+}
+.hero-swiper__slide.swiper-slide-prev {
+  animation: sliderFadeReverse 1s ease;
+}
+.hero-swiper__slide.swiper-slide-next {
+  animation: sliderFadeReverse 2s ease;
 }
 
 .companies-slider-section {

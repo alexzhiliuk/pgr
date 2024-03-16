@@ -58,3 +58,11 @@
         </div>
     </div>
 </section>
+<script>
+    $(".hero_slider__nav-btn_prev, .hero_slider__nav-btn_next").click(function() {
+        $(".hero_slider__slider").addClass("shade")
+        setTimeout(()=> {
+            $(".hero_slider__slider").removeClass("shade")
+        }, 800)
+    })
+</script>

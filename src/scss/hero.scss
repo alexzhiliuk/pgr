@@ -261,6 +261,29 @@
 
         position: relative;
         z-index: 2;
+        transition: all 180ms ease-out;
+
+        &.shade {
+            &::before {
+                opacity: 1;
+            }
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            z-index: 2;
+            background: linear-gradient(180deg, #D8E2EE 0%, #CEDBEA 100%);
+            filter: blur(2px);
+            height: 360px;
+            width: 30px;
+            left: 4px;
+            bottom: 28px;
+            opacity: 0;
+            transition: all 1s ease-out;
+            // translate: 0 -50%;
+
+        }
 
         @media screen and (max-width: $breakpoint1366) {
             flex: 0 1 512px;
@@ -398,7 +421,7 @@
             object-fit: contain;
             object-position: center;
             display: block;
-            transition: all 120ms ease-out;
+            transition: all 180ms ease-out;
             
             @media screen and (max-width: $breakpoint1366) {
                 object-position: 35vw;
@@ -427,6 +450,7 @@
                 color: #000;
             }
             .hero_slider__expert-arrow {
+                translate: 4px 0;
                 svg {
                     path {
                         stroke: #000;
@@ -512,7 +536,10 @@
 
     // .hero_slider__expert-arrow
     &__expert-arrow {
-        transition: all 60ms ease-out;
+        svg, svg * {
+            transition: all 180ms ease-out;
+
+        }
         @media screen and (max-width: $breakpoint768) {
             svg {
                 width: 24px;
@@ -575,9 +602,15 @@
 
         &.swiper-slide-prev,
         &.swiper-slide-next {
-            animation: sliderFadeReverse 2s ease;
             animation-iteration-count: 1;
             animation-fill-mode: both;
+        }
+
+        &.swiper-slide-prev {
+            animation: sliderFadeReverse 1s ease;
+        }
+        &.swiper-slide-next {
+            animation: sliderFadeReverse 2s ease;
         }
     }
 }

@@ -29,7 +29,7 @@
         <!-- Header -->
         <header class="header">
     <div class="header__container container container_full">
-        <a href="#" class="header__logo">
+        <a href="index.html" class="header__logo">
             <img src="img/logo.svg" class="header__logo-img" alt="">
             <span class="header__logo-text">
                 Первая<br>
@@ -440,6 +440,14 @@
         </div>
     </div>
 </section>
+<script>
+    $(".hero_slider__nav-btn_prev, .hero_slider__nav-btn_next").click(function() {
+        $(".hero_slider__slider").addClass("shade")
+        setTimeout(()=> {
+            $(".hero_slider__slider").removeClass("shade")
+        }, 800)
+    })
+</script>
 
             <!-- Companies Slider -->
             <div class="companies-slider-section">
