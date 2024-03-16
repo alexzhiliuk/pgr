@@ -263,28 +263,6 @@
         z-index: 2;
         transition: all 180ms ease-out;
 
-        &.shade {
-            &::before {
-                opacity: 1;
-            }
-        }
-
-        &::before {
-            content: '';
-            position: absolute;
-            z-index: 2;
-            background: linear-gradient(180deg, #D8E2EE 0%, #CEDBEA 100%);
-            filter: blur(2px);
-            height: 360px;
-            width: 30px;
-            left: 4px;
-            bottom: 28px;
-            opacity: 0;
-            transition: all 1s ease-out;
-            // translate: 0 -50%;
-
-        }
-
         @media screen and (max-width: $breakpoint1366) {
             flex: 0 1 512px;
             max-width: 512px;
@@ -577,6 +555,24 @@
 .hero-swiper {
     max-width: 100%;
     overflow: hidden;
+    position: relative;
+    
+
+    @media screen and (min-width: $breakpoint992) {
+        padding-left: 20px !important;
+        margin-left: -20px !important;
+    
+        &::before {
+            content: '';
+            position: absolute;
+            z-index: 2;
+            background: linear-gradient(180deg, #D8E2EE 0%, #CEDBEA 100%);
+            filter: blur(2px);
+            height: 100%;
+            width: 18px;
+            left: 0;
+        }
+    }
 
     @media screen and (max-width: $breakpoint768) {
         overflow: visible;
