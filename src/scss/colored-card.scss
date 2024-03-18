@@ -106,6 +106,20 @@
         }
     }
 
+    // .colored-card__btns
+    &__btns {
+        display: flex;
+        justify-content: center;
+        gap: 8px;
+
+        @media screen and (max-width: $breakpoint576) {
+            width: 100%;
+            & > * {
+                flex: 0 0 calc(50% - 8px / 2);
+            }
+        }
+    }
+
     // .colored-card__btn
     &__btn {
         margin-top: 16px;
@@ -114,7 +128,6 @@
         @media (hover: hover) {
             &:hover {
                 background-color: rgba(#000000, .1);
-                outline: none;
             }
         }
 

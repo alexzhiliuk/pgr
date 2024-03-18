@@ -7,10 +7,21 @@ input {
     padding: 10px 16px;
     color: #2C3136;
     transition: all 60ms ease-out;
+    border: 1px solid transparent;
 
-    &:hover {
-        background-color: $surfaceSecondary;
+
+    &:not([type="range"]) {
+        @media (hover: hover) {
+            &:hover {
+                background-color: $surfaceSecondary;
+            }   
+        }
+        &:focus {
+            border: 1px solid rgba(29, 36, 51, 0.2);
+            background-color: $surfacePrimary;
+        }
     }
+
 
     &::placeholder {
         color: #2C3136;

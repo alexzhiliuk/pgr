@@ -2,10 +2,12 @@
     @extend .icon-cards;
 
     row-gap: 32px;
+    padding-top: 26px;
 
-    @media screen and (max-width: $breakpoint576) {
+    @media screen and (max-width: $breakpoint768) {
         padding-top: 12px;
     }
+
 
     &_big {
         @extend .num-cards;

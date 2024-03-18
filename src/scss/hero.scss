@@ -202,26 +202,35 @@
             @extend .hero__img;
 
             .hero__img-effect {
-                width: 120%;
-                left: -8.8%;
-                top: -32%;
+                mix-blend-mode: darken;
+                width: 188%;
+                left: -2%;
+                top: 50%;
+                translate: 0 -50%;
+                aspect-ratio: unset;
+
+                & > img {
+                    aspect-ratio: unset;
+                }
             }
 
             @media screen and (max-width: $breakpoint1366) and (min-width: $breakpoint992) {
                 align-self: unset;
             }
 
-            @media screen and (max-width: $breakpoint576) {
-                .hero__img-effect {
-                    width: 592px;
-                    left: -20px;
-                    top: -100px;
-                }
+            @media screen and (max-width: $breakpoint992) {
+                width: 100%;
+                display: flex;
+                justify-content: center;
 
-                & > img {
-                    width: 535px;
+                .hero__img-effect {
+                    width: 1280px;
+                    top: -120px;
+                    left: 50%;
+                    translate: -50% 0;
                 }
             }
+
         }
     }
 
@@ -568,6 +577,7 @@
             z-index: 2;
             background: linear-gradient(180deg, #D8E2EE 0%, #CEDBEA 100%);
             filter: blur(2px);
+            -webkit-filter: blur(2px);
             top: -6px;
             bottom: -6px;
             width: 20px;
