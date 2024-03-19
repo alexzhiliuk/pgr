@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */
@@ -405,7 +406,7 @@ button {
   left: 0;
   right: 0;
   pointer-events: none;
-  z-index: 2;
+  z-index: 3;
 }
 .blackout.blackout-active {
   background-color: rgba(0, 0, 0, 0.15);
@@ -601,7 +602,7 @@ input::placeholder {
   border-bottom: 1px solid #E1E6EF;
   background-color: #FFF;
   position: relative;
-  z-index: 3;
+  z-index: 4;
 }
 .header__container {
   display: flex;
@@ -2947,6 +2948,99 @@ input::placeholder {
 img.mfp-img {
   width: 400px !important;
   max-height: unset !important;
+}
+
+.gallery-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.85);
+  z-index: 10;
+}
+.gallery-popup__close {
+  position: absolute;
+  top: 44px;
+  right: 44px;
+  cursor: pointer;
+}
+.gallery-popup__body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+@media screen and (max-width: 767.98px) {
+  .gallery-popup__body {
+    flex-wrap: wrap;
+    align-content: center;
+    column-gap: 48px;
+    row-gap: 48px;
+  }
+}
+.gallery-popup__btn {
+  cursor: pointer;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 120ms ease-out;
+}
+.gallery-popup__btn:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+.gallery-popup__btn:active {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+.gallery-popup__btn_disabled {
+  cursor: default;
+  pointer-events: none;
+  opacity: 0.4;
+}
+@media screen and (max-width: 767.98px) {
+  .gallery-popup__btn-prev {
+    order: 2;
+  }
+}
+@media screen and (max-width: 767.98px) {
+  .gallery-popup__btn-next {
+    order: 3;
+  }
+}
+.gallery-popup__img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+@media screen and (max-width: 767.98px) {
+  .gallery-popup__img {
+    order: 1;
+    flex: 0 0 100%;
+  }
+}
+.gallery-popup__img::before {
+  content: attr(data-current-counter) " из " attr(data-max-counter);
+  position: absolute;
+  bottom: -16px;
+  left: 50%;
+  translate: -50% 100%;
+  color: #F1F3F9;
+  opacity: 0.6;
+  font-size: 14px;
+}
+.gallery-popup__img img {
+  border-radius: 12px;
+  overflow: hidden;
+  display: block;
+  width: 500px;
+  max-width: 70%;
+  max-height: 80%;
 }
 
 @font-face {

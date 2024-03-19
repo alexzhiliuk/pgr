@@ -8,8 +8,8 @@ import * as rangeInput from './modules/rangeInput.js';
 import * as mediaAbout from './modules/mediaAbout.js';
 import * as calculator from './modules/calculator.js';
 import * as tabs from './modules/tabs.js';
-import * as magnific from './modules/magnific.min.js';
 import * as certificates from './modules/certificates.js';
+import * as galleryPopup from './modules/galleryPopup.js';
 
 
 flsFunctions.isWebp()
