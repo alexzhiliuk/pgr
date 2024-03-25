@@ -973,6 +973,21 @@ input::placeholder {
   opacity: 0.6;
   margin-top: 4px;
 }
+.hero__btns {
+  display: flex;
+  gap: 12px;
+}
+@media screen and (max-width: 1365.98px) {
+  .hero__btns {
+    flex-direction: column-reverse;
+  }
+  .hero__btns .hero__btn {
+    max-width: 100%;
+  }
+  .hero__btns .hero__btn:first-child {
+    margin-top: 0;
+  }
+}
 .hero__btn {
   max-width: max-content;
 }
@@ -3014,6 +3029,60 @@ input::placeholder {
   width: 500px;
   max-width: 70%;
   max-height: 80%;
+}
+
+.select {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border: 1px solid rgba(29, 36, 51, 0.2);
+  border-radius: 8px;
+  position: relative;
+  transition: all 120ms ease-out;
+}
+@media (hover: hover) {
+  .select:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+}
+.select:active, .select_active {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-color: transparent;
+}
+.select_big {
+  padding: 14px 20px 14px 24px;
+}
+.select span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+.select__droplist, .select__droplist_absolute {
+  position: absolute;
+  z-index: 2;
+  width: max-content;
+  max-width: calc(100vw - 2 * 24px);
+  left: 0;
+  top: calc(100% + 4px);
+  background-color: #FFF;
+  border-radius: 8px;
+  padding: 4px;
+  color: #1D2433;
+  display: none;
+  flex-direction: column;
+  transition: all 120ms ease-out;
+}
+.select__droplist_active {
+  display: flex;
+}
+.select__item {
+  padding: 10px 12px;
+  border-radius: 4px;
+}
+.select__item:hover {
+  background-color: #F1F3F9;
 }
 
 @font-face {

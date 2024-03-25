@@ -134,6 +134,24 @@
         margin-top: 4px;
     }
 
+    // .hero__btns
+    &__btns {
+        display: flex;
+        gap: 12px;
+
+        @media screen and (max-width: $breakpoint1366) {
+            flex-direction: column-reverse;
+
+            .hero__btn {
+                max-width: 100%;
+            }
+
+            .hero__btn:first-child {
+                margin-top: 0;
+            }
+        }
+    }
+
     // .hero__btn
     &__btn {
         max-width: max-content;

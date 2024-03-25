@@ -10,6 +10,7 @@ import * as calculator from './modules/calculator.js';
 import * as tabs from './modules/tabs.js';
 import * as certificates from './modules/certificates.js';
 import * as galleryPopup from './modules/galleryPopup.js';
+import * as select from './modules/select.js';
 
 
 flsFunctions.isWebp()
