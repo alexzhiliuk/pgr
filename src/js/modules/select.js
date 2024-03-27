@@ -32,3 +32,14 @@ $(".select").click(function() {
         }
     }
 })
+
+$(".select__item").click(function() {
+    let droplistId = $(this).parent().attr("data-drop-id"),
+        $droplist = $(`.select__droplist_absolute[data-drop-id=${droplistId}]`),
+        select = $(`.select[data-drop-id=${droplistId}]`)
+
+    
+    select.removeClass("select_active")
+    select.find(".select__title").text($(this).find("a").text())
+    $droplist.css("display", "none").removeClass("select__droplist_active")
+})

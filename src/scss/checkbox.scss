@@ -1,0 +1,32 @@
+.checkbox {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    input[type="checkbox"] {
+        cursor: pointer;
+        -webkit-appearance: none;
+        appearance: none;
+        height: 20px;
+        width: 20px;
+        border: 1px solid $borderBase;
+        border-radius: 3px;
+        position: relative;
+        
+        &:checked {
+            background: $contentPrimary;
+            border-color: $contentPrimary;
+
+            &::after {
+                content: url(../img/checkbox.svg);
+                position: absolute;
+                width: 16px;
+                height: 16px;
+                top: 50%;
+                left: 50%;
+                translate: -50% -50%;
+            }
+        }
+    }
+}
