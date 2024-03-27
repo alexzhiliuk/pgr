@@ -173,3 +173,104 @@
         }
     }
 }
+
+.horizontal-tabs {
+
+    // .horizontal-tabs__items
+    &__items {
+        display: flex;
+        justify-content: center;
+        gap: 6px;
+        background-color: #E5E7EC;
+        border-radius: 8px;
+        width: max-content;
+        margin: 0 auto;
+        padding: 3px;
+        overflow: hidden;
+    }
+
+    // .horizontal-tabs__item
+    &__item {
+
+        padding: 6px 15px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: all 120ms ease-out;
+
+        @media screen and (max-width: $breakpoint576) {
+            padding: 6px 10px;
+            font-size: 14px;
+        }
+
+        // .horizontal-tabs__item_active
+        &_active {
+            background-color: $surfacePrimary;
+            box-shadow: 0px 100px 80px rgba(48, 48, 48, 0.07), 0px 23px 31px rgba(48, 48, 48, 0.05), 0px 8px 12px rgba(48, 48, 48, 0.04), 0px 3px 3px rgba(48, 48, 48, 0.03);
+        }
+    }
+
+    // .horizontal-tabs__body
+    &__body {
+        margin-top: 24px;
+    }
+
+    // .horizontal-tabs__content
+    &__content {
+
+        padding: 28px 28px 24px;
+        border-radius: 16px;
+        border: 1px solid $borderBase;
+        background-color: $surfacePrimary;
+        display: none;
+
+        box-shadow: 0px 36px 56px rgba(54, 70, 99, 0.12), 0px 4.50776px 7.01207px rgba(54, 70, 99, 0.06);
+
+        @media screen and (max-width: $breakpoint768) {
+            padding: 20px;
+        }
+
+        // .horizontal-tabs__content_active
+        &_active {
+            display: block;
+        }
+    }
+
+    // .horizontal-tabs__content-text
+    &__content-text {
+
+        &.horizontal-tabs__content-text_opened {
+            p:not(:first-of-type) {
+                display: block;
+            }
+        }
+        p:not(:first-of-type) {
+            display: none;
+        }
+        p:not(:last-of-type) {
+            margin-bottom: 16px;
+        }
+    }
+
+    // .horizontal-tabs__content-btn
+    &__content-btn {
+        margin: 20px auto 0;
+        max-width: fit-content;
+
+        @media screen and (max-width: $breakpoint576) {
+            max-width: 100%;
+        }
+
+        svg {
+            transition: all 120ms ease-out;
+        }
+
+        &_opened {
+            svg {
+                rotate: -180deg;
+            }
+        }
+
+    }
+}
+
+
