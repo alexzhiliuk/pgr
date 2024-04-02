@@ -12,6 +12,7 @@ import * as certificates from './modules/certificates.js';
 import * as galleryPopup from './modules/galleryPopup.js';
 import * as select from './modules/select.js';
 import * as showcase from './modules/showcase.js';
+import * as breadcrumbs from './modules/breadcrumbs.js';
 
 
 flsFunctions.isWebp()

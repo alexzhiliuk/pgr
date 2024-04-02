@@ -1,3 +1,36 @@
+let galleryNames = []
+$("img[data-gallery]").each(function(i, el) {
+    let galleryName = $(el).attr("data-gallery")
+    if (!galleryNames.includes(galleryName)) {
+        $("body").append(`
+        <div class="gallery-popup" style="display: none;" data-gallery="${galleryName}">
+        <div class="gallery-popup__close">
+            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M36 12L12 36M12 12L36 36" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>            
+        </div>
+        <div class="gallery-popup__body">
+            <div class="gallery-popup__btn gallery-popup__btn-prev">
+                <svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M14.1998 16.8273L8.75977 11.3873L14.1998 5.94727" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>                
+            </div>
+            <div class="gallery-popup__img" data-current-counter="" data-max-counter="">
+                <img src="" alt="">
+            </div>
+            <div class="gallery-popup__btn gallery-popup__btn-next">
+                <svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M8.57367 16.8273L14.0137 11.3873L8.57367 5.94727" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>                
+            </div>
+        </div>
+    </div>
+        `)
+    }
+
+    galleryNames.push(galleryName)
+})
+
 $(".gallery-popup__close").click(function() {
     $(this).parent().hide()
     
@@ -56,7 +89,7 @@ $(".gallery-popup__btn-next").click(function() {
 $(window).click(function() {
     $(".gallery-popup").hide()
 });
-  
+
 $('.gallery-popup__img, .gallery-popup__btn, img[data-gallery]').click(function(event){
     event.stopPropagation();
 });

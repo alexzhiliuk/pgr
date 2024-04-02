@@ -3,7 +3,7 @@
     <div class="breadcrumbs__arrow">
         <img src="@img/breadcrumbs-arrow.svg" alt="">
     </div>
-    <div class="breadcrumbs__item breadcrumbs__dots" hidden>
+    <div class="breadcrumbs__item breadcrumbs__dots">
         ...
     </div>
     <a href="#" class="breadcrumbs__item">Инвестиции</a>
@@ -16,23 +16,3 @@
     </div>
     <a href="#" class="breadcrumbs__item">Банковская закладная</a>
 </div>
-<script>
-    let hiddenElements = 0
-    $(window).on("resize", function() {
-        let width = $(".breadcrumbs").outerWidth()
-        
-        if (Math.round(width + 24) == window.outerWidth && $(".breadcrumbs__item:not(.breadcrumbs__dots)").length > hiddenElements + 2) {
-            let hiddenElementIndex = 2 + hiddenElements
-            console.log(hiddenElementIndex, hiddenElements)
-            $(`.breadcrumbs__item:not(.breadcrumbs__dots):nth-of-type(${hiddenElementIndex})`).attr("hidden", "hidden")
-            if (hiddenElements != 0) { 
-                console.log(`hide arrow ${hiddenElements + 2}`)
-                $(`.breadcrumbs__arrow:nth-of-type(${hiddenElements + 2})`).attr("hidden", "hidden") 
-            }
-            $(`.breadcrumbs__dots`).removeAttr("hidden")
-
-            hiddenElements++
-        }
-        
-    })
-</script>

@@ -3800,12 +3800,28 @@ input::placeholder {
 
 .breadcrumbs {
   margin-top: 24px;
-  width: max-content;
-  margin-right: 0;
-  margin-left: 0;
+  width: 100%;
+  max-width: 100%;
+  overflow: scroll;
   display: flex;
   align-items: center;
   gap: 4px;
+}
+.breadcrumbs > * {
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+.breadcrumbs::-webkit-scrollbar {
+  display: none;
+}
+.breadcrumbs_opened .breadcrumbs__item:not(.breadcrumbs__dots, :first-of-type, :last-of-type) {
+  display: block;
+}
+.breadcrumbs_opened .breadcrumbs__arrow:not(:first-of-type, :last-of-type) {
+  display: block;
+}
+.breadcrumbs_opened .breadcrumbs__dots {
+  display: none;
 }
 .breadcrumbs__item {
   color: rgba(0, 0, 0, 0.5);
@@ -3814,9 +3830,28 @@ input::placeholder {
 .breadcrumbs__item:hover {
   color: rgb(0, 0, 0);
 }
+@media screen and (max-width: 575.98px) {
+  .breadcrumbs__item:not(.breadcrumbs__dots, :first-of-type, :last-of-type) {
+    display: none;
+  }
+}
 .breadcrumbs__arrow img {
   display: block;
 }
+@media screen and (max-width: 575.98px) {
+  .breadcrumbs__arrow:not(:first-of-type, :last-of-type) {
+    display: none;
+  }
+}
+.breadcrumbs__dots {
+  display: none;
+}
+@media screen and (max-width: 575.98px) {
+  .breadcrumbs__dots {
+    display: block;
+  }
+}
+
 .mortgage {
   margin-top: 28px;
   display: flex;

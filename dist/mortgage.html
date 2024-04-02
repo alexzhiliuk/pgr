@@ -386,7 +386,7 @@
     <div class="breadcrumbs__arrow">
         <img src="img/breadcrumbs-arrow.svg" alt="">
     </div>
-    <div class="breadcrumbs__item breadcrumbs__dots" hidden>
+    <div class="breadcrumbs__item breadcrumbs__dots">
         ...
     </div>
     <a href="#" class="breadcrumbs__item">Инвестиции</a>
@@ -399,26 +399,7 @@
     </div>
     <a href="#" class="breadcrumbs__item">Банковская закладная</a>
 </div>
-<script>
-    let hiddenElements = 0
-    $(window).on("resize", function() {
-        let width = $(".breadcrumbs").outerWidth()
-        
-        if (Math.round(width + 24) == window.outerWidth && $(".breadcrumbs__item:not(.breadcrumbs__dots)").length > hiddenElements + 2) {
-            let hiddenElementIndex = 2 + hiddenElements
-            console.log(hiddenElementIndex, hiddenElements)
-            $(`.breadcrumbs__item:not(.breadcrumbs__dots):nth-of-type(${hiddenElementIndex})`).attr("hidden", "hidden")
-            if (hiddenElements != 0) { 
-                console.log(`hide arrow ${hiddenElements + 2}`)
-                $(`.breadcrumbs__arrow:nth-of-type(${hiddenElements + 2})`).attr("hidden", "hidden") 
-            }
-            $(`.breadcrumbs__dots`).removeAttr("hidden")
 
-            hiddenElements++
-        }
-        
-    })
-</script>
             
             <!-- Mortgage -->
             <section class="mortgage section container container_full">
@@ -427,7 +408,7 @@
             <div class="mortgage-img__blackout">
                 <img src="img/zoom-in.svg" alt="">
             </div>
-            <img src="img/mortgage/mortgage.png" alt=""  data-gallery="certificates" data-gallery-order="1">
+            <img src="img/mortgage/mortgage.png" alt=""  data-gallery="mortgage" data-gallery-order="1">
         </div>
         <div class="mortgage-img__map">
 
@@ -551,28 +532,6 @@
         </div>
     </div>
 </section>
-<div class="gallery-popup" style="display: none;" data-gallery="certificates">
-    <div class="gallery-popup__close">
-        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M36 12L12 36M12 12L36 36" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>            
-    </div>
-    <div class="gallery-popup__body">
-        <div class="gallery-popup__btn gallery-popup__btn-prev">
-            <svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M14.1998 16.8273L8.75977 11.3873L14.1998 5.94727" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>                
-        </div>
-        <div class="gallery-popup__img" data-current-counter="" data-max-counter="">
-            <img src="" alt="">
-        </div>
-        <div class="gallery-popup__btn gallery-popup__btn-next">
-            <svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M8.57367 16.8273L14.0137 11.3873L8.57367 5.94727" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>                
-        </div>
-    </div>
-</div>
 
         </main>
 

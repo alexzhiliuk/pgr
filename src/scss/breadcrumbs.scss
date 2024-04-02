@@ -1,12 +1,37 @@
 .breadcrumbs {
 
     margin-top: 24px;
-    width: max-content;
-    margin-right: 0;
-    margin-left: 0;
+    width: 100%;
+    max-width: 100%;
+    overflow: scroll;
     display: flex;
     align-items: center;
     gap: 4px;
+
+    & > * {
+        flex-shrink: 0;
+        white-space: nowrap;
+    }
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
+    &_opened {
+        .breadcrumbs__item {
+            &:not(.breadcrumbs__dots, :first-of-type, :last-of-type) {
+                display: block;
+            }
+        }
+        .breadcrumbs__arrow {
+            &:not(:first-of-type, :last-of-type) {
+                display: block;
+            }
+        }
+        .breadcrumbs__dots {
+            display: none;
+        }
+    }
 
 
     // .breadcrumbs__item
@@ -19,11 +44,11 @@
             color: rgba(0, 0, 0, 1);
         }
 
-        // @media screen and (max-width: $breakpoint576) {
-        //     &:not(:first-of-type, :last-of-type) {
-        //         display: none;
-        //     }
-        // }
+        @media screen and (max-width: $breakpoint576) {
+            &:not(.breadcrumbs__dots, :first-of-type, :last-of-type) {
+                display: none;
+            }
+        }
     }
 
     // .breadcrumbs__arrow
@@ -32,16 +57,19 @@
             display: block;
         }
 
-        // @media screen and (max-width: $breakpoint576) {
-        //     &:not(:first-of-type, :last-of-type) {
-        //         display: none;
-        //     }
-        // }
+        @media screen and (max-width: $breakpoint576) {
+            &:not(:first-of-type, :last-of-type) {
+                display: none;
+            }
+        }
     }
 
     // .breadcrumbs__dots
     &__dots {
-
+        display: none;
+        @media screen and (max-width: $breakpoint576) {
+            display: block;
+        }
     }
 }
 
