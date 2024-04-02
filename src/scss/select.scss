@@ -62,6 +62,12 @@
         &_absolute {
             @extend .select__droplist;
         }
+
+        &_right {
+            @extend .select__droplist;
+            left: unset;
+            right: 0;
+        }
     }
 
     // .select__item

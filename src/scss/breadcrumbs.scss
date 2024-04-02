@@ -1,0 +1,47 @@
+.breadcrumbs {
+
+    margin-top: 24px;
+    width: max-content;
+    margin-right: 0;
+    margin-left: 0;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+
+
+    // .breadcrumbs__item
+    &__item {
+        @extend .caption-regular;
+        color: rgba(0, 0, 0, .5);
+        transition: all 120ms ease-out;
+
+        &:hover {
+            color: rgba(0, 0, 0, 1);
+        }
+
+        // @media screen and (max-width: $breakpoint576) {
+        //     &:not(:first-of-type, :last-of-type) {
+        //         display: none;
+        //     }
+        // }
+    }
+
+    // .breadcrumbs__arrow
+    &__arrow {
+        img {
+            display: block;
+        }
+
+        // @media screen and (max-width: $breakpoint576) {
+        //     &:not(:first-of-type, :last-of-type) {
+        //         display: none;
+        //     }
+        // }
+    }
+
+    // .breadcrumbs__dots
+    &__dots {
+
+    }
+}
+

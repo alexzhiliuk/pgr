@@ -16,7 +16,8 @@ $("img[data-gallery]").click(function() {
     gallery.find(".gallery-popup__btn-next").removeClass("gallery-popup__btn_disabled")
     if (currentNumber == 1) {
         gallery.find(".gallery-popup__btn-prev").addClass("gallery-popup__btn_disabled")
-    } else if (currentNumber == imagesCount) {
+    } 
+    if (currentNumber == imagesCount || imagesCount == 1) {
         gallery.find(".gallery-popup__btn-next").addClass("gallery-popup__btn_disabled")
     }
 })
