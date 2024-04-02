@@ -1,0 +1,75 @@
+.can-be-interesting-section {
+    @extend .media-about-section;
+}
+
+.can-be-interesting-slider {
+
+    @extend .article-slider;
+
+    // .can-be-interesting-slider__btn
+    &__btn {
+
+        @extend .article-slider__btn;
+
+        // .can-be-interesting-slider__btn_prev
+        &_prev {
+            @extend .article-slider__btn_prev;
+        }
+
+        // .can-be-interesting-slider__btn_next
+        &_next {
+            @extend .article-slider__btn_next;
+        }
+    }
+
+    // .can-be-interesting-slider__container
+    &__container {
+        @extend .article-slider__container;
+    }
+}
+
+.can-be-interesting-slide {
+
+    // .can-be-interesting-slide__img
+    &__img {
+        @extend .article-slide__img;
+
+        img {
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: cover;
+            object-position: center;
+        }
+    }
+
+    // .can-be-interesting-slide__specifications
+    &__specifications {
+        margin-top: 12px;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    // .can-be-interesting-slide__specification
+    &__specification {
+        display: flex;
+        gap: 4px;
+    }
+
+    // .can-be-interesting-slide__specification-title
+    &__specification-title {
+        color: $contentDisabled;
+    }
+
+    // .can-be-interesting-slide__specification-line
+    &__specification-line {
+        @extend .mortgage-info__specification-line;
+    }
+
+    // .can-be-interesting-slide__specification-value
+    &__specification-value {
+        color: $surfaceTertiaryInvert;
+        text-align: right;
+    }
+}

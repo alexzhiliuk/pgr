@@ -13,6 +13,7 @@ import * as galleryPopup from './modules/galleryPopup.js';
 import * as select from './modules/select.js';
 import * as showcase from './modules/showcase.js';
 import * as breadcrumbs from './modules/breadcrumbs.js';
+import * as canBeInteresting from './modules/canBeInteresting.js';
 
 
 flsFunctions.isWebp()
