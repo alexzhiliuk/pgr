@@ -3892,7 +3892,7 @@ input::placeholder {
 .breadcrumbs {
   margin-top: 24px;
   width: 100%;
-  max-width: 100%;
+  max-width: 100vw;
   overflow: scroll;
   display: flex;
   align-items: center;
