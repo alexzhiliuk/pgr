@@ -68,6 +68,12 @@
             left: unset;
             right: 0;
         }
+
+        &_centered {
+            @extend .select__droplist;
+            left: 50%;
+            translate: -50%;
+        }
     }
 
     // .select__item

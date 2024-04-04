@@ -36,6 +36,12 @@
             }
         }
 
+        @media screen and (max-width: $breakpoint576) {
+            &:nth-of-type(n+4):not(:last-of-type) {
+                display: none;
+            }
+        }
+
 
         &_active {
             background-color: #E6E6E6;

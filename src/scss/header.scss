@@ -98,6 +98,53 @@
     &__item {
         height: 100%;
         color: $contentPrimary;
+
+        .select {
+            border: unset;
+            padding: 0;
+            height: 100%;
+            border-radius: 0;
+
+            &::before {
+                content: '';
+                position: absolute;
+                left: 0;
+                width: 0px;
+                bottom: -1px;
+                display: block;
+                height: 2px;
+                background-color: $contentPrimary;
+                transition: unset;
+            }
+    
+            &:hover {
+                background: inherit;
+    
+                &::before {
+                    content: '';
+                    width: 100%;
+                }
+
+                span {
+                    opacity: 1;
+                }
+            }
+
+            &:active,
+            &_active  {
+                background: inherit;
+            }
+            
+            span {
+                font-size: 14px;
+                color: $contentPrimary;
+                opacity: .6;
+            }
+
+            &__droplist {
+                top: 100%;
+            }
+        }
     }
 
     // .nav__link
@@ -220,6 +267,7 @@
     &__list {
         display: flex;
         flex-direction: column;
+        flex-grow: 1;
         overflow-y: scroll;
 
 
@@ -313,6 +361,39 @@
     // .nav-accordion__body-list
     &__body-list {
         padding-left: 28px;
+    }
+
+    &__body-item {
+        .select {
+            border: unset;
+            padding: 0;
+            height: 44px;
+            border-radius: 0;
+            justify-content: flex-start;
+    
+            &:hover {
+                background: inherit;
+
+                span {
+                    opacity: 1;
+                }
+            }
+
+            &:active,
+            &_active  {
+                background: inherit;
+            }
+            
+            span {
+                font-size: 14px;
+                color: $contentPrimary;
+                opacity: .6;
+            }
+
+            &__droplist {
+                top: 100%;
+            }
+        }
     }
 
     // .nav-accordion__body-link

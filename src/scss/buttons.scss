@@ -44,6 +44,21 @@
         }
     }
 
+    &_white {
+        background-color: $surfacePrimary;
+        color: $grey;
+
+        @media (hover: hover) {
+            &:hover {
+                background-color: $surfaceSecondary;
+            }
+        }
+
+        &:active {
+            background-color: $surfaceTertiary;
+        }
+    }
+
     &_outline {
         outline: 1px solid rgba(29, 36, 51, 0.2);
         color: $contentPrimary;
