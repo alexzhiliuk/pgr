@@ -27,12 +27,17 @@
         padding: 14px 20px 14px 24px;
     }
 
+    &_border_none {
+        border: unset;
+    }
+
 
     span {
         display: flex;
         justify-content: center;
         align-items: center;
         gap: 8px;
+        transition: all 120ms ease-out;
         @extend .body-regular;
     }
 
@@ -69,6 +74,14 @@
             right: 0;
         }
 
+        &_right-mobile {
+            @extend .select__droplist;
+            @media screen and (max-width: $breakpoint768) {
+                left: unset;
+                right: 0;
+            }
+        }
+
         &_centered {
             @extend .select__droplist;
             left: 50%;
@@ -83,11 +96,19 @@
 
         a {
             padding: 10px 12px;
-            display: block;
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
 
         &:hover {
             background-color: $surfaceTertiary;
+
+            svg {
+                g {
+                    opacity: 1;
+                }
+            }
         }
     }
 }

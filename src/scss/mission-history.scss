@@ -1,0 +1,75 @@
+
+.mission-history {
+
+    // .mission-history__stages
+    &__stages {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 24px;
+
+
+        @media screen and (max-width: $breakpoint768) {
+            gap: 16px;
+        }
+    }
+
+    // .mission-history__stage
+    &__stage {
+        padding: 24px;
+        flex: 0 0 calc(50% - 12px);
+        color: #0a0d14;
+        border-radius: 12px;
+
+        @media screen and (max-width: $breakpoint768) {
+            flex: 0 0 100%;
+        }
+    }
+
+    // .mission-history__stage-icon
+    &__stage-icon {
+        width: 36px;
+
+        img {
+            display: block;
+            width: 100%;
+        }
+    }
+
+    // .mission-history__stage-title
+    &__stage-title {
+        margin-top: 24px;
+    }
+
+    // .mission-history__stage-text
+    &__stage-text {
+        margin-top: 12px;
+        @media screen and (max-width: $breakpoint768) {
+            font-size: 14px;
+        }
+    }
+
+    // .mission-history__info
+    &__info {
+        margin-top: 24px;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+
+        @media screen and (max-width: $breakpoint768) {
+            margin-top: 16px;
+        }
+    }
+
+    // .mission-history__info-item
+    &__info-item {
+        padding: 24px;
+        border-radius: 12px;
+
+        background-color: $surfaceTertiary;
+
+        @media screen and (max-width: $breakpoint768) {
+            font-size: 14px;
+        }
+    }
+}

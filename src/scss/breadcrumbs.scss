@@ -17,6 +17,16 @@
         display: none;
     }
 
+    &_hero {
+        margin-top: 0;
+        margin-bottom: 16px;
+
+        @media screen and (max-width: $breakpoint1366) {
+            margin-top: 16px;
+            margin-bottom: -36px;
+        }
+    }
+
     &_opened {
         .breadcrumbs__item {
             &:not(.breadcrumbs__dots, :first-of-type, :last-of-type) {
