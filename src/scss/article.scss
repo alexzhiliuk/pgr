@@ -11,6 +11,7 @@
     background-color: $surfacePrimary;
 
     position: fixed;
+    z-index: 3;
     bottom: 40px;
     right: 48px;
 
@@ -556,6 +557,7 @@
         @media screen and (max-width: $breakpoint992) {
             max-width: calc(100vw - 2 * $containerMobilePadding);
             width: 100%;
+            padding: 2px;
             overflow: scroll;
         }
     }

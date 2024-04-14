@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ru">
+    @@include('html/index/head.html',{
+        "title": "«Первая Гильдия Ростовщиков» — инвестиционная компания"
+    })
+    <body>
+
+        <!-- Header -->
+        @@include('html/header.html')
+
+        <main>
+            <div class="blackout"></div>
+
+            <!-- Author -->
+            @@include('html/author/author.html')
+
+            <!-- Articles -->
+            @@include('html/author/articles.html')
+
+            <!-- Consultation Form -->
+            @@include('html/consultation-form.html')
+
+            <!-- Can Be Interestign -->
+            @@include('html/author/can-be-interesting.html')
+        </main>
+
+        <!-- Footer -->
+        @@include('html/footer.html')
+
+        <script src="js/app.min.js"></script>
+    </body>
+</html>
