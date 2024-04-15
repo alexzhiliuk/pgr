@@ -38,7 +38,9 @@
             }
 
             .hero__img-effect {
-                translate: 0 -40%;
+                @media screen and (min-width: $breakpoint992) {
+                    translate: 0 -40%;
+                }
             }
         }
     }

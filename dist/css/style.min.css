@@ -6059,8 +6059,10 @@ input::placeholder {
     left: 15px;
   }
 }
-.founder-hero.hero .hero__img_centered .hero__img-effect {
-  translate: 0 -40%;
+@media screen and (min-width: 991.98px) {
+  .founder-hero.hero .hero__img_centered .hero__img-effect {
+    translate: 0 -40%;
+  }
 }
 
 .founder-sources {
