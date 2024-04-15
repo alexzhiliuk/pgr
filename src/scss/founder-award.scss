@@ -1,0 +1,75 @@
+.founder-award-section {
+    @media screen and (max-width: $breakpoint768) {
+        &.container {
+            padding: 0;
+            max-width: 100%;
+        }
+    }
+}
+
+.founder-award {
+
+    padding: 40px 32px;
+    background-color: $surfaceTertiary;
+    border-radius: 12px;  
+
+    @media screen and (max-width: $breakpoint768) {
+        padding: 32px 0;
+        border-radius: 0;
+    }
+
+    // .founder-award__title
+    &__title {
+        @extend .certificates__title;
+    }
+
+    // .founder-award__body
+    &__body {
+        display: flex;
+        align-items: center;
+        gap: 40px;
+        margin-top: 60px;
+
+        @media screen and (max-width: $breakpoint992) {
+            margin-top: 48px;
+            flex-direction: column;
+            gap: 32px;
+        }
+
+        @media screen and (max-width: $breakpoint768) {
+            align-items: unset;
+            padding: 0 $containerMobilePadding;
+        }
+
+    }
+
+    // .founder-award__img
+    &__img {
+        flex: 0 0 432px;
+        max-width: 432px;
+        aspect-ratio: 432 / 304;
+        border-radius: 12px;
+        overflow: hidden;
+        border: 2px solid $surfacePrimary;
+        
+        filter: drop-shadow(0px 32.64px 72.5333px rgba(0, 0, 0, 0.11)) drop-shadow(0px 9.84px 21.8667px rgba(0, 0, 0, 0.0716748)) drop-shadow(0px 4.08703px 9.0823px rgba(0, 0, 0, 0.055)) drop-shadow(0px 1.4782px 3.28489px rgba(0, 0, 0, 0.0383252));
+
+        @media screen and (max-width: $breakpoint992) {
+            flex: unset;
+            max-width: 500px;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+    }
+
+    // .founder-award__text
+    &__text {
+        color: $grey;
+    }
+}
+

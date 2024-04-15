@@ -1,0 +1,45 @@
+.founder-hero {
+    &.hero {
+        .hero__title {
+            @media screen and (max-width: $breakpoint576) {
+                font-size: 30px;
+            }
+        }
+
+        .hero__img_centered {
+
+            width: 672px;
+
+            @media screen and (max-width: $breakpoint1366) and (min-width: $breakpoint992) {
+                height: 100%;
+            }
+
+            @media screen and (max-width: $breakpoint992) {
+                height: 380px;
+            }
+
+            & > img {
+                width: 140%;
+                height: unset;
+                left: -125px;
+
+
+                @media screen and (max-width: 1100px) {
+                    width: 200%;
+                    left: -150px;
+                }
+                
+                @media screen and (max-width: $breakpoint992) {
+                    width: unset;
+                    height: 200%;
+                    object-fit: cover;
+                    left: 15px;
+                }
+            }
+
+            .hero__img-effect {
+                translate: 0 -40%;
+            }
+        }
+    }
+}
