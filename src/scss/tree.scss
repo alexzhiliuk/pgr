@@ -11,6 +11,13 @@
     row-gap: 64px;
     column-gap: 24px;
 
+    @media screen and (max-width: $breakpoint768) {
+        display: flex;
+        flex-direction: column;
+
+        padding-top: 48px;
+    }
+
     &__cell {
         display: flex;
         justify-content: center;
@@ -19,11 +26,29 @@
             grid-column-start: 1;
             grid-column-end: 5;
             margin-bottom: 44px;
+            @media screen and (max-width: $breakpoint768) {
+                grid-column-start: unset;
+                grid-column-end: unset;
+                margin: 0;
+            }
         }
 
         &_height_2 {
             grid-row: span 2;
+            @media screen and (max-width: $breakpoint768) {
+                grid-row: unset;
+            }
         }
+
+        @media screen and (max-width: $breakpoint768) {
+            &:not(.tree__cell_width_full) {
+                padding-left: 40px;
+            }
+            &:empty {
+                display: none;
+            }
+        }
+    
     }
 
     &__card {
@@ -34,53 +59,31 @@
         padding: 48px 16px 16px;
         border-radius: 12px;
 
+        filter: drop-shadow(0px 1.6px 3.6px rgba(0, 0, 0, 0.133)) drop-shadow(0px 0.3px 0.9px rgba(0, 0, 0, 0.11));
+
         text-align: center;
         position: relative;
 
-        &_top-left-side {
-            &::before {
-                content: url(../img/mission/tree/connectors/top-left-side.svg);
-                position: absolute;
-                left: calc(50% - 1px);
-                top: -100px;
-            }
-        }
-        &_top-left-center {
-            &::before {
-                content: url(../img/mission/tree/connectors/top-left-center.svg);
-                position: absolute;
-                left: calc(50% - 1px);
-                top: -100px;
-            }
+        &_simple {
+            background-color: #7D8593;
+            padding: 12px;
+            box-shadow: 0px 1.6px 3.6px rgba(0, 0, 0, 0.133), 0px 0.3px 0.9px rgba(0, 0, 0, 0.11);
         }
 
-        &_top-right-center {
-            &::before {
-                content: url(../img/mission/tree/connectors/top-right-center.svg);
-                position: absolute;
-                right: calc(50% - 1px);
-                top: -100px;
-            }
+        @media screen and (max-width: $breakpoint768) {
+            max-width: 100%;
         }
 
-        &_left-top {
-            &::before {
-                content: url(../img/mission/tree/connectors/left-top.svg);
-                position: absolute;
-                left: 100%;
-                top: 50%;
-                translate: 2.5px -50%;
-            }
-        }
+    }
 
-        &_right-top {
-            &::before {
-                content: url(../img/mission/tree/connectors/right-top.svg);
-                position: absolute;
-                right: 100%;
-                top: 50%;
-                translate: -2.5px -50%;
-            }
+    &__simple-cards {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+
+        @media screen and (max-width: $breakpoint768) {
+            gap: 12px;
+            width: 100%;
         }
     }
 
@@ -136,16 +139,13 @@
         margin-top: 4px;
     }
 
+    &__text {
+        color: $surfacePrimary;
+    }
+
     &__btn {
         margin-top: 16px;
     }
-
-    &__vertical-line {
-        width: 2px;
-        height: 100%;
-        background-color: #E1E1E1;
-    }
-
 
 
 }
