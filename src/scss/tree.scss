@@ -21,6 +21,8 @@
     &__cell {
         display: flex;
         justify-content: center;
+        position: relative;
+        z-index: 1;
 
         &_width_full {
             grid-column-start: 1;

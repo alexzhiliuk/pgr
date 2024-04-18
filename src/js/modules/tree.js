@@ -5,18 +5,19 @@ function createSVG(svgWidth, svgHeight, xStart, xEnd, yEnd, from) {
     svg.setAttribute("height", svgHeight)
     document.querySelector("body").appendChild(svg)
 
+    $(svg).css("position", "absolute").css("top", yEnd).css("pointer-events", "none").css("z-index", "0")
     if (from == "top"){
         if (xEnd >= xStart) {
-            $(svg).css("position", "absolute").css("top", yEnd).css("left", xStart)
+            $(svg).css("left", xStart)
         } else {
-            $(svg).css("position", "absolute").css("top", yEnd).css("left", xEnd).css("transform", "scaleX(-1)")
+            $(svg).css("left", xEnd).css("transform", "scaleX(-1)")
         }
     } else
     if (from == "side"){
         if (xEnd > xStart) {
-            $(svg).css("position", "absolute").css("top", yEnd).css("left", xStart)
+            $(svg).css("left", xStart)
         } else {
-            $(svg).css("position", "absolute").css("top", yEnd).css("left", xEnd).css("transform", "scaleX(-1)")
+            $(svg).css("left", xEnd).css("transform", "scaleX(-1)")
         }
     }
 
@@ -139,15 +140,18 @@ function sortCardsForMobile() {
     }
 }
 
-if (window.outerWidth > 768) {
-    linkCards()
-    $(`.tree__card`).parent().css("order", "")
-} else {
-    sortCardsForMobile()
-    setTimeout(() => {
-        linkCardsMobile()
-    }, 500)
-}
+setTimeout(() => {
+    if (window.outerWidth > 768) {
+        linkCards()
+        $(`.tree__card`).parent().css("order", "")
+    } else {
+        sortCardsForMobile()
+        setTimeout(() => {
+            linkCardsMobile()
+        }, 500)
+    }
+}, 500)
+
 
 
 
