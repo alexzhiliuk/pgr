@@ -1,0 +1,33 @@
+/* -------- UP BTN -------- */
+.up-btn {
+    height: 52px;
+    width: 52px;
+
+    display: none;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 50%;
+    border: 1px solid $borderBase;
+    background-color: $surfacePrimary;
+
+    position: fixed;
+    z-index: 3;
+    bottom: 40px;
+    right: 48px;
+
+    cursor: pointer;
+    transition: all 60ms ease-out;
+
+    &:hover {
+        background-color: $borderBase;
+    }
+    &:active {
+        background-color: #D7DCE5;
+    }
+
+    &_visible {
+        animation: move-down 120ms;
+        display: flex;
+    }
+}
