@@ -199,7 +199,7 @@
             <div class="header__phone">
                 <a href="#" class="caption-regular">8 (900) 500-27-12</a>
             </div>
-            <a href="#" class="btn btn_red btn_small caption-regular">Оформить заявку</a>
+            <a href="#" class="btn btn_red btn_small caption-regular" data-js-open-modal="app">Оформить заявку</a>
         </div>
     
         <div class="header__burger burger">
@@ -395,7 +395,7 @@
             <div class="mobile-nav__footer">
                 <div class="mobile-nav__footer-container">
                     <a href="#" class="mobile-nav__phone body-medium">8 (900) 500-27-12</a>
-                    <a href="#" class="btn btn_red body-regular">Оформить заявку</a>
+                    <a href="#" class="btn btn_red body-regular" data-js-open-modal="app">Оформить заявку</a>
                 </div>
             </div>
         </nav>
@@ -405,6 +405,69 @@
 
         <main>
             <div class="blackout"></div>
+            <!-- Modal -->
+            <div class="modal-wrapper" data-js-modal="app">
+    <div class="modal">
+        <div class="modal__header">
+            <div class="modal__col">
+                <h3 class="h5 modal__title">Оформить заявку</h3>
+                <p class="modal__subtitle caption-regular">Специалист перезвонит вам в течение 2 минут</p>
+                <p class="modal__subtitle modal__subtitle_transparent caption-regular">Рабочее время: Пн-Пт c 10:00 до 19:00</p>
+            </div>
+            <div class="modal__col">
+                <button type="button" class="modal__close">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M18 6L6 18M6 6L18 18" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>                    
+                </button>
+            </div>
+        </div>
+        <form action="" class="modal__form">
+            <div class="modal__form-inputs">
+                <div class="modal__form-row">
+                    <label class="modal__label body-regular">
+                        <span>Услуга</span>
+                        <div class="select select_form">
+                            <span>
+                               <span class="select__title">Выберите услугу</span>
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <g>
+                                        <path d="M6 9L12 15L18 9" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </g>
+                                </svg>                     
+                            </span>
+                                
+                            <ul class="select__droplist caption-regular">
+                                <li class="select__item"><a href="#" data-value="1">Услуга 1</a></li>
+                                <li class="select__item"><a href="#" data-value="2">Услуга 2</a></li>
+                            </ul>
+    
+                            <select name="service" id="" hidden>
+                                <option value="1"></option>
+                                <option value="2"></option>
+                            </select>
+    
+    
+                        </div>
+                    </label>
+                </div>
+                <div class="modal__form-row">
+                    <label class="modal__label body-regular">
+                        <span>Ваше имя</span>
+                        <input type="text" placeholder="Введите имя" class="body-regular">
+                    </label>
+                    <label class="modal__label body-regular">
+                        <span>Номер телефона</span>
+                        <input type="tel" placeholder="+7 (___) ___-__-__ " class="body-regular" data-tel-input>
+                    </label>
+                </div>
+            </div>
+            <button class="modal__btn btn btn_black body-regular">Отправить</button>
+            <p class="modal__caption caption-regular">Отправляя форму, вы даете согласие на обработку персональных данных</p>
+        </form>
+    </div>
+</div>
+
             <!-- Hero -->
             <section class="hero hero_slider container container_full" style="--bg: radial-gradient(75.09% 100% at 50% 0%, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0) 100%), #CEDBEA;">
     <div class="hero__bg" style="--bg: radial-gradient(75.09% 100% at 50% 0%, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0) 100%), #CEDBEA;">

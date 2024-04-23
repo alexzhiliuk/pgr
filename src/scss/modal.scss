@@ -1,0 +1,144 @@
+/* -------- MODAL -------- */
+.modal-wrapper {
+    position: fixed;
+    z-index: 9;
+    top: 0; bottom: 0;
+    left: 0; right: 0;
+    background-color: rgba($color: #000000, $alpha: .4);
+    display: none;
+    align-items: center;
+    justify-content: center;
+
+    &_active {
+        display: flex;
+    }
+    
+}
+.modal {
+
+    padding: 20px;
+    background-color: $surfacePrimary;
+    border-radius: 12px;
+    max-width: 440px;
+    width: 100%;
+
+    @media screen and (max-width: $breakpoint576) {
+        max-width: calc(100% - 32px);
+    }
+
+    // .modal__header
+    &__header {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    // .modal__col
+    &__col {
+    }
+
+    // .modal__title
+    &__title {
+        color: #1A1A1A;
+    }
+
+    // .modal__subtitle
+    &__subtitle {
+
+        color: $contentDisabled;
+        margin-top: 4px;
+
+        // .modal__subtitle_transparent
+        &_transparent {
+            opacity: .6;
+        }
+    }
+
+    // .modal__close
+    &__close {
+    }
+
+    // .modal__form
+    &__form {
+        margin-top: 24px;
+
+        @media screen and (max-width: $breakpoint576) {
+            margin-top: 20px;
+        }
+    }
+
+    // .modal__form-inputs
+    &__form-inputs {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        @media screen and (max-width: $breakpoint576) {
+            gap: 16px;
+        }
+    }
+
+    // .modal__form-row
+    &__form-row {
+        display: flex;
+        justify-content: space-between;
+        gap: 16px;
+
+        @media screen and (max-width: $breakpoint576) {
+            flex-direction: column;
+        }
+    }
+
+    // .modal__label
+    &__label {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        flex: 1 0 calc(50% - 16px / 2);
+
+        span {
+            color: $textPrimary;
+        }
+
+        input {
+            width: 100%;
+            border: 1px solid $borderBase
+        }
+    }
+
+    // .modal__btn
+    &__btn {
+        margin-top: 24px;
+        width: 100%;
+
+        @media screen and (max-width: $breakpoint576) {
+            margin-top: 20px;
+        }
+    }
+
+    // .modal__caption
+    &__caption {
+        color: $contentDisabled;
+        margin-top: 16px;
+    }
+}
+.h3 {
+}
+.caption-regular {
+}
+.select {
+
+		// .select__title
+
+		&__title {
+		}
+
+		// .select__droplist
+
+		&__droplist {
+		}
+
+		// .select__item
+
+		&__item {
+		}
+}

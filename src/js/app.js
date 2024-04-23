@@ -16,6 +16,7 @@ import * as breadcrumbs from './modules/breadcrumbs.js';
 import * as canBeInteresting from './modules/canBeInteresting.js';
 import * as articles from './modules/articles.js';
 import * as tree from './modules/tree.js';
+import * as modal from './modules/modal.js';
 
 
 flsFunctions.isWebp()

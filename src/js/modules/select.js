@@ -4,7 +4,8 @@ $(".select__droplist_absolute").each(function(index, el) {
     $(el).attr("data-drop-id", index)
 })
 
-$(".select").click(function() {
+$(".select").click(function(e) {
+    if ($(e.target).is("select")) { return }
     $(this).toggleClass("select_active")
 
     if ( $(this).find(".select__droplist").length ) {
@@ -38,8 +39,19 @@ $(".select__item").click(function() {
         $droplist = $(`.select__droplist_absolute[data-drop-id=${droplistId}]`),
         select = $(`.select[data-drop-id=${droplistId}]`)
 
-    
     select.removeClass("select_active")
     select.find(".select__title").text($(this).find("a").text())
     $droplist.css("display", "none").removeClass("select__droplist_active")
+})
+
+$(".select_form .select__item a").click(function(e) {
+    e.preventDefault()
+    let value = $(this).attr("data-value"),
+        text = $(this).html(),
+        select = $(this).parent().parent().parent()
+    
+    select.find("option").removeAttr("selected")
+    select.find(`option[value=${value}]`).attr("selected", "selected")
+    select.find(".select__title").html(text)
+    select.addClass("select_selected")
 })

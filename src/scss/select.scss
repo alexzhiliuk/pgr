@@ -32,8 +32,50 @@
         border: unset;
     }
 
+    &.select_form {
+        justify-content: space-between;
 
-    span {
+        & > span {
+            justify-content: space-between;
+            width: 100%;
+
+            svg {
+                opacity: .4;
+            }
+        }
+
+        .select__title {
+            color: #2C3136;
+            opacity: .4;
+            transition: all 120ms ease-out;
+        }
+
+        &.select_selected {
+            & > span {
+                svg {
+                    opacity: 1;
+                }
+            }
+
+            .select__title {
+                opacity: 1;
+            }
+        }
+
+        @media (hover: hover) {
+            &:hover {
+                background-color: $surfaceSecondary;
+            }
+        }
+        &:active,
+        &.select_active {
+            background-color: $surfacePrimary;
+            border-color: rgba(29, 36, 51, 0.2);
+        }
+    }
+
+
+    & > span {
         display: flex;
         justify-content: center;
         align-items: center;
