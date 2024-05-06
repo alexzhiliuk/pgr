@@ -2,6 +2,7 @@
 .icon-cards {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
     gap: 24px;
 
     @media screen and (max-width: $breakpoint992) {
@@ -24,7 +25,8 @@
     padding: 24px;
 
     flex: 0 0 calc(25% - (24px * 3 / 4));
-
+    min-width: calc(25% - (24px * 3 / 4));
+    
     @media screen and (max-width: $breakpoint992) {
         flex: 0 0 calc(50% - (24px / 2));
     }

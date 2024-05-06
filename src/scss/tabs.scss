@@ -112,6 +112,7 @@
     &__body {
         padding: 12px 52px 12px 28px;
         overflow: scroll;
+        overflow-x: hidden;
 
         @media screen and (max-width: $breakpoint768){ 
             background: $surfacePrimary;
@@ -124,6 +125,21 @@
             margin-top: 16px;
         }
 
+        &::-webkit-scrollbar {
+            background: unset;
+            width: 12px;
+            padding: 0 2px;
+            border-radius: 0 8px 8px 0;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background-color: rgba($contentPrimary, 0.6) ;
+            opacity: .6;
+            width: 8px;
+            border-radius: 8px;
+            border: 2px solid transparent;
+            background-clip: content-box;
+        }
     }
 
     // .tabs__content

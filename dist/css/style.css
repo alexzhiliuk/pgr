@@ -763,6 +763,13 @@ input::placeholder {
 .nav__item .select__droplist, .nav__item .select__droplist_centered, .nav__item .select__droplist_right-mobile, .nav__item .select__droplist_right, .nav__item .select__droplist_absolute {
   top: 100%;
 }
+.nav__item_active > .nav__link {
+  opacity: 1;
+}
+.nav__item_active > .nav__link::before {
+  content: "";
+  width: 100%;
+}
 .nav__link {
   height: 100%;
   display: flex;
@@ -1853,6 +1860,7 @@ input::placeholder {
 .icon-cards, .num-cards, .num-cards_big, .icon-cards_big {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
   gap: 24px;
 }
 @media screen and (max-width: 991.98px) {
@@ -1870,6 +1878,7 @@ input::placeholder {
   border-radius: 12px;
   padding: 24px;
   flex: 0 0 calc(25% - 18px);
+  min-width: calc(25% - 18px);
 }
 @media screen and (max-width: 991.98px) {
   .icon-card, .num-card, .num-card_big, .icon-card_lg, .icon-card_big {
@@ -2963,6 +2972,7 @@ input::placeholder {
 .tabs__body {
   padding: 12px 52px 12px 28px;
   overflow: scroll;
+  overflow-x: hidden;
 }
 @media screen and (max-width: 767.98px) {
   .tabs__body {
@@ -2975,6 +2985,20 @@ input::placeholder {
     border-radius: 12px;
     margin-top: 16px;
   }
+}
+.tabs__body::-webkit-scrollbar {
+  background: unset;
+  width: 12px;
+  padding: 0 2px;
+  border-radius: 0 8px 8px 0;
+}
+.tabs__body::-webkit-scrollbar-thumb {
+  background-color: rgba(29, 36, 51, 0.6);
+  opacity: 0.6;
+  width: 8px;
+  border-radius: 8px;
+  border: 2px solid transparent;
+  background-clip: content-box;
 }
 .tabs__content {
   height: 100%;
@@ -4011,6 +4035,8 @@ input::placeholder {
   padding-top: 40px;
   padding-bottom: 52px;
   background: linear-gradient(0deg, #F1F3F9, #F1F3F9), linear-gradient(0deg, #CEDBEA, #CEDBEA), #E1E6EF;
+}
+.buying-section:last-child {
   border-top: 1px solid #E1E6EF;
 }
 @media screen and (max-width: 767.98px) {
@@ -6224,6 +6250,7 @@ input::placeholder {
   display: flex;
   flex-direction: column;
   gap: 16px;
+  color: #1D2433;
 }
 .founder-sources__article-btn {
   max-width: max-content;

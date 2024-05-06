@@ -146,6 +146,17 @@
                 top: 100%;
             }
         }
+
+        &_active {
+            & > .nav__link {
+                opacity: 1;
+
+                &::before {
+                    content: '';
+                    width: 100%;
+                }
+            }
+        }
     }
 
     // .nav__link
