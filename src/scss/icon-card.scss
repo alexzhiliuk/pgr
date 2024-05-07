@@ -16,9 +16,34 @@
     &_big {
         @extend .icon-cards;
     }
+
+    &_columns_2 {
+        display: block;
+        column-count: 2;
+        column-gap: 24px;
+
+        @media screen and (max-width: $breakpoint768) {
+            display: flex;
+            column-count: unset;
+            column-gap: unset;
+        }
+
+        & > * {
+            break-inside: avoid;
+            width: 100%;
+            margin-bottom: 24px;
+
+            @media screen and (max-width: $breakpoint768) {
+                flex: 0 0 100%;
+                margin-bottom: 0;
+            }
+        }
+    }
 }
 
 .icon-card {
+    display: flex;
+    flex-direction: column;
 
     background-color: $surfaceTertiary;
     border-radius: 12px;
@@ -34,6 +59,23 @@
     @media screen and (max-width: $breakpoint576) {
         flex: 0 0 100%;
         padding: 20px;
+    }
+
+    &:has(.btn) {
+        & > *:nth-last-child(2) {
+            margin-bottom: 16px;
+        }
+    }
+
+    &_centered {
+        .icon-card__img {
+            margin: 0 auto;
+        }
+
+        .icon-card__title,
+        .icon-card__subtitle {
+            text-align: center;
+        }
     }
 
     &_big {
@@ -74,14 +116,50 @@
             margin-top: 20px;
             margin-bottom: 4px;
         }
+
+        &_hr {
+            padding-bottom: 16px;
+            border-bottom: 1px solid rgba(#3F444D, .2);
+            margin-bottom: 16px;
+        }
     }
 
     // .icon-card__subtitle
     &__subtitle {
+        color: $contentPrimary;
+        opacity: .6;
+
+        &:not(:last-child) {
+            margin-bottom: 20px;
+        }
+    }
+
+    // .icon-card__text
+    &__text {
         color: $grey;
 
         @media screen and (max-width: $breakpoint576) {
             font-size: 14px;
+        }
+        
+        &:not(:last-child) {
+            margin-bottom: 16px;
+        }
+    }
+
+    // .icon-card__ul
+    &__ul {
+        list-style: disc;
+        list-style-position: inside;
+    }
+
+    // .icon-card__btn
+    &__btn {
+        margin: auto auto 0;
+        max-width: fit-content;
+        @media screen and (max-width: $breakpoint576) {
+            max-width: 100%;
+            width: 100%;
         }
     }
 }

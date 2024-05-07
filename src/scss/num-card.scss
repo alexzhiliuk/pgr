@@ -36,6 +36,15 @@
         }
     }
 
+    &_lg {
+        @extend .num-card;
+        flex: 0 0 calc(50% - (24px / 2));
+
+        @media screen and (max-width: $breakpoint768) {
+            flex: 0 0 100%;
+        }
+    }
+
     // .num-card__number
     &__number {
         @extend .h4;
@@ -61,8 +70,12 @@
         margin-top: 0;
     }
 
-    // .num-card__subtitle
-    &__subtitle {
-        @extend .icon-card__subtitle;
+    // .num-card__text
+    &__text {
+        @extend .icon-card__text;
+
+        &_left {
+            text-align: left;
+        }
     }
 }
