@@ -627,7 +627,7 @@ input::placeholder {
   line-height: 125%;
 }
 
-.h5, .article-section .article__h4 {
+.h5, .article-section .article__h4, .benefits__text ol {
   font-family: "Inter Tight";
   font-style: normal;
   font-weight: 500;
@@ -635,7 +635,7 @@ input::placeholder {
   line-height: 125%;
 }
 @media screen and (max-width: 767.98px) {
-  .h5, .article-section .article__h4 {
+  .h5, .article-section .article__h4, .benefits__text ol {
     font-size: 18px;
   }
 }
@@ -1058,32 +1058,40 @@ input::placeholder {
 .hero__subtitle {
   color: #1D2433;
 }
-.hero__numbers {
+.hero__subtitle ul {
+  list-style-type: disc;
+  list-style-position: inside;
+}
+.hero__subtitle ul li {
+  margin-left: 1.2em;
+  text-indent: -1.2em;
+}
+.hero__numbers, .image-banner__numbers {
   margin-top: 16px;
   display: flex;
   gap: 24px;
 }
 @media screen and (max-width: 1229.98px) {
-  .hero__numbers {
+  .hero__numbers, .image-banner__numbers {
     gap: 20px;
   }
 }
 @media screen and (max-width: 767.98px) {
-  .hero__numbers {
+  .hero__numbers, .image-banner__numbers {
     flex-direction: column;
     gap: 12px;
   }
 }
-.hero__number {
+.hero__number, .image-banner__number {
   color: #1D2433;
   flex: 0 0 172px;
 }
 @media screen and (max-width: 1229.98px) {
-  .hero__number {
+  .hero__number, .image-banner__number {
     flex: 0 0 max-content;
   }
 }
-.hero__number-subtitle {
+.hero__number-subtitle, .image-banner__number-subtitle {
   opacity: 0.6;
   margin-top: 4px;
 }
@@ -1924,7 +1932,9 @@ input::placeholder {
   margin: 0 auto;
 }
 .icon-card_centered .icon-card__title, .icon-card_centered .num-card__title,
-.icon-card_centered .icon-card__subtitle {
+.icon-card_centered .icon-card__subtitle,
+.icon-card_centered .icon-card__text,
+.icon-card_centered .num-card__text {
   text-align: center;
 }
 .icon-card_big {
@@ -1986,6 +1996,10 @@ input::placeholder {
 }
 .icon-card__ul {
   list-style: disc;
+  list-style-position: inside;
+}
+.icon-card__ol {
+  list-style: decimal;
   list-style-position: inside;
 }
 .icon-card__btn {
@@ -2099,6 +2113,14 @@ input::placeholder {
     font-size: 14px;
   }
 }
+.consultation-form__subtitle ul {
+  list-style-type: disc;
+  list-style-position: inside;
+}
+.consultation-form__subtitle ul li {
+  margin-left: 1.375em;
+  text-indent: -1.375em;
+}
 .consultation-form__form {
   margin-top: 48px;
   display: flex;
@@ -2153,17 +2175,17 @@ input::placeholder {
 }
 
 /* -------- CALCULATOR -------- */
-.calculator {
+.calculator, .income {
   padding-top: 40px;
   padding-bottom: 40px;
 }
 @media screen and (max-width: 575.98px) {
-  .calculator {
+  .calculator, .income {
     padding-top: 20px;
     padding-bottom: 20px;
   }
 }
-.calculator__container {
+.calculator__container, .income__container {
   border-radius: 16px;
   border: 1px solid #E1E6EF;
   background-color: #FFF;
@@ -2172,25 +2194,25 @@ input::placeholder {
   gap: 16px;
 }
 @media screen and (max-width: 767.98px) {
-  .calculator__container {
+  .calculator__container, .income__container {
     padding: 20px;
     flex-direction: column;
   }
 }
-.calculator__form {
+.calculator__form, .income__content {
   flex-grow: 1;
   padding: 12px 16px;
 }
 @media screen and (max-width: 767.98px) {
-  .calculator__form {
+  .calculator__form, .income__content {
     padding: 0;
   }
 }
-.calculator__title {
+.calculator__title, .income__title {
   color: #1A1A1A;
 }
 @media screen and (max-width: 767.98px) {
-  .calculator__title {
+  .calculator__title, .income__title {
     font-size: 18px;
   }
 }
@@ -2218,7 +2240,7 @@ input::placeholder {
 .calculator__inputs-row > * {
   flex-grow: 1;
 }
-.calculator__result {
+.calculator__result, .income__result {
   flex: 0 0 324px;
   padding: 20px;
   background-color: #F1F3F9;
@@ -2230,33 +2252,33 @@ input::placeholder {
   align-items: center;
 }
 @media screen and (max-width: 767.98px) {
-  .calculator__result {
+  .calculator__result, .income__result {
     flex: unset;
     gap: 24px;
     padding: 16px 20px;
   }
 }
-.calculator__result-title {
+.calculator__result-title, .income__result-title {
   color: #1A1A1A;
   text-align: center;
 }
 @media screen and (max-width: 767.98px) {
-  .calculator__result-title {
+  .calculator__result-title, .income__result-title {
     font-size: 18px;
   }
 }
-.calculator__result-body {
+.calculator__result-body, .income__result-body {
   text-align: center;
 }
-.calculator__result-value {
+.calculator__result-value, .income__result-value {
   color: rgba(0, 0, 0, 0.85);
 }
 @media screen and (max-width: 575.98px) {
-  .calculator__result-value {
+  .calculator__result-value, .income__result-value {
     font-size: 24px;
   }
 }
-.calculator__result-caption {
+.calculator__result-caption, .income__result-caption {
   color: #1D2433;
   opacity: 0.4;
   margin-top: 8px;
@@ -2265,6 +2287,38 @@ input::placeholder {
   width: 100%;
 }
 
+/* -------- INCOME -------- */
+.income__content {
+  flex: 0 0 calc(50% - 8px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 24px;
+}
+.income__text {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+}
+.income__text ul {
+  list-style-type: disc;
+  list-style-position: inside;
+}
+.income__text ul li {
+  margin-left: 1.2em;
+  text-indent: -1.2em;
+}
+.income__result {
+  flex: 0 0 calc(50% - 8px);
+  gap: 28px;
+}
+.income__result-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 /* -------- RANGE INPUT -------- */
 .range-input__label {
   color: rgba(0, 0, 0, 0.85);
@@ -2966,6 +3020,22 @@ input::placeholder {
 .benefits__text ul li {
   margin-left: 1.375rem;
   text-indent: -1.375rem;
+}
+.benefits__text ol {
+  list-style-type: decimal;
+  list-style-position: inside;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+@media screen and (max-width: 767.98px) {
+  .benefits__text ol {
+    gap: 24px;
+  }
+}
+.benefits__text ol li {
+  margin-left: 1.2em;
+  text-indent: -1.2em;
 }
 .benefits__list {
   display: flex;
@@ -6544,6 +6614,101 @@ input::placeholder {
 .modal__caption {
   color: rgba(29, 36, 51, 0.65);
   margin-top: 16px;
+}
+
+.image-banner {
+  padding: 16px;
+  background: #F8F9FC;
+  border: 1px solid #E1E6EF;
+  border-radius: 24px;
+  height: 460px;
+  display: flex;
+}
+@media screen and (max-width: 767.98px) {
+  .image-banner {
+    flex-direction: column;
+    height: unset;
+    gap: 16px;
+  }
+}
+.image-banner:nth-child(even) {
+  flex-direction: row-reverse;
+}
+@media screen and (max-width: 767.98px) {
+  .image-banner:nth-child(even) {
+    flex-direction: column;
+  }
+}
+.image-banner:not(:first-child) {
+  margin-top: 40px;
+}
+@media screen and (max-width: 767.98px) {
+  .image-banner:not(:first-child) {
+    margin-top: 16px;
+  }
+}
+.image-banner__img {
+  flex: 0 1 643px;
+  height: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+}
+@media screen and (max-width: 767.98px) {
+  .image-banner__img {
+    flex: unset;
+  }
+}
+.image-banner__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.image-banner__content {
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 16px;
+}
+@media screen and (max-width: 767.98px) {
+  .image-banner__content {
+    padding: 0;
+  }
+}
+.image-banner__title {
+  color: #1D2433;
+}
+.image-banner__text {
+  color: #1D2433;
+}
+.image-banner__text ul {
+  list-style-type: disc;
+  list-style-position: inside;
+}
+.image-banner__text ul li {
+  margin-left: 1.2em;
+  text-indent: -1.2em;
+}
+.image-banner__numbers {
+  gap: 60px;
+  margin-top: 0;
+}
+@media screen and (max-width: 767.98px) {
+  .image-banner__numbers {
+    flex-direction: column;
+    gap: 8px;
+  }
+}
+.image-banner__number {
+  flex: 0 1 max-content;
+}
+.image-banner__btn {
+  max-width: max-content;
+}
+@media screen and (max-width: 575.98px) {
+  .image-banner__btn {
+    max-width: 100%;
+  }
 }
 
 @font-face {

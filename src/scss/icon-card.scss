@@ -68,12 +68,14 @@
     }
 
     &_centered {
+
         .icon-card__img {
             margin: 0 auto;
         }
 
         .icon-card__title,
-        .icon-card__subtitle {
+        .icon-card__subtitle,
+        .icon-card__text {
             text-align: center;
         }
     }
@@ -150,6 +152,12 @@
     // .icon-card__ul
     &__ul {
         list-style: disc;
+        list-style-position: inside;
+    }
+
+    // .icon-card__ol
+    &__ol {
+        list-style: decimal;
         list-style-position: inside;
     }
 

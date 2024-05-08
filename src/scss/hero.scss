@@ -97,6 +97,16 @@
     // .hero__subtitle
     &__subtitle {
         color: $contentPrimary;
+
+        ul {
+            list-style-type: disc;
+            list-style-position: inside;
+
+            li {
+                margin-left: 1.2em;
+                text-indent: -1.2em;
+            }
+        }
     }
 
     // .hero__numbers

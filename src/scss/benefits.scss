@@ -89,6 +89,24 @@
                 text-indent: -1.375rem;
             }
         }
+
+        ol {
+            @extend .h5;
+            list-style-type: decimal;
+            list-style-position: inside;
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+
+            @media screen and (max-width: $breakpoint768) {
+                gap: 24px;
+            }
+
+            li {
+                margin-left: 1.2em;
+                text-indent: -1.2em;
+            }
+        }
     }
     
     // .benefits__list

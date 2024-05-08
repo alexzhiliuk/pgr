@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ru">
+    @@include('html/index/head.html',{
+        "title": "«Первая Гильдия Ростовщиков» — инвестиционная компания"
+    })
+    <body>
+
+        <!-- Header -->
+        @@include('html/header.html')
+
+        <main>
+            <div class="blackout"></div>
+            <!-- Modal -->
+            @@include('html/modal.html')
+
+            <!-- Hero -->
+            @@include('html/bonds/hero.html')
+
+            <!-- Income -->
+            @@include('html/bonds/calculator.html')
+
+            <!-- Cards -->
+            @@include('html/bonds/cards.html')
+
+            <!-- Benefits -->
+            @@include('html/bonds/benefits.html')
+
+            <!-- Buying -->
+            @@include('html/showcase/buying.html')
+
+            <!-- Banner -->
+            @@include('html/bonds/banner.html')
+            
+        </main>
+
+        <!-- Footer -->
+        @@include('html/footer.html')
+
+        <script src="js/app.min.js"></script>
+    </body>
+</html>
