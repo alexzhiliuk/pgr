@@ -20,3 +20,16 @@ import * as modal from './modules/modal.js';
 
 
 flsFunctions.isWebp()
+
+
+$(".droplist").on("mouseleave", function() {
+    $(this).css("display", "flex")
+    setTimeout(() => {
+        if (!$(this).is(":hover")) {
+            $(this).animate({opacity: 0}, 500)
+        }
+    }, 200)
+    setTimeout(() => {
+        $(this).css("display", "").css("opacity", "")
+    }, 1000)
+})

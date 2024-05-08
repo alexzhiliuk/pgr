@@ -73,10 +73,39 @@
 
     // .header__phone
     &__phone {
-        margin-right: 16px;
+        margin-right: 10px;
         height: 100%;
         display: flex;
         align-items: center;
+    }
+
+    // .header__socials
+    &__socials {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        margin-right: 8px;
+    }
+
+    // .header__social
+    &__social {
+        width: 28px;
+        height: 28px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 6px;
+        background-color: rgba($color: var(--color), $alpha: .16);
+        transition: $quickTransition;
+
+
+        &:hover {
+            background-color: rgba($color: var(--color), $alpha: .26);
+        }
+        &:active {
+            background-color: rgba($color: var(--color), $alpha: .36);
+        }
+
     }
 
 }
@@ -142,9 +171,6 @@
                 opacity: .6;
             }
 
-            &__droplist {
-                top: 100%;
-            }
         }
 
         &_active {
@@ -193,6 +219,8 @@
 }
 .droplist {
 
+    animation: fade 400ms;
+
     &-open {
         &:hover {
             .droplist {
@@ -207,10 +235,19 @@
     height: 100%;
     background-color: $surfacePrimary;
     display: none;
+    transition: all 500ms;
 
     top: calc(100% + 1px);
     left: 50%;
     translate: -50% 0;
+
+    .nav__list {
+        margin-left: 202px;
+
+        @media screen and (max-width: $breakpoint1366) {
+            margin-left: 170px;
+        }
+    }
 }
 
 
@@ -309,6 +346,22 @@
 
         .btn {
             width: 100%;
+        }
+    }
+
+    // .mobile-nav__footer-row
+    &__footer-row {
+        display: flex;
+        width: 100%;
+
+        .header__social {
+            height: 44px;
+            width: 44px;
+
+            img {
+                width: 25px;
+                height: auto;
+            }
         }
     }
 

@@ -704,10 +704,32 @@ input::placeholder {
   }
 }
 .header__phone {
-  margin-right: 16px;
+  margin-right: 10px;
   height: 100%;
   display: flex;
   align-items: center;
+}
+.header__socials {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-right: 8px;
+}
+.header__social {
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  background-color: rgba(var(--color), 0.16);
+  transition: all 120ms ease-out;
+}
+.header__social:hover {
+  background-color: rgba(var(--color), 0.26);
+}
+.header__social:active {
+  background-color: rgba(var(--color), 0.36);
 }
 
 .nav__list {
@@ -760,9 +782,6 @@ input::placeholder {
   color: #1D2433;
   opacity: 0.6;
 }
-.nav__item .select__droplist, .nav__item .select__droplist_centered, .nav__item .select__droplist_right-mobile, .nav__item .select__droplist_right, .nav__item .select__droplist_absolute {
-  top: 100%;
-}
 .nav__item_active > .nav__link {
   opacity: 1;
 }
@@ -797,11 +816,13 @@ input::placeholder {
 }
 
 .droplist {
+  animation: fade 400ms;
   position: absolute;
   width: 100%;
   height: 100%;
   background-color: #FFF;
   display: none;
+  transition: all 500ms;
   top: calc(100% + 1px);
   left: 50%;
   translate: -50% 0;
@@ -809,6 +830,14 @@ input::placeholder {
 .droplist-open:hover .droplist {
   display: flex;
   animation: fade 400ms;
+}
+.droplist .nav__list {
+  margin-left: 202px;
+}
+@media screen and (max-width: 1365.98px) {
+  .droplist .nav__list {
+    margin-left: 170px;
+  }
 }
 
 .burger {
@@ -890,6 +919,18 @@ input::placeholder {
 }
 .mobile-nav__footer .btn {
   width: 100%;
+}
+.mobile-nav__footer-row {
+  display: flex;
+  width: 100%;
+}
+.mobile-nav__footer-row .header__social {
+  height: 44px;
+  width: 44px;
+}
+.mobile-nav__footer-row .header__social img {
+  width: 25px;
+  height: auto;
 }
 .mobile-nav__phone {
   display: block;
