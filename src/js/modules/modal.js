@@ -5,7 +5,7 @@ $("[data-js-open-modal]").click(function(e) {
     $("html, body").addClass("lock")
 })
 
-$(".modal__close").click(function() {
+$(".modal__close, [data-js-close-modal]").click(function() {
     $(this).parents(".modal-wrapper").removeClass("modal-wrapper_active")
     $("html, body").removeClass("lock")
 })

@@ -21,6 +21,7 @@
     border-radius: 12px;
     max-width: 440px;
     width: 100%;
+    position: relative;
 
     @media screen and (max-width: $breakpoint576) {
         max-width: calc(100% - 32px);
@@ -28,8 +29,7 @@
 
     // .modal__header
     &__header {
-        display: flex;
-        justify-content: space-between;
+        
     }
 
     // .modal__col
@@ -55,6 +55,9 @@
 
     // .modal__close
     &__close {
+        position: absolute;
+        top: 20px;
+        right: 20px;
     }
 
     // .modal__form
