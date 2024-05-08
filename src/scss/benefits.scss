@@ -75,20 +75,22 @@
         opacity: .6;
     }
 
-    // .benefits__ul
-    &__ul {
-        list-style: disc;
-        list-style-position: inside;
-        display: flex;
-        flex-direction: column;
-        gap: 12px;
-
-        li {
-            margin-left: 1.375rem;
-            text-indent: -1.375rem;
+    // .benefits__text
+    &__text {
+        ul {
+            list-style: disc;
+            list-style-position: inside;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+    
+            li {
+                margin-left: 1.375rem;
+                text-indent: -1.375rem;
+            }
         }
     }
-
+    
     // .benefits__list
     &__list {
         display: flex;

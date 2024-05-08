@@ -2001,12 +2001,13 @@ input::placeholder {
 
 /* -------- NUM CARDS -------- */
 .num-cards, .num-cards_big {
-  row-gap: 32px;
+  row-gap: 42px;
   padding-top: 26px;
 }
 @media screen and (max-width: 767.98px) {
   .num-cards, .num-cards_big {
     padding-top: 12px;
+    row-gap: 32px;
   }
 }
 .num-card, .num-card_lg, .num-card_big {
@@ -2955,14 +2956,14 @@ input::placeholder {
   color: #1D2433;
   opacity: 0.6;
 }
-.benefits__ul {
+.benefits__text ul {
   list-style: disc;
   list-style-position: inside;
   display: flex;
   flex-direction: column;
   gap: 12px;
 }
-.benefits__ul li {
+.benefits__text ul li {
   margin-left: 1.375rem;
   text-indent: -1.375rem;
 }
