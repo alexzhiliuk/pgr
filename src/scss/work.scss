@@ -1,0 +1,102 @@
+
+.steps {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    max-width: 888px;
+    margin: 0 auto;
+
+    @media screen and (max-width: $breakpoint768) {
+        gap: 8px;
+    }
+
+    // .steps__item
+    &__item {
+    }
+}
+
+.step {
+
+    display: flex;
+    gap: 44px;
+    width: 100%;
+    position: relative;
+
+    @media screen and (max-width: $breakpoint768) {
+        gap: 16px;
+        align-items: center;
+    }
+
+    &:not(:last-child) {
+        &::before {
+            content: '';
+            position: absolute;
+            width: 1px;
+            top: 80px;
+            left: 26px;
+            height: 100%;
+            background-color: $borderBase;
+
+            @media screen and (max-width: $breakpoint768) {
+                top: calc(50% + 20px);
+                left: 20px;
+            }
+        }
+    }
+
+    // .step__num
+    &__num {
+        margin-top: 28px;
+        width: 52px;
+        height: 52px;
+        border-radius: 50%;
+        background-color: $contentPrimary;
+        color: $surfacePrimary;
+        flex-shrink: 0;
+        
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+
+        @media screen and (max-width: $breakpoint768) {
+            width: 40px;
+            height: 40px;
+            font-size: 18px;
+            margin-top: 0;
+        }
+    }
+
+    // .step__card
+    &__card {
+        border-radius: 12px;
+        background-color: $surfaceTertiary;
+        padding: 24px;
+        max-width: 774px;
+        flex-grow: 1;
+
+        @media screen and (max-width: $breakpoint768) {
+            padding: 20px;
+        }
+    }
+
+    // .step__title
+    &__title {
+        margin-bottom: 12px;
+        color: $contentPrimary;
+
+        @media screen and (max-width: $breakpoint768) {
+            font-size: 18px;
+            margin-bottom: 8px;
+        }
+    }
+
+    // .step__text
+    &__text {
+        color: $contentPrimary;
+        @media screen and (max-width: $breakpoint768) {
+            font-size: 14px;
+        }
+    }
+}
