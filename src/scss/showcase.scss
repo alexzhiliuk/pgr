@@ -362,6 +362,27 @@
                 display: flex;
             }
         }
+
+        .cross-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            background-color: $surfacePrimary;
+            border: 1px solid $borderBase;
+
+            height: 44px;
+            width: 44px;
+
+            position: absolute;
+            top: calc(10px + 68px);
+            right: 10px;
+            z-index: 2;
+
+            @media screen and (max-width: $breakpoint992) {
+                display: none;
+            }
+        }
     }
 }
 

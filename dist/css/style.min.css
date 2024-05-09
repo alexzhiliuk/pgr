@@ -4069,6 +4069,25 @@ input::placeholder {
     display: flex;
   }
 }
+.showcase-section_map .cross-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  background-color: #FFF;
+  border: 1px solid #E1E6EF;
+  height: 44px;
+  width: 44px;
+  position: absolute;
+  top: 78px;
+  right: 10px;
+  z-index: 2;
+}
+@media screen and (max-width: 991.98px) {
+  .showcase-section_map .cross-btn {
+    display: none;
+  }
+}
 
 .showcase-aside {
   flex: 0 0 204px;

@@ -527,6 +527,11 @@
         </svg>            
         Показать фильтры            
     </a>
+    <a href="showcase.html" class="cross-btn">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M15 5L5 15M5 5L15 15" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>            
+    </a>
     <div class="showcase-map" id="showcase-map"></div>
 </section>
 <script>
@@ -541,13 +546,20 @@
             // Уровень масштабирования. Допустимые значения:
             // от 0 (весь мир) до 19.
             zoom: 11,
-            // controls: ['zoomControl']
+            // controls: ['zoomControl', 'geolocationControl']
         });
         myMap.controls.remove('zoomControl');
         myMap.controls.add('zoomControl', {
             size: "small",
             position: {
                 top: '400px',
+                right: '20px'
+            }
+        });
+        myMap.controls.remove('geolocationControl');
+        myMap.controls.add('geolocationControl', {
+            position: {
+                top: '500px',
                 right: '20px'
             }
         });
