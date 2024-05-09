@@ -157,8 +157,8 @@
     </aside>
     <div class="showcase">
         <div class="showcase__header">
-            <div class="showcase__map">
-                <a href="#" class="showcase__map-btn caption-regular btn btn_small">Показать объявления на карте</a>
+            <div class="showcase__map" id="map">
+                <a href="map.html" class="showcase__map-btn caption-regular btn btn_small">Показать объявления на карте</a>
             </div>
             <div class="showcase__sorting">
                 <div class="showcase__sorting-col">
@@ -659,3 +659,31 @@
         </div>
     </div>
 </section>
+<script src="https://api-maps.yandex.ru/2.1/?apikey=8efda445-f80b-4eae-9eed-19515faf2b82&lang=ru_RU"></script>
+<script>
+    ymaps.ready(init);
+    function init(){
+        var myMap = new ymaps.Map("map", {
+            center: [55.7448299, 37.625194],
+            // Уровень масштабирования. Допустимые значения:
+            // от 0 (весь мир) до 19.
+            zoom: 11,
+            controls: []
+        });
+
+        // placemarkSize = $(window).width() > 576 ? 43 : 30
+        myPlacemark = new ymaps.Placemark([55.7448299, 37.625194], {
+ 
+        }, {
+            preset: "islands#circleDotIcon",
+            iconColor: '#ff0000',
+
+            dataId: "5"
+        });
+
+
+        myMap.geoObjects.add(myPlacemark)
+
+    }
+
+    </script>

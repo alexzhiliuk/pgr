@@ -534,6 +534,7 @@
     // .showcase__map-btn
     &__map-btn {
         position: absolute;
+        z-index: 2;
         color: $contentPrimary;
         white-space: nowrap;
         left: 50%;

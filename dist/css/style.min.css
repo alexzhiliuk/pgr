@@ -4213,6 +4213,7 @@ input::placeholder {
 }
 .showcase__map-btn {
   position: absolute;
+  z-index: 2;
   color: #1D2433;
   white-space: nowrap;
   left: 50%;
