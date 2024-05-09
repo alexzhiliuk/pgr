@@ -17,14 +17,27 @@ $("#showcaseType a").click(function(e) {
 })
 
 
-$("#openFilters").click(function(e) {
+$("#openFilters, .show-filters").click(function(e) {
     e.preventDefault()
     $(".showcase-aside").addClass("showcase-aside_active")
     $("body").addClass("lock")
+
+    $(".showcase-section_map .showcase").addClass("showcase_overlap")
 })
 
 $(".close-filters").click(function(e) {
     e.preventDefault()
     $(".showcase-aside").removeClass("showcase-aside_active")
     $("body").removeClass("lock")
+
+    $(".showcase-section_map .showcase").removeClass("showcase_overlap")
+})
+
+$("#apply-filters").click(function(e) {
+    e.preventDefault()
+    $(".showcase-section_map .showcase").addClass("showcase_filtered")
+})
+
+$("#all-mortgages").click(function() {
+    $(".showcase-section_map .showcase").removeClass("showcase_filtered")
 })
