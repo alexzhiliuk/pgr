@@ -22,6 +22,6 @@ $(document).keyup(function(e) {
     }
 });
   
-$('.modal, [data-js-open-modal]').click(function(event){
+$('.modal, [data-js-open-modal], .burger').click(function(event){
     event.stopPropagation();
 });
