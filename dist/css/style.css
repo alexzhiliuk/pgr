@@ -735,17 +735,17 @@ input::placeholder {
 .nav__list {
   display: flex;
   align-items: center;
-  gap: 28px;
   height: 100%;
-}
-@media screen and (max-width: 1365.98px) {
-  .nav__list {
-    gap: 16px;
-  }
 }
 .nav__item {
   height: 100%;
   color: #1D2433;
+  padding: 0 14px;
+}
+@media screen and (max-width: 1365.98px) {
+  .nav__item {
+    padding: 0 8px;
+  }
 }
 .nav__item .select {
   border: unset;
@@ -789,6 +789,12 @@ input::placeholder {
   content: "";
   width: 100%;
 }
+.nav__item:first-of-type {
+  padding-left: 0;
+}
+.nav__item:last-of-type {
+  padding-right: 0;
+}
 .nav__link {
   height: 100%;
   display: flex;
@@ -816,7 +822,6 @@ input::placeholder {
 }
 
 .droplist {
-  animation: fade 400ms;
   position: absolute;
   width: 100%;
   height: 100%;
@@ -829,7 +834,6 @@ input::placeholder {
 }
 .droplist-open:hover .droplist {
   display: flex;
-  animation: fade 400ms;
 }
 .droplist .nav__list {
   margin-left: 202px;
@@ -2226,6 +2230,41 @@ input::placeholder {
     padding-bottom: 20px;
   }
 }
+.calculator_tabs {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+}
+@media screen and (max-width: 1199.98px) {
+  .calculator_tabs {
+    flex-direction: column;
+  }
+}
+.calculator_tabs .calculator__container:not(.calculator__container_active), .calculator_tabs .income__container:not(.calculator__container_active) {
+  display: none;
+}
+.calculator__types {
+  display: flex;
+  flex-direction: column;
+  flex: 0 1 318px;
+}
+@media screen and (max-width: 1199.98px) {
+  .calculator__types {
+    flex: unset;
+  }
+}
+.calculator__type {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  transition: all 120ms ease-out;
+  cursor: pointer;
+}
+.calculator__type_active, .calculator__type:hover {
+  background-color: #E1E6EF;
+}
 .calculator__container, .income__container {
   border-radius: 16px;
   border: 1px solid #E1E6EF;
@@ -2267,6 +2306,19 @@ input::placeholder {
   .calculator__inputs {
     gap: 16px;
   }
+}
+.calculator__input {
+  border-color: #E1E6EF;
+  width: 100%;
+  position: relative;
+}
+.calculator__input::after {
+  content: "rub.";
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: black;
+  z-index: 2;
 }
 .calculator__inputs-row {
   display: flex;

@@ -11,7 +11,7 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@200;400;500;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <!-- CSS -->
@@ -198,6 +198,14 @@
         <div class="header__btns">
             <div class="header__phone">
                 <a href="#" class="caption-regular">8 (900) 500-27-12</a>
+            </div>
+            <div class="header__socials">
+                <a href="#" class="header__social" style="--color: 31, 211, 103">
+                    <img src="img/whatsApp.svg" alt="">
+                </a>
+                <a href="#" class="header__social" style="--color: 16, 169, 255">
+                    <img src="img/telegram_1.svg" alt="">
+                </a>
             </div>
             <a href="#" class="btn btn_red btn_small caption-regular" data-js-open-modal="app">Оформить заявку</a>
         </div>
@@ -395,7 +403,17 @@
             <div class="mobile-nav__footer">
                 <div class="mobile-nav__footer-container">
                     <a href="#" class="mobile-nav__phone body-medium">8 (900) 500-27-12</a>
-                    <a href="#" class="btn btn_red body-regular" data-js-open-modal="app">Оформить заявку</a>
+                    <div class="mobile-nav__footer-row">
+                        <div class="header__socials">
+                            <a href="#" class="header__social" style="--color: 31, 211, 103">
+                                <img src="img/whatsApp.svg" alt="">
+                            </a>
+                            <a href="#" class="header__social" style="--color: 16, 169, 255">
+                                <img src="img/telegram_1.svg" alt="">
+                            </a>
+                        </div>
+                        <a href="#" class="btn btn_red body-regular" data-js-open-modal="app">Оформить заявку</a>
+                    </div>
                 </div>
             </div>
         </nav>
@@ -408,19 +426,17 @@
             <!-- Modal -->
             <div class="modal-wrapper" data-js-modal="app">
     <div class="modal">
+        <button type="button" class="modal__close">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M18 6L6 18M6 6L18 18" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>                    
+        </button>
         <div class="modal__header">
-            <div class="modal__col">
-                <h3 class="h5 modal__title">Оформить заявку</h3>
-                <p class="modal__subtitle caption-regular">Специалист перезвонит вам в течение 2 минут</p>
-                <p class="modal__subtitle modal__subtitle_transparent caption-regular">Рабочее время: Пн-Пт c 10:00 до 19:00</p>
-            </div>
-            <div class="modal__col">
-                <button type="button" class="modal__close">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M18 6L6 18M6 6L18 18" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>                    
-                </button>
-            </div>
+        
+            <h3 class="h5 modal__title">Оформить заявку</h3>
+            <p class="modal__subtitle caption-regular">Специалист перезвонит вам в течение 2 минут</p>
+            <p class="modal__subtitle modal__subtitle_transparent caption-regular">Рабочее время: Пн-Пт c 10:00 до 19:00</p>
+            
         </div>
         <form action="" class="modal__form">
             <div class="modal__form-inputs">
@@ -456,6 +472,8 @@
                         <span>Ваше имя</span>
                         <input type="text" placeholder="Введите имя" class="body-regular">
                     </label>
+                </div>
+                <div class="modal__form-row">
                     <label class="modal__label body-regular">
                         <span>Номер телефона</span>
                         <input type="tel" placeholder="+7 (___) ___-__-__ " class="body-regular" data-tel-input>
@@ -469,16 +487,16 @@
 </div>
 
             <!-- Hero -->
-            <section class="hero container container_full" style="--bg: radial-gradient(49.78% 145.43% at 0.22% 1.85%, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0) 100%), linear-gradient(0deg, #FFD8B4, #FFD8B4), linear-gradient(0deg, #FFFFFF, #FFFFFF), #9299A3;">
-    <div class="hero__bg" style="--bg: radial-gradient(49.78% 145.43% at 0.22% 1.85%, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0) 100%), linear-gradient(0deg, #FFD8B4, #FFD8B4), linear-gradient(0deg, #FFFFFF, #FFFFFF), #9299A3;">
+            <section class="hero container container_full" style="--bg: radial-gradient(49.78% 145.43% at 0.22% 1.85%, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0) 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */, linear-gradient(0deg, #A9E2B5, #A9E2B5), linear-gradient(0deg, #FFFFFF, #FFFFFF), #9299A3;">
+    <div class="hero__bg" style="--bg: radial-gradient(49.78% 145.43% at 0.22% 1.85%, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0) 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */, linear-gradient(0deg, #A9E2B5, #A9E2B5), linear-gradient(0deg, #FFFFFF, #FFFFFF), #9299A3;">
         <div class="hero__container container container_wide">
             <div class="hero__content">
-                <h2 class="h2 hero__title">Продажа недвижимости в Москве и области</h2>
-                <p class="hero__subtitle hero_slider__subtitle body-regular">Получите бесплатную оценку вашей недвижимости за 15 минут. Решим ваши вопросы с долгами, обременением и залогом. Гарантируем выгодное предложение по цене, а также предоставим аванс в день обращения.</p>
-                <a href="#" class="hero__btn hero_slider__btn btn btn_black btn_big">Получить консультацию</a>
+                <h2 class="h2 hero__title">Калькулятор</h2>
+                <p class="hero__subtitle hero_slider__subtitle body-regular">Удобные калькуляторы для рассчёта кредита, рефинансирования, досрочного погашения, сравнения ставок и калькулятор для бизнеса в едином месте</p>
+                <a href="#" class="hero__btn hero_slider__btn btn btn_black btn_big">Оформить заявку</a>
             </div>
             <div href="#" class="hero__img">
-                <img src="img/redemption/hero.png" alt="">
+                <img src="img/credit-calculator/hero.png" alt="">
                 <div class="hero__img-effect">
                     <img src="img/investment/hero-effect.png" alt="">
                 </div>
@@ -488,37 +506,245 @@
 </section>
 
 
-            <!-- Benefits -->
-            <section class="section container">
-    <h2 class="section__title section__title_mb-left">Работаем со сложными объектами</h2>
-    <p class="section__subtitle section__subtitle_mb-left">Наш опыт и профессионализм позволяют нам успешно справляться с любыми задачами.</p>
-    <div class="section__content benefits">
-        <div class="benefits__img" style="background: radial-gradient(75.09% 100% at 50% 0%, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0) 100%), linear-gradient(0deg, #CEDBEA, #CEDBEA), #FFFFFF;">
-            <img src="img/redemption/benefits.png" alt="">
+
+
+            <!-- Companies -->
+            <div class="companies-slider-section">
+    <div class="companies-slider-section__container container container_full">
+        <div class="companies-slider">
+            <ul class="companies-slider__list" style="--speed: 60s">
+                <li>
+                    <img src="img/sber.svg" alt="">
+                </li>
+                <li>
+                    <img src="img/mts-logo.svg" alt="">
+                </li>
+                <li>
+                    <img src="img/rfz.svg" alt="">
+                </li>
+                <li>
+                    <img src="img/alfa-logo.svg" alt="">
+                </li>
+                <li>
+                    <img src="img/tinkoff-logo.svg" alt="">
+                </li>
+                <li>
+                    <img src="img/vtb-logo.svg" alt="">
+                </li>
+                <li>
+                    <img src="img/otkrytie-logo.svg" alt="">
+                </li>
+                <li>
+                    <img src="img/rosbank.svg" alt="">
+                </li>
+                <li>
+                    <img src="img/bzhf-logo.svg" alt="">
+                </li>
+                <li>
+                    <img src="img/sovkom.svg" alt="">
+                </li>
+                <li>
+                    <img src="img/gazprombank-logo.svg" alt="">
+                </li>
+                <li>
+                    <img src="img/russian-standart.svg" alt="">
+                </li>
+                <li>
+                    <img src="img/uni-credit.svg" alt="">
+                </li>
+                <li>
+                    <img src="img/absolute-logo.svg" alt="">
+                </li>
+            </ul>
         </div>
-        <div class="benefits__content">
-            <div class="benefits__list">
-                <div class="benefits__item">
-                    <div class="benefits__item-title h5">Работаем с задолжностями</div>
-                    <div class="benefits__item-text body-regular">С долгами по ЖКУ или ФССП</div>
+        
+    </div>
+</div>
+
+
+            <!-- Calculator -->
+            <div class="section" style="background: linear-gradient(0deg, #F1F3F9, #F1F3F9), linear-gradient(0deg, #CEDBEA, #CEDBEA), #E1E6EF;">
+    <div class="calculator calculator_tabs container container_full">
+        <div class="calculator__types">
+            <div class="calculator__type calculator__type_active caption-medium">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M14 11H8M10 15H8M16 7H8M20 6.8V17.2C20 18.8802 20 19.7202 19.673 20.362C19.3854 20.9265 18.9265 21.3854 18.362 21.673C17.7202 22 16.8802 22 15.2 22H8.8C7.11984 22 6.27976 22 5.63803 21.673C5.07354 21.3854 4.6146 20.9265 4.32698 20.362C4 19.7202 4 18.8802 4 17.2V6.8C4 5.11984 4 4.27976 4.32698 3.63803C4.6146 3.07354 5.07354 2.6146 5.63803 2.32698C6.27976 2 7.11984 2 8.8 2H15.2C16.8802 2 17.7202 2 18.362 2.32698C18.9265 2.6146 19.3854 3.07354 19.673 3.63803C20 4.27976 20 5.11984 20 6.8Z" stroke="#212121" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>                    
+                Кредитный калькулятор
+            </div>
+            <div class="calculator__type caption-medium">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M13 5C13 6.10457 10.5376 7 7.5 7C4.46243 7 2 6.10457 2 5M13 5C13 3.89543 10.5376 3 7.5 3C4.46243 3 2 3.89543 2 5M13 5V9.45715C11.7785 9.82398 11 10.3789 11 11M2 5V17C2 18.1046 4.46243 19 7.5 19C8.82963 19 10.0491 18.8284 11 18.5429V11M2 9C2 10.1046 4.46243 11 7.5 11C8.82963 11 10.0491 10.8284 11 10.5429M2 13C2 14.1046 4.46243 15 7.5 15C8.82963 15 10.0491 14.8284 11 14.5429M22 11C22 12.1046 19.5376 13 16.5 13C13.4624 13 11 12.1046 11 11M22 11C22 9.89543 19.5376 9 16.5 9C13.4624 9 11 9.89543 11 11M22 11V19C22 20.1046 19.5376 21 16.5 21C13.4624 21 11 20.1046 11 19V11M22 15C22 16.1046 19.5376 17 16.5 17C13.4624 17 11 16.1046 11 15" stroke="#212121" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                Калькулятор рефинансирования
+            </div>
+            <div class="calculator__type caption-medium">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M13 11H17.8C18.9201 11 19.4802 11 19.908 11.218C20.2843 11.4097 20.5903 11.7157 20.782 12.092C21 12.5198 21 13.0799 21 14.2V21M13 21V6.2C13 5.0799 13 4.51984 12.782 4.09202C12.5903 3.71569 12.2843 3.40973 11.908 3.21799C11.4802 3 10.9201 3 9.8 3H6.2C5.0799 3 4.51984 3 4.09202 3.21799C3.71569 3.40973 3.40973 3.71569 3.21799 4.09202C3 4.51984 3 5.0799 3 6.2V21M22 21H2M6.5 7H9.5M6.5 11H9.5M6.5 15H9.5" stroke="#212121" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                Калькулятор досрочного погашения
+            </div>
+            <div class="calculator__type caption-medium">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M22 10H2M11 14H6M2 8.2L2 15.8C2 16.9201 2 17.4802 2.21799 17.908C2.40973 18.2843 2.71569 18.5903 3.09202 18.782C3.51984 19 4.07989 19 5.2 19L18.8 19C19.9201 19 20.4802 19 20.908 18.782C21.2843 18.5903 21.5903 18.2843 21.782 17.908C22 17.4802 22 16.9201 22 15.8V8.2C22 7.0799 22 6.51984 21.782 6.09202C21.5903 5.7157 21.2843 5.40974 20.908 5.21799C20.4802 5 19.9201 5 18.8 5L5.2 5C4.0799 5 3.51984 5 3.09202 5.21799C2.7157 5.40973 2.40973 5.71569 2.21799 6.09202C2 6.51984 2 7.07989 2 8.2Z" stroke="#212121" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                Калькулятор для бизнеса
+            </div>
+            <div class="calculator__type caption-medium">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M5 9.00002V17M9.5 9.00002V17M14.5 9.00002V17M19 9.00002V17M3 18.6L3 19.4C3 19.9601 3 20.2401 3.10899 20.454C3.20487 20.6422 3.35785 20.7952 3.54601 20.891C3.75992 21 4.03995 21 4.6 21H19.4C19.9601 21 20.2401 21 20.454 20.891C20.6422 20.7952 20.7951 20.6422 20.891 20.454C21 20.2401 21 19.9601 21 19.4V18.6C21 18.04 21 17.7599 20.891 17.546C20.7951 17.3579 20.6422 17.2049 20.454 17.109C20.2401 17 19.9601 17 19.4 17H4.6C4.03995 17 3.75992 17 3.54601 17.109C3.35785 17.2049 3.20487 17.3579 3.10899 17.546C3 17.7599 3 18.04 3 18.6ZM11.6529 3.07715L4.25291 4.7216C3.80585 4.82094 3.58232 4.87062 3.41546 4.99082C3.26829 5.09685 3.15273 5.24092 3.08115 5.40759C3 5.59654 3 5.82553 3 6.28349L3 7.40002C3 7.96007 3 8.2401 3.10899 8.45401C3.20487 8.64217 3.35785 8.79515 3.54601 8.89103C3.75992 9.00002 4.03995 9.00002 4.6 9.00002H19.4C19.9601 9.00002 20.2401 9.00002 20.454 8.89103C20.6422 8.79515 20.7951 8.64217 20.891 8.45401C21 8.2401 21 7.96007 21 7.40002V6.2835C21 5.82553 21 5.59655 20.9188 5.40759C20.8473 5.24092 20.7317 5.09685 20.5845 4.99082C20.4177 4.87062 20.1942 4.82094 19.7471 4.7216L12.3471 3.07715C12.2176 3.04837 12.1528 3.03398 12.0874 3.02824C12.0292 3.02314 11.9708 3.02314 11.9126 3.02824C11.8472 3.03398 11.7824 3.04837 11.6529 3.07715Z" stroke="#212121" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                Калькулятор вкладов
+            </div>
+            <div class="calculator__type caption-medium">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M2 17V16.8498C2 16.5333 2 16.3751 2.02421 16.2209C2.0457 16.084 2.08136 15.9497 2.13061 15.8202C2.18609 15.6743 2.2646 15.5369 2.42162 15.2622L6 9M2 17C2 19.2091 3.79086 21 6 21C8.20914 21 10 19.2091 10 17M2 17V16.8C2 16.52 2 16.38 2.0545 16.273C2.10243 16.1789 2.17892 16.1024 2.273 16.0545C2.37996 16 2.51997 16 2.8 16H9.2C9.48003 16 9.62004 16 9.727 16.0545C9.82108 16.1024 9.89757 16.1789 9.9455 16.273C10 16.38 10 16.52 10 16.8V17M6 9L9.57838 15.2622C9.7354 15.5369 9.81391 15.6743 9.86939 15.8202C9.91864 15.9497 9.9543 16.084 9.97579 16.2209C10 16.3751 10 16.5333 10 16.8498V17M6 9L18 7M14 15V14.8498C14 14.5333 14 14.3751 14.0242 14.2209C14.0457 14.084 14.0814 13.9497 14.1306 13.8202C14.1861 13.6743 14.2646 13.5369 14.4216 13.2622L18 7M14 15C14 17.2091 15.7909 19 18 19C20.2091 19 22 17.2091 22 15M14 15V14.8C14 14.52 14 14.38 14.0545 14.273C14.1024 14.1789 14.1789 14.1024 14.273 14.0545C14.38 14 14.52 14 14.8 14H21.2C21.48 14 21.62 14 21.727 14.0545C21.8211 14.1024 21.8976 14.1789 21.9455 14.273C22 14.38 22 14.52 22 14.8V15M18 7L21.5784 13.2622C21.7354 13.5369 21.8139 13.6743 21.8694 13.8202C21.9186 13.9497 21.9543 14.084 21.9758 14.2209C22 14.3751 22 14.5333 22 14.8498V15M12 3V8" stroke="#212121" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>                                                         
+                Калькулятор сравнения ставок
+            </div>
+        </div>
+        <div class="calculator__container calculator__container_active" id="creditCalculator">
+            <div class="calculator__form">
+                <h4 class="calculator__title h4">Рассчитайте свой кредит онлайн</h4>
+                <div class="calculator__inputs">
+                    <div class="calculator__inputs-row">
+                        <div class="range-input">
+                            <div class="range-input__label body-regular">Сумма кредита</div>
+                            <div class="range-input__input">
+                                <input type="text" class="range-input__number" value="5000000" id="loanAmountInput" class="body-regular">
+                                <input type="range" id="loanAmountRange" min="0" max="30000000" step="100000">
+                                <div class="range-input__progress"></div>
+                            </div>
+                            <div class="range-input__captions">
+                                <div class="range-input__caption caption-regular">0 ₽</div>
+                                <div class="range-input__caption caption-regular">30 000 000 ₽</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="calculator__inputs-row">
+                        <div class="range-input">
+                            <div class="range-input__label body-regular">Срок кредита</div>
+                            <div class="range-input__input">
+                                <input type="text" class="range-input__number" value="10" id="loanTermInput" class="body-regular">
+                                <input type="range" id="loanTermRange" min="1" max="30" >
+                                <div class="range-input__progress"></div>
+                            </div>
+                            <div class="range-input__captions">
+                                <div class="range-input__caption caption-regular">1 год</div>
+                                <div class="range-input__caption caption-regular">30 лет</div>
+                            </div>
+                        </div>
+                        <div class="range-input">
+                            <div class="range-input__label body-regular">Ставка</div>
+                            <div class="range-input__input">
+                                <input type="text" class="range-input__number" value="10" id="loanRateInput" class="body-regular">
+                                <input type="range" id="loanRateRange" min="1" max="48" >
+                                <div class="range-input__progress"></div>
+                            </div>
+                            <div class="range-input__captions">
+                                <div class="range-input__caption caption-regular">1 %</div>
+                                <div class="range-input__caption caption-regular">48 %</div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="benefits__item">
-                    <div class="benefits__item-title h5">Запрет или арест</div>
-                    <div class="benefits__item-text body-regular">Снимаем ограничения на регистрационные действия в кратчайшие сроки</div>
+            </div>
+            <div class="calculator__result">
+                <div class="calculator__result-title h4">Ежемесячный платеж</div>
+                <div class="calculator__result-body">
+                    <div class="calculator__result-value h3"><span id="monthlyPayment">16 000 033,89</span> ₽</div>
+                    <p class="calculator__result-caption caption-regular">*расчет носит исключительно информационный характер</p>
                 </div>
-                <div class="benefits__item">
-                    <div class="benefits__item-title h5">Ипотека или залог</div>
-                    <div class="benefits__item-text body-regular">Выкупаем квартиры с любыми обременениями</div>
+                <a href="#" class="calculator__result-btn body-regular btn btn_black">Подать заявку</a>
+            </div>
+        </div>
+        <div class="calculator__container" id="refinancingCalculator">
+            <div class="calculator__form">
+                <h4 class="calculator__title h4">Ваши действующие кредиты</h4>
+                <div class="calculator__inputs">
+                    <div class="calculator__inputs-row">
+                        <div class="range-input">
+                            <div class="range-input__label body-regular">Сумма кредита</div>
+                            <div class="inner-caption-input-wrapper">
+                                <input type="number" id="loanAmountInput" class="calculator__input">
+                                <span class="inner-caption">rub.</span>
+                            </div>
+                        </div>
+                        <div class="range-input">
+                            <div class="range-input__label body-regular">Сумма кредита</div>
+                            <div class="range-input__input">
+                                <input type="text" class="range-input__number" value="5000000" id="loanAmountInput" class="body-regular">
+                                <input type="range" id="loanAmountRange" min="0" max="30000000" step="100000">
+                                <div class="range-input__progress"></div>
+                            </div>
+                            <div class="range-input__captions">
+                                <div class="range-input__caption caption-regular">0 ₽</div>
+                                <div class="range-input__caption caption-regular">30 000 000 ₽</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="calculator__inputs-row">
+                        <div class="range-input">
+                            <div class="range-input__label body-regular">Срок кредита</div>
+                            <div class="range-input__input">
+                                <input type="text" class="range-input__number" value="10" id="loanTermInput" class="body-regular">
+                                <input type="range" id="loanTermRange" min="1" max="30" >
+                                <div class="range-input__progress"></div>
+                            </div>
+                            <div class="range-input__captions">
+                                <div class="range-input__caption caption-regular">1 год</div>
+                                <div class="range-input__caption caption-regular">30 лет</div>
+                            </div>
+                        </div>
+                        <div class="range-input">
+                            <div class="range-input__label body-regular">Ставка</div>
+                            <div class="range-input__input">
+                                <input type="text" class="range-input__number" value="10" id="loanRateInput" class="body-regular">
+                                <input type="range" id="loanRateRange" min="1" max="48" >
+                                <div class="range-input__progress"></div>
+                            </div>
+                            <div class="range-input__captions">
+                                <div class="range-input__caption caption-regular">1 %</div>
+                                <div class="range-input__caption caption-regular">48 %</div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="benefits__item">
-                    <div class="benefits__item-title h5">Опека</div>
-                    <div class="benefits__item-text body-regular">Даже при наличии несовершеннолетних собственников</div>
+            </div>
+            <div class="calculator__result">
+                <div class="calculator__result-title h4">Ежемесячный платеж</div>
+                <div class="calculator__result-body">
+                    <div class="calculator__result-value h3"><span id="monthlyPayment">16 000 033,89</span> ₽</div>
+                    <p class="calculator__result-caption caption-regular">*расчет носит исключительно информационный характер</p>
                 </div>
+                <a href="#" class="calculator__result-btn body-regular btn btn_black">Подать заявку</a>
             </div>
         </div>
     </div>
-</section>
+</div>
 
+            <!-- Consultation Form -->
+            <div class="section container">
+    <div class="consultation-form zoom">
+        <div class="consultation-form__content">
+            <h4 class="consultation-form__title h4">Бесплатная консультация по вашей ситуации</h4>
+            <p class="consultation-form__subtitle body-regular">Вам позвонит эксперт, разберет ситуацию, ответит на вопросы и подберет оптимальное решение.</p>
+    
+            <form action="" class="consultation-form__form">
+                <input type="tel" placeholder="+7 (___) ___-__-__" class="body-regular" data-tel-input>
+                <button type="submit" class="btn btn_black body-regular">Получить консультацию</button>
+            </form>
+    
+            <p class="consultation-form__caption body-regular">
+                Отправляя форму, вы даете согласие на обработку персональных данных
+            </p>
+        </div>
+
+        <div class="consultation-form__img">
+            <img src="img/consultation-form-bg.png" alt="">
+        </div>
+    </div>
+</div>
 
             <!-- Buying -->
             <section class="section section-mb-0 buying-section">
@@ -585,29 +811,7 @@
     </div>
 </section>
 
-            <!-- Consultation Form -->
-            <div class="section container">
-    <div class="consultation-form zoom">
-        <div class="consultation-form__content">
-            <h4 class="consultation-form__title h4">Бесплатная консультация по вашей ситуации</h4>
-            <p class="consultation-form__subtitle body-regular">Вам позвонит эксперт, разберет ситуацию, ответит на вопросы и подберет оптимальное решение.</p>
-    
-            <form action="" class="consultation-form__form">
-                <input type="tel" placeholder="+7 (___) ___-__-__" class="body-regular" data-tel-input>
-                <button type="submit" class="btn btn_black body-regular">Получить консультацию</button>
-            </form>
-    
-            <p class="consultation-form__caption body-regular">
-                Отправляя форму, вы даете согласие на обработку персональных данных
-            </p>
-        </div>
 
-        <div class="consultation-form__img">
-            <img src="img/consultation-form-bg.png" alt="">
-        </div>
-    </div>
-</div>
-            
         </main>
 
         <!-- Footer -->

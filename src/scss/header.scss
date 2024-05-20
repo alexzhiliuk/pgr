@@ -116,18 +116,18 @@
     &__list {
         display: flex;
         align-items: center;
-        gap: 28px;
         height: 100%;
-
-        @media screen and (max-width: $breakpoint1366) {
-            gap: 16px;
-        }
     }
 
     // .nav__item
     &__item {
         height: 100%;
         color: $contentPrimary;
+        padding: 0 14px;
+
+        @media screen and (max-width: $breakpoint1366) {
+            padding: 0 8px;
+        }
 
         .select {
             border: unset;
@@ -183,6 +183,13 @@
                 }
             }
         }
+
+        &:first-of-type {
+            padding-left: 0;
+        }
+        &:last-of-type {
+            padding-right: 0;
+        }
     }
 
     // .nav__link
@@ -219,13 +226,13 @@
 }
 .droplist {
 
-    animation: fade 400ms;
+    // animation: fade 400ms;
 
     &-open {
         &:hover {
             .droplist {
                 display: flex;
-                animation: fade 400ms;
+                // animation: fade 400ms;
             }
         }
     }

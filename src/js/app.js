@@ -23,13 +23,29 @@ flsFunctions.isWebp()
 
 
 $(".droplist").on("mouseleave", function() {
+    if ($(".nav").is(":hover") && $(".droplist-open:hover").has($(this)).length == 0) {
+        return
+    }
     $(this).css("display", "flex")
     setTimeout(() => {
-        if (!$(this).is(":hover")) {
-            $(this).animate({opacity: 0}, 500)
+        if (!$(this).is(":hover") && !$(".nav").is(":hover")) {
+            $(this).animate({opacity: 0}, 300)
         }
-    }, 200)
+    }, 500)
     setTimeout(() => {
         $(this).css("display", "").css("opacity", "")
     }, 1000)
 })
+
+// $(".droplist-open").on("mouseleave", function() {
+//     console.log("leave")
+//     $(this).find(".droplist").css("display", "flex")
+//     setTimeout(() => {
+//         if (!$(this).find(".droplist") && !$(".nav").is(":hover")) {
+//             $(this).animate({opacity: 0}, 500)
+//         }
+//     }, 200)
+//     setTimeout(() => {
+//         $(this).find(".droplist").css("display", "").css("opacity", "")
+//     }, 1000)
+// })

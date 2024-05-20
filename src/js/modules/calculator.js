@@ -54,3 +54,21 @@ let paymentsNumber = loanTermRange.val() * 12
 let loanAmount = loanAmountRange.val()
 let monthlyPayment = calculatingMonthlyPayment(loanAmount, monthlyRate, paymentsNumber)
 $("#monthlyPayment").html(formatMonthlyPayment(monthlyPayment))
+
+
+// Табы калькулятора
+$(".calculator__type").each(function(i, el) {
+    $(el).attr("data-calculator-id", i)
+})
+$(".calculator__container").each(function(i, el) {
+    $(el).attr("data-calculator-id", i)
+})
+
+$(".calculator__type").on("click", function() {
+    $(".calculator__type").removeClass("calculator__type_active")
+    $(this).addClass("calculator__type_active")
+
+    let calculatorId = $(this).attr("data-calculator-id")
+    $(".calculator__container").removeClass("calculator__container_active")
+    $(`.calculator__container[data-calculator-id=${calculatorId}]`).addClass("calculator__container_active")
+})
