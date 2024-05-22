@@ -29,7 +29,7 @@ $(".droplist").on("mouseleave", function() {
     $(this).css("display", "flex")
     setTimeout(() => {
         if (!$(this).is(":hover") && !$(".nav").is(":hover")) {
-            $(this).animate({opacity: 0}, 300)
+            $(this).animate({opacity: 0}, 100)
         }
     }, 500)
     setTimeout(() => {
