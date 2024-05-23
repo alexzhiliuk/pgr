@@ -5821,6 +5821,16 @@ input::placeholder {
     gap: 40px;
   }
 }
+@media screen and (max-width: 1199.98px) and (min-width: 991.98px) {
+  .article-section {
+    justify-content: space-between;
+  }
+}
+@media screen and (max-width: 575.98px) {
+  .article-section {
+    flex-direction: column;
+  }
+}
 .article-section .article > * {
   margin-bottom: 20px;
   margin-top: 20px;
@@ -6106,6 +6116,16 @@ input::placeholder {
 @media screen and (min-width: 479.98px) {
   .article-section .article .consultation-form__img {
     display: none;
+  }
+}
+.article-section .article .recommended-articles {
+  margin: 0 calc(-1 * (100vw - 100%) / 2);
+  z-index: 3;
+  position: relative;
+}
+@media screen and (max-width: 1199.98px) and (min-width: 991.98px) {
+  .article-section .article .recommended-articles {
+    margin: 0 calc(-1 * (100vw - 100% - 48px)) 0 -48px;
   }
 }
 .article-section .article-header {

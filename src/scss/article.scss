@@ -16,6 +16,14 @@
         gap: 40px;
     }
 
+    @media screen and (max-width: $breakpoint1200) and (min-width: $breakpoint992) {
+        justify-content: space-between;
+    }
+
+    @media screen and (max-width: $breakpoint576) {
+        flex-direction: column;
+    }
+
     .article {
 
         & > * {
@@ -384,6 +392,16 @@
             }
 
 
+        }
+
+        .recommended-articles {
+            margin: 0 calc(-1*(100vw - 100%) / 2);
+            z-index: 3;
+            position: relative;
+
+            @media screen and (max-width: $breakpoint1200) and (min-width: $breakpoint992) {
+                margin: 0 calc(-1*(100vw - 100% - 48px)) 0 calc(-1 * 48px);
+            }
         }
     }
 
