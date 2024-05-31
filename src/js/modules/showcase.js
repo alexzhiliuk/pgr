@@ -40,4 +40,5 @@ $("#apply-filters").click(function(e) {
 
 $("#all-mortgages").click(function() {
     $(".showcase-section_map .showcase").removeClass("showcase_filtered")
+    $(`.showcase__item`).parent().show()
 })

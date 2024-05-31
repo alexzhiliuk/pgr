@@ -152,6 +152,7 @@
             left: 10px; top: calc(10px + 68px);
             bottom: 10px;
             max-width: 462px;
+            width: 100%;
             background-color: $surfacePrimary;
             border-radius: 4px;
             border: 1px solid $borderBase;
@@ -207,6 +208,7 @@
                 padding: 12px;
                 overflow-y: scroll;
                 scroll-behavior: smooth;
+                flex-grow: 1;
 
                 &::-webkit-scrollbar {
                     background: rgba(250, 250, 250, 1);
@@ -240,6 +242,11 @@
                         flex: 0 0 calc(50% - 12px / 2);
                     }
                 }
+
+
+                .showcase__item-img {
+                    border-radius: 6px;
+                }
             }
 
             &__item {
@@ -254,6 +261,88 @@
         
                     .showcase__item-btns {
                         display: none;
+                    }
+                }
+
+                &_map-mobile {
+                    @media screen and (min-width: $breakpoint992) {
+                        display: none;
+                    }
+                    display: flex;
+                    flex-direction: column;
+                    gap: 12px;
+                    background-color: $surfacePrimary;
+                    padding: 12px;
+                    border: 1px solid $borderBase;
+                    border-radius: 8px;
+                    
+                    position: absolute;
+                    bottom: 62px;
+                    left: 10px;
+                    right: 10px;
+
+                    .showcase__item-img {
+                        margin-top: 0;
+                        margin-right: 0;
+                        width: 100%;
+                        aspect-ratio: 316 / 156;
+
+                        border: 1px solid $borderBase;
+                        border-radius: 6px;
+                    }
+
+                    .showcase__item-close {
+                        position: absolute;
+                        top: 4px;
+                        right: 4px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        height: 40px;
+                        width: 40px;
+                        background-color: $surfacePrimary;
+                        border-radius: 6px;
+
+                        &::before {
+                            content: url(../img/mortgage-close.svg);
+                        }
+                    }
+
+                    .showcase__item-body {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: unset;
+                        justify-content: unset;
+                        padding: 0;
+                        width: 100%;
+                        border-bottom: unset;
+                    }
+                
+                    .showcase__item-specifications {
+                        flex-direction: column;
+                        align-items: unset;
+                        gap: 8px;
+                    }
+                
+                    .showcase__item-specification {
+                        flex: unset;
+                        display: flex;
+                        align-items: flex-end;
+                        justify-content: space-between;
+                        gap: 8px;
+                    }
+                
+                    .showcase__item-specification-line {
+                        display: block;
+                        flex-grow: 1;
+                        height: 1px;
+                        background: $contentDisabled;
+                        opacity: .2;
+                        margin-bottom: 4px;
+                    }
+                
+                    .showcase__item-specification-value {
+                        font-size: 14px;
                     }
                 }
             }

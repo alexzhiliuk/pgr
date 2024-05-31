@@ -972,6 +972,37 @@
             zoom: 11,
             // controls: ['zoomControl', 'geolocationControl']
         });
+        var objectManager = new ymaps.ObjectManager({});
+        objectManager.objects.options.set('preset', 'islands#circleDotIcon');
+        objectManager.objects.options.set('iconColor', '#ff0000');
+        myMap.geoObjects.add(objectManager);
+
+        function onObjectEvent (e) {
+            var mortgageId = e.get('objectId');
+            if (e.get('type') == 'click') {
+            
+                if (window.outerWidth >= 992) {
+                    $(".showcase-section_map .showcase").addClass("showcase_filtered")
+                    $(`.showcase__item:not([data-mortgage-id=${mortgageId}])`).parent().hide()
+                } else {
+                    let mortgage = $(`.showcase__item[data-mortgage-id=${mortgageId}]`).clone()
+                    mortgage.addClass("showcase__item_map-mobile")
+                    mortgage.removeClass("showcase__item")
+                    mortgage.append("<div class='showcase__item-close'></div>")
+                    $(".showcase-section_map").append(mortgage)
+
+                    $(".showcase__item_map-mobile .showcase__item-close").click(function(e) {
+                        e.preventDefault()
+                        console.log("work")
+                        $(this).parent().remove()
+                    })
+                }
+            } 
+        }
+
+        objectManager.objects.events.add(['click'], onObjectEvent);
+
+        // Контроллеры
         myMap.controls.remove('zoomControl');
         myMap.controls.add('zoomControl', {
             size: "small",
@@ -989,24 +1020,11 @@
         });
 
 
-        // placemarkSize = $(window).width() > 576 ? 43 : 30
-        myPlacemark = new ymaps.Placemark([55.7448299, 37.625194], {
- 
-        }, {
-            preset: "islands#circleDotIcon",
-            iconColor: '#ff0000',
-
-            dataId: "5"
+        $.ajax({
+            url: "points.json"
+        }).done(function(data) {
+            objectManager.add(data);
         });
-
-        myPlacemark.events.add('hover', function (e) {
-            let mortgageId = e.get('target').options.get('dataId');
-            let scrollTop = $(`[data-mortgage-id=${mortgageId}]`).position().top - 80
-            $(".showcase__body").scrollTop($(".showcase__body").scrollTop() + scrollTop)
-        });
-        
-
-        myMap.geoObjects.add(myPlacemark)
 
     }
 
