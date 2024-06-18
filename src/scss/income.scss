@@ -6,6 +6,7 @@
     // .income__container
     &__container {
         @extend .calculator__container;
+        align-items: unset
     }
 
     // .income__content

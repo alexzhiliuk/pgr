@@ -596,7 +596,7 @@
                 </svg>
                 Калькулятор вкладов
             </div>
-            <div class="calculator__type caption-medium">
+            <div class="calculator__type calculator__type_disabled caption-medium" >
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M2 17V16.8498C2 16.5333 2 16.3751 2.02421 16.2209C2.0457 16.084 2.08136 15.9497 2.13061 15.8202C2.18609 15.6743 2.2646 15.5369 2.42162 15.2622L6 9M2 17C2 19.2091 3.79086 21 6 21C8.20914 21 10 19.2091 10 17M2 17V16.8C2 16.52 2 16.38 2.0545 16.273C2.10243 16.1789 2.17892 16.1024 2.273 16.0545C2.37996 16 2.51997 16 2.8 16H9.2C9.48003 16 9.62004 16 9.727 16.0545C9.82108 16.1024 9.89757 16.1789 9.9455 16.273C10 16.38 10 16.52 10 16.8V17M6 9L9.57838 15.2622C9.7354 15.5369 9.81391 15.6743 9.86939 15.8202C9.91864 15.9497 9.9543 16.084 9.97579 16.2209C10 16.3751 10 16.5333 10 16.8498V17M6 9L18 7M14 15V14.8498C14 14.5333 14 14.3751 14.0242 14.2209C14.0457 14.084 14.0814 13.9497 14.1306 13.8202C14.1861 13.6743 14.2646 13.5369 14.4216 13.2622L18 7M14 15C14 17.2091 15.7909 19 18 19C20.2091 19 22 17.2091 22 15M14 15V14.8C14 14.52 14 14.38 14.0545 14.273C14.1024 14.1789 14.1789 14.1024 14.273 14.0545C14.38 14 14.52 14 14.8 14H21.2C21.48 14 21.62 14 21.727 14.0545C21.8211 14.1024 21.8976 14.1789 21.9455 14.273C22 14.38 22 14.52 22 14.8V15M18 7L21.5784 13.2622C21.7354 13.5369 21.8139 13.6743 21.8694 13.8202C21.9186 13.9497 21.9543 14.084 21.9758 14.2209C22 14.3751 22 14.5333 22 14.8498V15M12 3V8" stroke="#212121" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>                                                         
@@ -611,7 +611,7 @@
                         <div class="range-input">
                             <div class="range-input__label body-regular">Сумма кредита</div>
                             <div class="range-input__input">
-                                <input type="text" class="range-input__number" value="5000000" id="loanAmountInput" class="body-regular">
+                                <input type="text" class="range-input__number body-regular" value="5000000" id="loanAmountInput" >
                                 <input type="range" id="loanAmountRange" min="0" max="30000000" step="100000">
                                 <div class="range-input__progress"></div>
                             </div>
@@ -625,7 +625,7 @@
                         <div class="range-input">
                             <div class="range-input__label body-regular">Срок кредита</div>
                             <div class="range-input__input">
-                                <input type="text" class="range-input__number" value="10" id="loanTermInput" class="body-regular">
+                                <input type="text" class="range-input__number body-regular" value="10" id="loanTermInput">
                                 <input type="range" id="loanTermRange" min="1" max="30" >
                                 <div class="range-input__progress"></div>
                             </div>
@@ -637,7 +637,7 @@
                         <div class="range-input">
                             <div class="range-input__label body-regular">Ставка</div>
                             <div class="range-input__input">
-                                <input type="text" class="range-input__number" value="10" id="loanRateInput" class="body-regular">
+                                <input type="text" class="range-input__number body-regular" value="10" id="loanRateInput">
                                 <input type="range" id="loanRateRange" min="1" max="48" >
                                 <div class="range-input__progress"></div>
                             </div>
@@ -663,17 +663,233 @@
                 <h4 class="calculator__title h4">Ваши действующие кредиты</h4>
                 <div class="calculator__inputs">
                     <div class="calculator__inputs-row">
-                        <div class="range-input">
-                            <div class="range-input__label body-regular">Сумма кредита</div>
-                            <div class="inner-caption-input-wrapper">
-                                <input type="number" id="loanAmountInput" class="calculator__input">
-                                <span class="inner-caption">rub.</span>
+                        <div class="inner-caption-input">
+                            <div class="inner-caption-input__label body-regular">Сумма кредита</div>
+                            <div class="inner-caption-input__wrapper" data-caption="руб.">
+                                <input type="number" id="loanAmountInput" class="calculator__input body-regular">
                             </div>
                         </div>
+                        <div class="inner-caption-input">
+                            <div class="inner-caption-input__label body-regular">Ежемесячный платёж</div>
+                            <div class="inner-caption-input__wrapper" data-caption="руб.">
+                                <input type="number" id="loanAmountInput" class="calculator__input body-regular">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="calculator__inputs-row">
+                        <div class="inner-caption-input">
+                            <div class="inner-caption-input__label body-regular">Сумма кредита</div>
+                            <div class="inner-caption-input__wrapper" data-caption="руб.">
+                                <input type="number" id="loanAmountInput" class="calculator__input body-regular">
+                            </div>
+                        </div>
+                        <div class="inner-caption-input">
+                            <div class="inner-caption-input__label body-regular">Ежемесячный платёж</div>
+                            <div class="calculator__temp">
+                                <div class="inner-caption-input__wrapper" data-caption="руб.">
+                                    <input type="number" id="loanAmountInput" class="calculator__input body-regular">
+                                </div>
+                                <a href="javascript:void(0)" class="calculator__remove-row">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M16 6V5.2C16 4.0799 16 3.51984 15.782 3.09202C15.5903 2.71569 15.2843 2.40973 14.908 2.21799C14.4802 2 13.9201 2 12.8 2H11.2C10.0799 2 9.51984 2 9.09202 2.21799C8.71569 2.40973 8.40973 2.71569 8.21799 3.09202C8 3.51984 8 4.0799 8 5.2V6M10 11.5V16.5M14 11.5V16.5M3 6H21M19 6V17.2C19 18.8802 19 19.7202 18.673 20.362C18.3854 20.9265 17.9265 21.3854 17.362 21.673C16.7202 22 15.8802 22 14.2 22H9.8C8.11984 22 7.27976 22 6.63803 21.673C6.07354 21.3854 5.6146 20.9265 5.32698 20.362C5 19.7202 5 18.8802 5 17.2V6" stroke="#212121" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>                                
+                                </a>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                <a href="javascript:void(0)" class="calculator__form-btn btn btn_black body-regular">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 5V19M5 12H19" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>                          
+                    Добавить кредит
+                </a>
+                <div class="calculator__summary">
+                    <div class="calculator__summary-item calculator__summary-item_without-line">
+                        <div class="calculator__summary-item-name body-regular">
+                            По всем кредитам вы платите в месяц:
+                        </div>
+                        <div class="calculator__summary-item-line"></div>
+                        <div class="calculator__summary-item-value body-medium">
+                            0 руб.
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <h4 class="calculator__title h4">Рассчёт на основе ваших данных</h4>
+                <div class="calculator__inputs">
+                    <div class="calculator__inputs-row">
+                        <div class="inner-caption-input">
+                            <div class="inner-caption-input__label body-regular">Сумма кредита</div>
+                            <div class="inner-caption-input__wrapper" data-caption="руб.">
+                                <input type="number" id="loanAmountInput" class="calculator__input body-regular">
+                            </div>
+                        </div>
+                        <div class="inner-caption-input">
+                            <div class="inner-caption-input__label body-regular">Ежемесячный платёж</div>
+                            <div class="inner-caption-input__wrapper" data-caption="руб.">
+                                <input type="number" id="loanAmountInput" class="calculator__input body-regular">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="calculator__inputs-row">
+                        <div class="inner-caption-input">
+                            <div class="inner-caption-input__label body-regular">Сумма кредита</div>
+                            <div class="inner-caption-input__wrapper" data-caption="руб.">
+                                <input type="number" id="loanAmountInput" class="calculator__input body-regular">
+                            </div>
+                        </div>
+                        <div class="inner-caption-input">
+                            <div class="inner-caption-input__label body-regular">Ежемесячный платёж</div>
+                            <div class="inner-caption-input__wrapper" data-caption="руб.">
+                                <input type="number" id="loanAmountInput" class="calculator__input body-regular">
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="calculator__result">
+                <div class="calculator__result-title h4">Ежемесячный платеж</div>
+                <div class="calculator__result-body">
+                    <div class="calculator__result-value h3"><span id="monthlyPayment">16 000 033,89</span> ₽</div>
+                    <p class="calculator__result-caption caption-regular">*расчет носит исключительно информационный характер</p>
+                </div>
+                <a href="#" class="calculator__result-btn body-regular btn btn_black">Подать заявку</a>
+            </div>
+        </div>
+        <div class="calculator__container" id="repaymentCalculator">
+            <div class="calculator__form">
+                <h4 class="calculator__title h4">Данные по вашему кредиту</h4>
+                <div class="calculator__inputs">
+                    <div class="calculator__inputs-row">
+                        <div class="inner-caption-input">
+                            <div class="inner-caption-input__label body-regular">Сумма кредита</div>
+                            <div class="inner-caption-input__wrapper" data-caption="руб.">
+                                <input type="number" id="loanAmountInput" class="calculator__input body-regular">
+                            </div>
+                        </div>
+                        <div class="inner-caption-input">
+                            <div class="inner-caption-input__label body-regular">Срок кредита</div>
+                            <div class="inner-caption-input__wrapper" data-caption="лет">
+                                <input type="number" id="loanAmountInput" class="calculator__input body-regular">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="calculator__inputs-row">
+                        <div class="inner-caption-input">
+                            <div class="inner-caption-input__label body-regular">Ставка, годовых</div>
+                            <div class="inner-caption-input__wrapper" data-caption="%">
+                                <input type="number" id="loanAmountInput" class="calculator__input body-regular">
+                            </div>
+                        </div>
+                        <div class="">
+                            <div class="inner-caption-input__label body-regular">Дата получения</div>
+                            <input type="date" id="loanAmountInput" class="calculator__input body-regular">
+                        </div>
+                    </div>
+                    <div class="calculator__inputs-row">
+                        <div class="inner-caption-input">
+                            <div class="inner-caption-input__label body-regular">Ежемесячный платёж без досрочного погашения</div>
+                            <div class="inner-caption-input__wrapper" data-caption="руб.">
+                                <input type="number" id="loanAmountInput" class="calculator__input body-regular">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="calculator__inputs-row">
+                        <div>
+                            <div class="inner-caption-input__label body-regular">Ежемесячный платёж без досрочного погашения</div>
+                            <div class="radio-inputs">
+                                <label class="radio body-regular">
+                                    <input type="radio" name="radio" id="loanAmountInput" class="calculator__input body-regular">
+                                    Единоразовый
+                                </label>
+                                <label class="radio body-regular">
+                                    <input type="radio" name="radio" id="loanAmountInput" class="calculator__input body-regular">
+                                    Ежемесячный
+                                </label>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div class="calculator__inputs-row">
+                        <div class="inner-caption-input">
+                            <div class="inner-caption-input__label body-regular">Единоразовая сумма досрочного погашения</div>
+                            <div class="inner-caption-input__wrapper" data-caption="руб.">
+                                <input type="number" id="loanAmountInput" class="calculator__input body-regular">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="calculator__summary">
+                    <div class="calculator__summary-item">
+                        <div class="calculator__summary-item-name body-regular">
+                            Общая переплата в рублях
+                        </div>
+                        <div class="calculator__summary-item-line"></div>
+                        <div class="calculator__summary-item-value body-medium">
+                            12 000 руб.
+                        </div>
+                    </div>
+                    <div class="calculator__summary-item">
+                        <div class="calculator__summary-item-name body-regular">
+                            Общая переплата в процентах
+                        </div>
+                        <div class="calculator__summary-item-line"></div>
+                        <div class="calculator__summary-item-value body-medium">
+                            24%
+                        </div>
+                    </div>
+                    <div class="calculator__summary-item">
+                        <div class="calculator__summary-item-name body-regular">
+                            Общая переплата при досрочном погашении
+                        </div>
+                        <div class="calculator__summary-item-line"></div>
+                        <div class="calculator__summary-item-value body-medium">
+                            200 000 руб.
+                        </div>
+                    </div>
+                    <div class="calculator__summary-item">
+                        <div class="calculator__summary-item-name body-regular">
+                            Cрок погашения при досрочном погашении
+                        </div>
+                        <div class="calculator__summary-item-line"></div>
+                        <div class="calculator__summary-item-value body-medium">
+                            24 мес.
+                        </div>
+                    </div>
+                    <div class="calculator__summary-item">
+                        <div class="calculator__summary-item-name body-regular">
+                            Ежемесячный платеж с досрочным погашением
+                        </div>
+                        <div class="calculator__summary-item-line"></div>
+                        <div class="calculator__summary-item-value body-medium">
+                            24 000 руб.
+                        </div>
+                    </div>
+                </div>
+   
+            </div>
+            <div class="calculator__result">
+                <div class="calculator__result-title h4">Экономия при досрочном погашении</div>
+                <div class="calculator__result-body">
+                    <div class="calculator__result-value h3"><span id="monthlyPayment">16 000 033,89</span> ₽</div>
+                    <p class="calculator__result-caption caption-regular">*расчет носит исключительно информационный характер</p>
+                </div>
+                <a href="#" class="calculator__result-btn body-regular btn btn_black">Подать заявку</a>
+            </div>
+        </div>
+        <div class="calculator__container" id="businessCalculator">
+            <div class="calculator__form">
+                <h4 class="calculator__title h4">Рассчитайте кредит для бизнеса онлайн</h4>
+                <div class="calculator__inputs">
+                    <div class="calculator__inputs-row">
                         <div class="range-input">
                             <div class="range-input__label body-regular">Сумма кредита</div>
                             <div class="range-input__input">
-                                <input type="text" class="range-input__number" value="5000000" id="loanAmountInput" class="body-regular">
+                                <input type="text" class="range-input__number body-regular" value="5000000" id="loanAmountInput" >
                                 <input type="range" id="loanAmountRange" min="0" max="30000000" step="100000">
                                 <div class="range-input__progress"></div>
                             </div>
@@ -687,7 +903,7 @@
                         <div class="range-input">
                             <div class="range-input__label body-regular">Срок кредита</div>
                             <div class="range-input__input">
-                                <input type="text" class="range-input__number" value="10" id="loanTermInput" class="body-regular">
+                                <input type="text" class="range-input__number body-regular" value="10" id="loanTermInput">
                                 <input type="range" id="loanTermRange" min="1" max="30" >
                                 <div class="range-input__progress"></div>
                             </div>
@@ -699,7 +915,99 @@
                         <div class="range-input">
                             <div class="range-input__label body-regular">Ставка</div>
                             <div class="range-input__input">
-                                <input type="text" class="range-input__number" value="10" id="loanRateInput" class="body-regular">
+                                <input type="text" class="range-input__number body-regular" value="10" id="loanRateInput">
+                                <input type="range" id="loanRateRange" min="1" max="48" >
+                                <div class="range-input__progress"></div>
+                            </div>
+                            <div class="range-input__captions">
+                                <div class="range-input__caption caption-regular">1 %</div>
+                                <div class="range-input__caption caption-regular">48 %</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <hr>
+                <h4 class="calculator__title h4">Данные вашей компании</h4>
+                <div class="calculator__inputs">
+                    <div class="calculator__inputs-row">
+                        <div >
+                            <div class="inner-caption-input__label body-regular">Наименование</div>
+                            <input type="text" id="loanAmountInput" class="calculator__input body-regular">
+                        </div>
+                        <div class="inner-caption-input">
+                            <div class="inner-caption-input__label body-regular">Годовая выручка</div>
+                            <div class="inner-caption-input__wrapper" data-caption="руб.">
+                                <input type="number" id="loanAmountInput" class="calculator__input body-regular">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="calculator__inputs-row">
+                        <div >
+                            <div class="inner-caption-input__label body-regular">ИНН</div>
+                            <input type="text" id="loanAmountInput" class="calculator__input body-regular">
+                        </div>
+                        <div >
+                            <div class="inner-caption-input__label body-regular">Контактное лицо</div>
+                            <input type="text" id="loanAmountInput" class="calculator__input body-regular">
+                        </div>
+                    </div>
+                    <div class="calculator__inputs-row">
+                        <div >
+                            <div class="inner-caption-input__label body-regular">Телефон</div>
+                            <input type="tel" id="loanAmountInput" class="calculator__input body-regular" placeholder="+7 (___) ___-__-__" data-tel-input>
+                        </div>
+                        <div >
+                            <div class="inner-caption-input__label body-regular">Электронная почта</div>
+                            <input type="email" id="loanAmountInput" class="calculator__input body-regular">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="calculator__result">
+                <div class="calculator__result-title h4">Ежемесячный платеж</div>
+                <div class="calculator__result-body">
+                    <div class="calculator__result-value h3"><span id="monthlyPayment">16 000 033,89</span> ₽</div>
+                    <p class="calculator__result-caption caption-regular">*расчет носит исключительно информационный характер</p>
+                </div>
+                <a href="#" class="calculator__result-btn body-regular btn btn_black">Подать заявку</a>
+            </div>
+        </div>
+        <div class="calculator__container" id="depositCalculator">
+            <div class="calculator__form">
+                <h4 class="calculator__title h4">Расчёт доходности вклада</h4>
+                <div class="calculator__inputs">
+                    <div class="calculator__inputs-row">
+                        <div class="range-input">
+                            <div class="range-input__label body-regular">Сумма вклада</div>
+                            <div class="range-input__input">
+                                <input type="text" class="range-input__number body-regular" value="5000000" id="loanAmountInput" >
+                                <input type="range" id="loanAmountRange" min="0" max="30000000" step="100000">
+                                <div class="range-input__progress"></div>
+                            </div>
+                            <div class="range-input__captions">
+                                <div class="range-input__caption caption-regular">0 ₽</div>
+                                <div class="range-input__caption caption-regular">30 000 000 ₽</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="calculator__inputs-row">
+                        <div class="range-input">
+                            <div class="range-input__label body-regular">Срок вклада</div>
+                            <div class="range-input__input">
+                                <input type="text" class="range-input__number body-regular" value="10" id="loanTermInput">
+                                <input type="range" id="loanTermRange" min="1" max="30" >
+                                <div class="range-input__progress"></div>
+                            </div>
+                            <div class="range-input__captions">
+                                <div class="range-input__caption caption-regular">1 год</div>
+                                <div class="range-input__caption caption-regular">30 лет</div>
+                            </div>
+                        </div>
+                        <div class="range-input">
+                            <div class="range-input__label body-regular">Ставка</div>
+                            <div class="range-input__input">
+                                <input type="text" class="range-input__number body-regular" value="10" id="loanRateInput">
                                 <input type="range" id="loanRateRange" min="1" max="48" >
                                 <div class="range-input__progress"></div>
                             </div>
@@ -712,7 +1020,7 @@
                 </div>
             </div>
             <div class="calculator__result">
-                <div class="calculator__result-title h4">Ежемесячный платеж</div>
+                <div class="calculator__result-title h4">Общий доход</div>
                 <div class="calculator__result-body">
                     <div class="calculator__result-value h3"><span id="monthlyPayment">16 000 033,89</span> ₽</div>
                     <p class="calculator__result-caption caption-regular">*расчет носит исключительно информационный характер</p>

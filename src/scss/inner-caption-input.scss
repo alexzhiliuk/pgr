@@ -1,0 +1,38 @@
+.inner-caption-input {
+
+    // .inner-caption-input__label
+    &__label {
+        color: $textPrimary;
+        margin-bottom: 8px;
+    }
+
+    // .inner-caption-input__wrapper
+    &__wrapper {
+        position: relative;
+
+        &::after {
+            content: attr(data-caption);
+            position: absolute;
+            top: 50%;
+            right: 16px;
+            translate: 0 -50%;
+            color: $contentPrimary;
+            opacity: .4;
+        }
+
+        input {
+            padding-right: 20%;
+        }
+
+        input[type="number"] {
+            appearance: none;
+            &::-webkit-inner-spin-button {
+                display: none;
+            }
+            &::-webkit-outer-spin-button {
+                display: none;
+            }
+        }
+    }
+}
+

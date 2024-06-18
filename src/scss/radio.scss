@@ -1,0 +1,30 @@
+/* -------- RADIO -------- */
+.radio {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: $textPrimary;
+
+    input[type="radio"] {
+        cursor: pointer;
+        -webkit-appearance: none;
+        appearance: none;
+        height: 20px;
+        width: 20px;
+        border: 1px solid $borderBase;
+        border-radius: 50%;
+        position: relative;
+        
+        &:checked {
+            border-width: 6px;
+            border-color: $contentPrimary;
+        }
+    }
+}
+
+.radio-inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
