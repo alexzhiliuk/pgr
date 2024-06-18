@@ -1,13 +1,13 @@
 <div class="section" style="background: linear-gradient(0deg, #F1F3F9, #F1F3F9), linear-gradient(0deg, #CEDBEA, #CEDBEA), #E1E6EF;">
     <div class="calculator calculator_tabs container container_full">
         <div class="calculator__types">
-            <div class="calculator__type calculator__type_active caption-medium">
+            <div class="calculator__type caption-medium">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M14 11H8M10 15H8M16 7H8M20 6.8V17.2C20 18.8802 20 19.7202 19.673 20.362C19.3854 20.9265 18.9265 21.3854 18.362 21.673C17.7202 22 16.8802 22 15.2 22H8.8C7.11984 22 6.27976 22 5.63803 21.673C5.07354 21.3854 4.6146 20.9265 4.32698 20.362C4 19.7202 4 18.8802 4 17.2V6.8C4 5.11984 4 4.27976 4.32698 3.63803C4.6146 3.07354 5.07354 2.6146 5.63803 2.32698C6.27976 2 7.11984 2 8.8 2H15.2C16.8802 2 17.7202 2 18.362 2.32698C18.9265 2.6146 19.3854 3.07354 19.673 3.63803C20 4.27976 20 5.11984 20 6.8Z" stroke="#212121" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>                    
                 Кредитный калькулятор
             </div>
-            <div class="calculator__type caption-medium">
+            <div class="calculator__type calculator__type_active caption-medium">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M13 5C13 6.10457 10.5376 7 7.5 7C4.46243 7 2 6.10457 2 5M13 5C13 3.89543 10.5376 3 7.5 3C4.46243 3 2 3.89543 2 5M13 5V9.45715C11.7785 9.82398 11 10.3789 11 11M2 5V17C2 18.1046 4.46243 19 7.5 19C8.82963 19 10.0491 18.8284 11 18.5429V11M2 9C2 10.1046 4.46243 11 7.5 11C8.82963 11 10.0491 10.8284 11 10.5429M2 13C2 14.1046 4.46243 15 7.5 15C8.82963 15 10.0491 14.8284 11 14.5429M22 11C22 12.1046 19.5376 13 16.5 13C13.4624 13 11 12.1046 11 11M22 11C22 9.89543 19.5376 9 16.5 9C13.4624 9 11 9.89543 11 11M22 11V19C22 20.1046 19.5376 21 16.5 21C13.4624 21 11 20.1046 11 19V11M22 15C22 16.1046 19.5376 17 16.5 17C13.4624 17 11 16.1046 11 15" stroke="#212121" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
@@ -38,7 +38,7 @@
                 Калькулятор сравнения ставок
             </div>
         </div>
-        <div class="calculator__container calculator__container_active" id="creditCalculator">
+        <div class="calculator__container" id="creditCalculator">
             <div class="calculator__form">
                 <h4 class="calculator__title h4">Рассчитайте свой кредит онлайн</h4>
                 <div class="calculator__inputs">
@@ -46,8 +46,8 @@
                         <div class="range-input">
                             <div class="range-input__label body-regular">Сумма кредита</div>
                             <div class="range-input__input">
-                                <input type="text" class="range-input__number body-regular" value="5000000" id="loanAmountInput" >
-                                <input type="range" id="loanAmountRange" min="0" max="30000000" step="100000">
+                                <input type="text" class="range-input__number body-regular" value="5000000" id="creditCalculatorLoanAmountInput" >
+                                <input type="range" id="creditCalculatorLoanAmountRange" min="0" max="30000000" step="100000">
                                 <div class="range-input__progress"></div>
                             </div>
                             <div class="range-input__captions">
@@ -60,8 +60,8 @@
                         <div class="range-input">
                             <div class="range-input__label body-regular">Срок кредита</div>
                             <div class="range-input__input">
-                                <input type="text" class="range-input__number body-regular" value="10" id="loanTermInput">
-                                <input type="range" id="loanTermRange" min="1" max="30" >
+                                <input type="text" class="range-input__number body-regular" value="10" id="creditCalculatorLoanTermInput">
+                                <input type="range" id="creditCalculatorLoanTermRange" min="1" max="30" >
                                 <div class="range-input__progress"></div>
                             </div>
                             <div class="range-input__captions">
@@ -72,8 +72,8 @@
                         <div class="range-input">
                             <div class="range-input__label body-regular">Ставка</div>
                             <div class="range-input__input">
-                                <input type="text" class="range-input__number body-regular" value="10" id="loanRateInput">
-                                <input type="range" id="loanRateRange" min="1" max="48" >
+                                <input type="text" class="range-input__number body-regular" value="10" id="creditCalculatorLoanRateInput">
+                                <input type="range" id="creditCalculatorLoanRateRange" min="1" max="48" >
                                 <div class="range-input__progress"></div>
                             </div>
                             <div class="range-input__captions">
@@ -87,13 +87,13 @@
             <div class="calculator__result">
                 <div class="calculator__result-title h4">Ежемесячный платеж</div>
                 <div class="calculator__result-body">
-                    <div class="calculator__result-value h3"><span id="monthlyPayment">16 000 033,89</span> ₽</div>
+                    <div class="calculator__result-value h3"><span id="creditCalculatorMonthlyPayment">16 000 033,89</span> ₽</div>
                     <p class="calculator__result-caption caption-regular">*расчет носит исключительно информационный характер</p>
                 </div>
                 <a href="#" class="calculator__result-btn body-regular btn btn_black">Подать заявку</a>
             </div>
         </div>
-        <div class="calculator__container" id="refinancingCalculator">
+        <div class="calculator__container calculator__container_active" id="refinancingCalculator" data-rate="10">
             <div class="calculator__form">
                 <h4 class="calculator__title h4">Ваши действующие кредиты</h4>
                 <div class="calculator__inputs">
@@ -101,13 +101,13 @@
                         <div class="inner-caption-input">
                             <div class="inner-caption-input__label body-regular">Сумма кредита</div>
                             <div class="inner-caption-input__wrapper" data-caption="руб.">
-                                <input type="number" id="loanAmountInput" class="calculator__input body-regular">
+                                <input type="text" value="1000000" id="refinancingCalculatorLoanAmountInput1" inputmode="numeric" class="calculator__input body-regular js-number-input js-refinancing-calculator-amount">
                             </div>
                         </div>
                         <div class="inner-caption-input">
                             <div class="inner-caption-input__label body-regular">Ежемесячный платёж</div>
                             <div class="inner-caption-input__wrapper" data-caption="руб.">
-                                <input type="number" id="loanAmountInput" class="calculator__input body-regular">
+                                <input type="text" value="24000" id="refinancingCalculatorMonthlyPaymentInput1" inputmode="numeric" class="calculator__input body-regular js-number-input js-refinancing-calculator-monthly-payment">
                             </div>
                         </div>
                     </div>
@@ -115,14 +115,14 @@
                         <div class="inner-caption-input">
                             <div class="inner-caption-input__label body-regular">Сумма кредита</div>
                             <div class="inner-caption-input__wrapper" data-caption="руб.">
-                                <input type="number" id="loanAmountInput" class="calculator__input body-regular">
+                                <input type="text" value="500000" id="refinancingCalculatorLoanAmountInput2" inputmode="numeric" class="calculator__input body-regular js-number-input js-refinancing-calculator-amount">
                             </div>
                         </div>
                         <div class="inner-caption-input">
                             <div class="inner-caption-input__label body-regular">Ежемесячный платёж</div>
                             <div class="calculator__temp">
                                 <div class="inner-caption-input__wrapper" data-caption="руб.">
-                                    <input type="number" id="loanAmountInput" class="calculator__input body-regular">
+                                    <input type="text" value="12000" id="refinancingCalculatorMonthlyPaymentInput2" inputmode="numeric" class="calculator__input body-regular js-number-input js-refinancing-calculator-monthly-payment">
                                 </div>
                                 <a href="javascript:void(0)" class="calculator__remove-row">
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -131,10 +131,9 @@
                                 </a>
                             </div>
                         </div>
-                        
                     </div>
                 </div>
-                <a href="javascript:void(0)" class="calculator__form-btn btn btn_black body-regular">
+                <a href="javascript:void(0)" class="calculator__form-btn btn btn_black body-regular" id="refinancingCalculatorAddFields">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M12 5V19M5 12H19" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>                          
@@ -147,7 +146,7 @@
                         </div>
                         <div class="calculator__summary-item-line"></div>
                         <div class="calculator__summary-item-value body-medium">
-                            0 руб.
+                            <span id="refinancingCalculatorMonthlyPayment">0</span> руб.
                         </div>
                     </div>
                 </div>
@@ -156,29 +155,29 @@
                 <div class="calculator__inputs">
                     <div class="calculator__inputs-row">
                         <div class="inner-caption-input">
-                            <div class="inner-caption-input__label body-regular">Сумма кредита</div>
+                            <div class="inner-caption-input__label body-regular">Сумма для перекредитования</div>
                             <div class="inner-caption-input__wrapper" data-caption="руб.">
-                                <input type="number" id="loanAmountInput" class="calculator__input body-regular">
+                                <input type="text" value="1500000" id="refinancingCalculatorRecreditingAmountInput" inputmode="numeric" class="calculator__input body-regular js-number-input">
                             </div>
                         </div>
                         <div class="inner-caption-input">
-                            <div class="inner-caption-input__label body-regular">Ежемесячный платёж</div>
+                            <div class="inner-caption-input__label body-regular">Дополнительные средства</div>
                             <div class="inner-caption-input__wrapper" data-caption="руб.">
-                                <input type="number" id="loanAmountInput" class="calculator__input body-regular">
+                                <input type="text" value="24000" id="refinancingCalculatorAdditionalAmountInput" inputmode="numeric" class="calculator__input body-regular js-number-input">
                             </div>
                         </div>
                     </div>
                     <div class="calculator__inputs-row">
                         <div class="inner-caption-input">
-                            <div class="inner-caption-input__label body-regular">Сумма кредита</div>
+                            <div class="inner-caption-input__label body-regular">Общая сумма кредита</div>
                             <div class="inner-caption-input__wrapper" data-caption="руб.">
-                                <input type="number" id="loanAmountInput" class="calculator__input body-regular">
+                                <input type="text" value="1524000" id="refinancingCalculatorTotalAmountInput" inputmode="numeric" class="calculator__input body-regular js-number-input" disabled>
                             </div>
                         </div>
                         <div class="inner-caption-input">
-                            <div class="inner-caption-input__label body-regular">Ежемесячный платёж</div>
-                            <div class="inner-caption-input__wrapper" data-caption="руб.">
-                                <input type="number" id="loanAmountInput" class="calculator__input body-regular">
+                            <div class="inner-caption-input__label body-regular">Срок кредита</div>
+                            <div class="inner-caption-input__wrapper" data-caption="лет">
+                                <input type="text" value="30" id="refinancingCalculatorTermInput" inputmode="numeric" class="calculator__input body-regular js-number-input">
                             </div>
                         </div>
                         
@@ -188,7 +187,7 @@
             <div class="calculator__result">
                 <div class="calculator__result-title h4">Ежемесячный платеж</div>
                 <div class="calculator__result-body">
-                    <div class="calculator__result-value h3"><span id="monthlyPayment">16 000 033,89</span> ₽</div>
+                    <div class="calculator__result-value h3"><span id="refinancingCalculatorResult">16 000 033,89</span> ₽</div>
                     <p class="calculator__result-caption caption-regular">*расчет носит исключительно информационный характер</p>
                 </div>
                 <a href="#" class="calculator__result-btn body-regular btn btn_black">Подать заявку</a>
