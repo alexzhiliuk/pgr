@@ -159,7 +159,9 @@ function refinancingCalculatorCalculate() {
     )
 }
 
-refinancingCalculatorCalculate()
+if ($("#refinancingCalculator").length) {
+    refinancingCalculatorCalculate()
+}
 
 $("#refinancingCalculator input").on("input", function() {
     refinancingCalculatorCalculate()
