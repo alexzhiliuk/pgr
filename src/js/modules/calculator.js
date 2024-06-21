@@ -169,11 +169,8 @@ $("#refinancingCalculator input").on("input", function() {
 
 
 // ------- businessCalculator -------
-let businessCalculatorAmountInput = $("#businessCalculatorAmountInput"),
-    businessCalculatorlLoanAmountRange = $("#businessCalculatorlLoanAmountRange"),
-    businessCalculatorLoanTermInput = $("#businessCalculatorLoanTermInput"),
+let businessCalculatorlLoanAmountRange = $("#businessCalculatorlLoanAmountRange"),
     businessCalculatorLoanTermRange = $("#businessCalculatorLoanTermRange"),
-    businessCalculatorLoanRateInput = $("#businessCalculatorLoanRateInput"),
     businessCalculatorlLoanRateRange = $("#businessCalculatorlLoanRateRange"),
     businessCalculatorResult = $("#businessCalculatorResult")
 
@@ -203,4 +200,36 @@ if ($("#businessCalculator").length) {
 
 $("#businessCalculator input").on("input", function() {
     businessCalculatorCalculate()
+})
+
+// ------- depositCalculator -------
+let depositCalculatorlLoanAmountRange = $("#depositCalculatorLoanAmountRange"),
+    depositCalculatorLoanTermRange = $("#depositCalculatorLoanTermRange"),
+    depositCalculatorlLoanRateRange = $("#depositCalculatorLoanRateRange"),
+    depositCalculatorResult = $("#depositCalculatorResult")
+
+function depositCalculatorCalculateResult(p, r, n) {
+    // p - сумма кредита
+    // r - месячная процентная ставка
+    // n - срок кредита
+    return p * Math.pow(1 + r / 100, n)
+}
+
+function depositCalculatorCalculate() {
+
+    depositCalculatorResult.html(
+        formatResult(depositCalculatorCalculateResult(
+            Number(depositCalculatorlLoanAmountRange.val()),
+            Number(depositCalculatorlLoanRateRange.val()) / 100,
+            Number(depositCalculatorLoanTermRange.val()),
+        ))
+    )
+}
+    
+if ($("#depositCalculator").length) {
+    depositCalculatorCalculate()
+}
+
+$("#depositCalculator input").on("input", function() {
+    depositCalculatorCalculate()
 })
