@@ -96,14 +96,14 @@ $("#refinancingCalculatorAddFields").click(function() {
                         <div class="inner-caption-input">
                             <div class="inner-caption-input__label body-regular">Сумма кредита</div>
                             <div class="inner-caption-input__wrapper" data-caption="руб.">
-                                <input type="number" value="500000" id="refinancingCalculatorLoanAmountInput${inputId}" class="calculator__input body-regular js-refinancing-calculator-amount">
+                                <input type="text" value="500000" id="refinancingCalculatorLoanAmountInput${inputId}" class="calculator__input body-regular js-number-input js-refinancing-calculator-amount">
                             </div>
                         </div>
                         <div class="inner-caption-input">
                             <div class="inner-caption-input__label body-regular">Ежемесячный платёж</div>
                             <div class="calculator__temp">
                                 <div class="inner-caption-input__wrapper" data-caption="руб.">
-                                    <input type="number" value="12000" id="refinancingCalculatorMonthlyPaymentInput${inputId}" class="calculator__input body-regular js-refinancing-calculator-monthly-payment">
+                                    <input type="text" value="12000" id="refinancingCalculatorMonthlyPaymentInput${inputId}" class="calculator__input body-regular js-number-input js-refinancing-calculator-monthly-payment">
                                 </div>
                                 <a href="javascript:void(0)" class="calculator__remove-row">
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -113,7 +113,32 @@ $("#refinancingCalculatorAddFields").click(function() {
                             </div>
                         </div>
                     </div>`
+
     $(".js-refinancing-calculator-amount").parents(".calculator__inputs").append(newFields)
+    
+    $(".js-refinancing-calculator-amount").parents(".calculator__inputs").find(".calculator__remove-row").last().click(function() {
+        $(this).parents(".calculator__inputs-row").remove()
+        refinancingCalculatorCalculate()
+    })
+    
+    $(".js-refinancing-calculator-amount").parents(".calculator__inputs").find(".js-number-input").on('input', function(e) {
+        let currentValue = rangeInput.getNumberValue(e.target)
+        $(this).val(rangeInput.addSpaces(currentValue))
+    }).each(function(i, el) {
+        let currentValue = rangeInput.getNumberValue(el)
+        $(el).val(rangeInput.addSpaces(currentValue))
+    })
+
+    $("#refinancingCalculator input").off("input", "**")
+    $("#refinancingCalculator input").on("input", function() {
+        refinancingCalculatorCalculate()
+    })
+
+    refinancingCalculatorCalculate()
+})
+
+$("#refinancingCalculator .calculator__remove-row").click(function() {
+    refinancingCalculatorCalculate()
 })
 
 let refinancingCalculatorMonthlyPayment = $("#refinancingCalculatorMonthlyPayment"),
