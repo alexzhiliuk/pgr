@@ -166,3 +166,41 @@ if ($("#refinancingCalculator").length) {
 $("#refinancingCalculator input").on("input", function() {
     refinancingCalculatorCalculate()
 })
+
+
+// ------- businessCalculator -------
+let businessCalculatorAmountInput = $("#businessCalculatorAmountInput"),
+    businessCalculatorlLoanAmountRange = $("#businessCalculatorlLoanAmountRange"),
+    businessCalculatorLoanTermInput = $("#businessCalculatorLoanTermInput"),
+    businessCalculatorLoanTermRange = $("#businessCalculatorLoanTermRange"),
+    businessCalculatorLoanRateInput = $("#businessCalculatorLoanRateInput"),
+    businessCalculatorlLoanRateRange = $("#businessCalculatorlLoanRateRange"),
+    businessCalculatorResult = $("#businessCalculatorResult")
+
+function businessCalculatorCalculateResult(p, r, n) {
+    // p - сумма кредита
+    // r - месячная процентная ставка
+    // n - срок кредита
+    return (p * r / 12) / (1 - Math.pow(1 + r / 12, -1 * n * 12))
+}
+
+
+function businessCalculatorCalculate() {
+
+    businessCalculatorResult.html(
+        formatResult(businessCalculatorCalculateResult(
+            Number(businessCalculatorlLoanAmountRange.val()),
+            Number(businessCalculatorlLoanRateRange.val()) / 100,
+            Number(businessCalculatorLoanTermRange.val()),
+        ))
+    )
+}
+    
+
+if ($("#businessCalculator").length) {
+    businessCalculatorCalculate()
+}
+
+$("#businessCalculator input").on("input", function() {
+    businessCalculatorCalculate()
+})

@@ -572,7 +572,7 @@
                 </svg>                    
                 Кредитный калькулятор
             </div>
-            <div class="calculator__type calculator__type_active caption-medium">
+            <div class="calculator__type caption-medium">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M13 5C13 6.10457 10.5376 7 7.5 7C4.46243 7 2 6.10457 2 5M13 5C13 3.89543 10.5376 3 7.5 3C4.46243 3 2 3.89543 2 5M13 5V9.45715C11.7785 9.82398 11 10.3789 11 11M2 5V17C2 18.1046 4.46243 19 7.5 19C8.82963 19 10.0491 18.8284 11 18.5429V11M2 9C2 10.1046 4.46243 11 7.5 11C8.82963 11 10.0491 10.8284 11 10.5429M2 13C2 14.1046 4.46243 15 7.5 15C8.82963 15 10.0491 14.8284 11 14.5429M22 11C22 12.1046 19.5376 13 16.5 13C13.4624 13 11 12.1046 11 11M22 11C22 9.89543 19.5376 9 16.5 9C13.4624 9 11 9.89543 11 11M22 11V19C22 20.1046 19.5376 21 16.5 21C13.4624 21 11 20.1046 11 19V11M22 15C22 16.1046 19.5376 17 16.5 17C13.4624 17 11 16.1046 11 15" stroke="#212121" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
@@ -584,7 +584,7 @@
                 </svg>
                 Калькулятор досрочного погашения
             </div>
-            <div class="calculator__type caption-medium">
+            <div class="calculator__type calculator__type_active caption-medium">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M22 10H2M11 14H6M2 8.2L2 15.8C2 16.9201 2 17.4802 2.21799 17.908C2.40973 18.2843 2.71569 18.5903 3.09202 18.782C3.51984 19 4.07989 19 5.2 19L18.8 19C19.9201 19 20.4802 19 20.908 18.782C21.2843 18.5903 21.5903 18.2843 21.782 17.908C22 17.4802 22 16.9201 22 15.8V8.2C22 7.0799 22 6.51984 21.782 6.09202C21.5903 5.7157 21.2843 5.40974 20.908 5.21799C20.4802 5 19.9201 5 18.8 5L5.2 5C4.0799 5 3.51984 5 3.09202 5.21799C2.7157 5.40973 2.40973 5.71569 2.21799 6.09202C2 6.51984 2 7.07989 2 8.2Z" stroke="#212121" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
@@ -658,7 +658,7 @@
                 <a href="#" class="calculator__result-btn body-regular btn btn_black">Подать заявку</a>
             </div>
         </div>
-        <div class="calculator__container calculator__container_active" id="refinancingCalculator" data-rate="10">
+        <div class="calculator__container" id="refinancingCalculator" data-rate="10">
             <div class="calculator__form">
                 <h4 class="calculator__title h4">Ваши действующие кредиты</h4>
                 <div class="calculator__inputs">
@@ -880,7 +880,7 @@
                 <a href="#" class="calculator__result-btn body-regular btn btn_black">Подать заявку</a>
             </div>
         </div>
-        <div class="calculator__container" id="businessCalculator">
+        <div class="calculator__container calculator__container_active" id="businessCalculator">
             <div class="calculator__form">
                 <h4 class="calculator__title h4">Рассчитайте кредит для бизнеса онлайн</h4>
                 <div class="calculator__inputs">
@@ -888,8 +888,8 @@
                         <div class="range-input">
                             <div class="range-input__label body-regular">Сумма кредита</div>
                             <div class="range-input__input">
-                                <input type="text" class="range-input__number body-regular" value="5000000" id="loanAmountInput" >
-                                <input type="range" id="loanAmountRange" min="0" max="30000000" step="100000">
+                                <input type="text" class="range-input__number body-regular js-number-input" value="5000000" id="businessCalculatorLoanAmountInput" >
+                                <input type="range" id="businessCalculatorlLoanAmountRange" min="0" max="30000000" step="100000">
                                 <div class="range-input__progress"></div>
                             </div>
                             <div class="range-input__captions">
@@ -902,8 +902,8 @@
                         <div class="range-input">
                             <div class="range-input__label body-regular">Срок кредита</div>
                             <div class="range-input__input">
-                                <input type="text" class="range-input__number body-regular" value="10" id="loanTermInput">
-                                <input type="range" id="loanTermRange" min="1" max="30" >
+                                <input type="text" class="range-input__number body-regular" value="10" id="businessCalculatorLoanTermInput">
+                                <input type="range" id="businessCalculatorLoanTermRange" min="1" max="30" >
                                 <div class="range-input__progress"></div>
                             </div>
                             <div class="range-input__captions">
@@ -914,8 +914,8 @@
                         <div class="range-input">
                             <div class="range-input__label body-regular">Ставка</div>
                             <div class="range-input__input">
-                                <input type="text" class="range-input__number body-regular" value="10" id="loanRateInput">
-                                <input type="range" id="loanRateRange" min="1" max="48" >
+                                <input type="text" class="range-input__number body-regular" value="10" id="businessCalculatorLoanRateInput">
+                                <input type="range" id="businessCalculatorlLoanRateRange" min="1" max="48" >
                                 <div class="range-input__progress"></div>
                             </div>
                             <div class="range-input__captions">
@@ -932,33 +932,33 @@
                     <div class="calculator__inputs-row">
                         <div >
                             <div class="inner-caption-input__label body-regular">Наименование</div>
-                            <input type="text" id="loanAmountInput" class="calculator__input body-regular">
+                            <input type="text" id="businessCalculatorCompanyNameInput" class="calculator__input body-regular">
                         </div>
                         <div class="inner-caption-input">
                             <div class="inner-caption-input__label body-regular">Годовая выручка</div>
                             <div class="inner-caption-input__wrapper" data-caption="руб.">
-                                <input type="number" id="loanAmountInput" class="calculator__input body-regular">
+                                <input type="text" inputmode="numeric" id="businessCalculatorRevenueInput" class="calculator__input body-regular js-number-input">
                             </div>
                         </div>
                     </div>
                     <div class="calculator__inputs-row">
                         <div >
                             <div class="inner-caption-input__label body-regular">ИНН</div>
-                            <input type="text" id="loanAmountInput" class="calculator__input body-regular">
+                            <input type="text" id="businessCalculatorINNInput" class="calculator__input body-regular">
                         </div>
                         <div >
                             <div class="inner-caption-input__label body-regular">Контактное лицо</div>
-                            <input type="text" id="loanAmountInput" class="calculator__input body-regular">
+                            <input type="text" id="businessCalculatorPersonInput" class="calculator__input body-regular">
                         </div>
                     </div>
                     <div class="calculator__inputs-row">
                         <div >
                             <div class="inner-caption-input__label body-regular">Телефон</div>
-                            <input type="tel" id="loanAmountInput" class="calculator__input body-regular" placeholder="+7 (___) ___-__-__" data-tel-input>
+                            <input type="tel" id="businessCalculatorTelInput" class="calculator__input body-regular" placeholder="+7 (___) ___-__-__" data-tel-input>
                         </div>
                         <div >
                             <div class="inner-caption-input__label body-regular">Электронная почта</div>
-                            <input type="email" id="loanAmountInput" class="calculator__input body-regular">
+                            <input type="email" id="businessCalculatorMailInput" class="calculator__input body-regular">
                         </div>
                     </div>
                 </div>
@@ -966,7 +966,7 @@
             <div class="calculator__result">
                 <div class="calculator__result-title h4">Ежемесячный платеж</div>
                 <div class="calculator__result-body">
-                    <div class="calculator__result-value h3"><span id="monthlyPayment">16 000 033,89</span> ₽</div>
+                    <div class="calculator__result-value h3"><span id="businessCalculatorResult">16 000 033,89</span> ₽</div>
                     <p class="calculator__result-caption caption-regular">*расчет носит исключительно информационный характер</p>
                 </div>
                 <a href="#" class="calculator__result-btn body-regular btn btn_black">Подать заявку</a>
