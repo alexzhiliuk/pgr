@@ -96,14 +96,14 @@ $("#refinancingCalculatorAddFields").click(function() {
                         <div class="inner-caption-input">
                             <div class="inner-caption-input__label body-regular">Сумма кредита</div>
                             <div class="inner-caption-input__wrapper" data-caption="руб.">
-                                <input type="text" value="500000" id="refinancingCalculatorLoanAmountInput${inputId}" class="calculator__input body-regular js-number-input js-refinancing-calculator-amount">
+                                <input type="text" placeholder="0" id="refinancingCalculatorLoanAmountInput${inputId}" class="calculator__input body-regular js-number-input js-refinancing-calculator-amount">
                             </div>
                         </div>
                         <div class="inner-caption-input">
                             <div class="inner-caption-input__label body-regular">Ежемесячный платёж</div>
                             <div class="calculator__temp">
                                 <div class="inner-caption-input__wrapper" data-caption="руб.">
-                                    <input type="text" value="12000" id="refinancingCalculatorMonthlyPaymentInput${inputId}" class="calculator__input body-regular js-number-input js-refinancing-calculator-monthly-payment">
+                                    <input type="text" placeholder="0" id="refinancingCalculatorMonthlyPaymentInput${inputId}" class="calculator__input body-regular js-number-input js-refinancing-calculator-monthly-payment">
                                 </div>
                                 <a href="javascript:void(0)" class="calculator__remove-row">
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -149,11 +149,12 @@ let refinancingCalculatorMonthlyPayment = $("#refinancingCalculatorMonthlyPaymen
     refinancingCalculatorResult = $("#refinancingCalculatorResult"),
     refinancingCalculatorRate = Number($("#refinancingCalculator").attr('data-rate')) / 100
 
-function refinancingCalculatorCalculateResult(amount, rate, term) {
-    // amount - сумма кредита
-    // rate - месячная процентная ставка
-    // term - срок кредита
-    return (amount * (rate / 12)) / (1 - Math.pow(1 + (rate / 12), -1 * term * 12))
+function refinancingCalculatorCalculateResult(p, r, n) {
+    // p - сумма кредита
+    // r - месячная процентная ставка
+    // n - срок кредита
+    return (p * (r / 12)) / (1 - Math.pow(1 + (r / 12), -1 * n * 12))
+    // return (p * r * Math.pow(1 + r, n)) / (Math.pow(1 + r, n) - 1)
 }
 
 function refinancingCalculatorCalculate() {
@@ -167,6 +168,7 @@ function refinancingCalculatorCalculate() {
         currentMonthlyPayment += Number(rangeInput.getNumberValue(el))
     })
     refinancingCalculatorMonthlyPayment.text(rangeInput.addSpaces(currentMonthlyPayment))
+    refinancingCalculatorRecreditingAmountInput.val(rangeInput.addSpaces(currentCreditsAmount))
 
     refinancingCalculatorTotalAmountInput.val(
         rangeInput.addSpaces(
@@ -192,6 +194,105 @@ $("#refinancingCalculator input").on("input", function() {
     refinancingCalculatorCalculate()
 })
 
+
+// ------- repaymentCalculator -------
+let repaymentCalculatorLoanAmountInput = $("#repaymentCalculatorLoanAmountInput"),
+    repaymentCalculatorTermInput = $("#repaymentCalculatorTermInput"),
+    repaymentCalculatorRateInput = $("#repaymentCalculatorRateInput"),
+    repaymentCalculatorDateInput = $("#repaymentCalculatorDateInput"),
+    repaymentCalculatorDefaultMonthlyPaymentInput = $("#repaymentCalculatorDefaultMonthlyPaymentInput"),
+    repaymentCalculatorOncePaymentRadio = $("#repaymentCalculatorOncePaymentRadio"),
+    repaymentCalculatorMonthlyPaymentRadio = $("#repaymentCalculatorMonthlyPaymentRadio"),
+    repaymentCalculatorOncePaymentInput = $("#repaymentCalculatorOncePaymentInput"),
+    repaymentCalculatorAdditionalMontlyPaymentInput = $("#repaymentCalculatorAdditionalMontlyPaymentInput"),
+    repaymentCalculatorResult = $("#repaymentCalculatorResult"),
+    repaymentCalculatorOverpayment = $("#js-overpayment"),
+    repaymentCalculatorOverpaymentPercentage = $("#js-overpayment-percentage"),
+    repaymentCalculatorEarlyRepaymentOverpayment = $("#js-early-repayment-overpayment"),
+    repaymentCalculatorTermEarlyRepayment = $("#js-term-early-repayment"),
+    repaymentCalculatorEarlyRepaymentMonthlyPayment = $("#js-early-repayment-monthly-payment")
+
+function repaymentCalculatorChangeInput() {
+    if (repaymentCalculatorOncePaymentRadio[0].checked) {
+        repaymentCalculatorAdditionalMontlyPaymentInput.parents(".calculator__inputs-row").hide()
+        repaymentCalculatorOncePaymentInput.parents(".calculator__inputs-row").show()
+    } else if (repaymentCalculatorMonthlyPaymentRadio[0].checked) {
+        repaymentCalculatorOncePaymentInput.parents(".calculator__inputs-row").hide()
+        repaymentCalculatorAdditionalMontlyPaymentInput.parents(".calculator__inputs-row").show()
+    }
+}    
+
+function repaymentCalculatorCalculate() {
+    repaymentCalculatorChangeInput()
+
+    let p = Number(rangeInput.getNumberValue(repaymentCalculatorLoanAmountInput[0])),
+        n = Number(rangeInput.getNumberValue(repaymentCalculatorTermInput[0])),
+        r = Number(rangeInput.getNumberValue(repaymentCalculatorRateInput[0])),
+        m = Number(rangeInput.getNumberValue(repaymentCalculatorDefaultMonthlyPaymentInput[0])),
+        e
+    if (repaymentCalculatorOncePaymentRadio[0].checked) {
+        e = Number(rangeInput.getNumberValue(repaymentCalculatorOncePaymentInput[0]))
+    } else {
+        e = Number(rangeInput.getNumberValue(repaymentCalculatorAdditionalMontlyPaymentInput[0]))
+    }
+
+    repaymentCalculatorOverpayment.html(
+        rangeInput.addSpaces(m * n * 12 - p)
+    )
+
+    let overpaymentPercentage = (m * n * 12 - p) / p * 100
+    repaymentCalculatorOverpaymentPercentage.html(
+        overpaymentPercentage ? Math.round(overpaymentPercentage) : "-"
+    )
+
+    let earlyRepaymentOverpayment
+    if (repaymentCalculatorOncePaymentRadio[0].checked) {
+        earlyRepaymentOverpayment = m * ((p - e) / m) - (p - e)
+    } else {
+        earlyRepaymentOverpayment = (m + e) * Math.round(p / (m + e)) - p
+    }
+    repaymentCalculatorEarlyRepaymentOverpayment.html(
+        earlyRepaymentOverpayment ? rangeInput.addSpaces(earlyRepaymentOverpayment) : "-"
+    )
+
+    let termEarlyRepayment
+    if (repaymentCalculatorOncePaymentRadio[0].checked) {
+        termEarlyRepayment = (p - e) / m
+    } else {
+        termEarlyRepayment = p / (m + e)
+    }
+    repaymentCalculatorTermEarlyRepayment.html(
+        termEarlyRepayment ? Math.round(termEarlyRepayment) : "-"
+    )
+
+    if (repaymentCalculatorOncePaymentRadio[0].checked) {
+        repaymentCalculatorEarlyRepaymentMonthlyPayment.html(
+            m ? rangeInput.addSpaces(m) : "-"
+        )
+    } else {
+        repaymentCalculatorEarlyRepaymentMonthlyPayment.html(
+            m ? rangeInput.addSpaces(m + e) : "-"
+        )
+    }
+
+    let result
+    if (repaymentCalculatorOncePaymentRadio[0].checked) {
+        result = (m * n * 12 - p) - (m * Math.round((p - e) / m) - (p - e))
+    } else {
+        result = (m * n * 12 - p) - ((m + e) * Math.round(p / (m + e)) - p)
+    }
+    repaymentCalculatorResult.html(
+        result ? formatResult(result) : "-"
+    )
+}
+
+if ($("#repaymentCalculator").length) {
+    repaymentCalculatorCalculate()
+}
+
+$("#repaymentCalculator input").on("input", function() {
+    repaymentCalculatorCalculate()
+})
 
 // ------- businessCalculator -------
 let businessCalculatorlLoanAmountRange = $("#businessCalculatorlLoanAmountRange"),
@@ -234,10 +335,11 @@ let depositCalculatorlLoanAmountRange = $("#depositCalculatorLoanAmountRange"),
     depositCalculatorResult = $("#depositCalculatorResult")
 
 function depositCalculatorCalculateResult(p, r, n) {
-    // p - сумма кредита
+    // p - сумма вклада
     // r - месячная процентная ставка
-    // n - срок кредита
-    return p * Math.pow(1 + r / 100, n)
+    // n - срок вклада
+    
+    return p * (1 + r * n) - p
 }
 
 function depositCalculatorCalculate() {
