@@ -37,6 +37,10 @@ $(".droplist").on("mouseleave", function() {
     }, 1000)
 })
 
+$(".cookies__close").click(function() {
+    $(this).parents(".cookies").hide()
+})
+
 // $(".droplist-open").on("mouseleave", function() {
 //     console.log("leave")
 //     $(this).find(".droplist").css("display", "flex")
