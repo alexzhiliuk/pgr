@@ -1,0 +1,30 @@
+.cookies {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+
+    border-radius: 12px;
+    border: 1px solid $borderBase;
+    background-color: $surfacePrimary;
+    z-index: 7;
+
+    padding: 16px;
+    width: 347px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    p {
+        a {
+            text-decoration: underline;
+        }
+    }
+
+    @media screen and (max-width: $breakpoint480) {
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: unset;
+        border-radius: 0;
+    }
+}
