@@ -23,6 +23,13 @@ $(".range-input input[type='range']").on('input', function() {
     $(this).parent().children(".range-input__number").val(addSpaces(currentValue))
 })
 
+$(".range-input input[type='range']").each(function(i, el) {
+    let maxValue = $(el).attr('max'),
+        currentValue = $(el).val()
+
+    $(el).parent().children(".range-input__progress").css("width", `${currentValue / maxValue * 100}%`) 
+})
+
 $(".range-input__number").on('input', function(e) {
     let currentValue = getNumberValue(e.target),
         rangeInput = $(this).parent().children("input[type='range']"),

@@ -229,7 +229,7 @@ function repaymentCalculatorCalculate() {
         n = Number(rangeInput.getNumberValue(repaymentCalculatorTermInput[0])),
         r = Number(rangeInput.getNumberValue(repaymentCalculatorRateInput[0])),
         m = Number(rangeInput.getNumberValue(repaymentCalculatorDefaultMonthlyPaymentInput[0])),
-        e
+        e, remainingDebt
     if (repaymentCalculatorOncePaymentRadio[0].checked) {
         e = Number(rangeInput.getNumberValue(repaymentCalculatorOncePaymentInput[0]))
     } else {
@@ -242,17 +242,17 @@ function repaymentCalculatorCalculate() {
 
     let overpaymentPercentage = (m * n * 12 - p) / p * 100
     repaymentCalculatorOverpaymentPercentage.html(
-        overpaymentPercentage ? Math.round(overpaymentPercentage) : "-"
+        overpaymentPercentage ? Math.round(overpaymentPercentage) : "0"
     )
 
     let earlyRepaymentOverpayment
     if (repaymentCalculatorOncePaymentRadio[0].checked) {
         earlyRepaymentOverpayment = m * ((p - e) / m) - (p - e)
     } else {
-        earlyRepaymentOverpayment = (m + e) * Math.round(p / (m + e)) - p
+        earlyRepaymentOverpayment = (m + e) * n * 12 - p
     }
     repaymentCalculatorEarlyRepaymentOverpayment.html(
-        earlyRepaymentOverpayment ? rangeInput.addSpaces(earlyRepaymentOverpayment) : "-"
+        earlyRepaymentOverpayment ? rangeInput.addSpaces(earlyRepaymentOverpayment) : "0"
     )
 
     let termEarlyRepayment
@@ -262,16 +262,16 @@ function repaymentCalculatorCalculate() {
         termEarlyRepayment = p / (m + e)
     }
     repaymentCalculatorTermEarlyRepayment.html(
-        termEarlyRepayment ? Math.round(termEarlyRepayment) : "-"
+        termEarlyRepayment ? Math.round(termEarlyRepayment) : "0"
     )
 
     if (repaymentCalculatorOncePaymentRadio[0].checked) {
         repaymentCalculatorEarlyRepaymentMonthlyPayment.html(
-            m ? rangeInput.addSpaces(m) : "-"
+            m ? rangeInput.addSpaces(m) : "0"
         )
     } else {
         repaymentCalculatorEarlyRepaymentMonthlyPayment.html(
-            m ? rangeInput.addSpaces(m + e) : "-"
+            m ? rangeInput.addSpaces(m + e) : "0"
         )
     }
 
@@ -282,7 +282,7 @@ function repaymentCalculatorCalculate() {
         result = (m * n * 12 - p) - ((m + e) * Math.round(p / (m + e)) - p)
     }
     repaymentCalculatorResult.html(
-        result ? formatResult(result) : "-"
+        result ? formatResult(result) : "0"
     )
 }
 

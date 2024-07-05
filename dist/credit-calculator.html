@@ -611,8 +611,8 @@
                         <div class="range-input">
                             <div class="range-input__label body-regular">Сумма кредита</div>
                             <div class="range-input__input">
-                                <input type="text" class="range-input__number body-regular js-number-input" value="15000000" id="creditCalculatorLoanAmountInput" >
-                                <input type="range" id="creditCalculatorLoanAmountRange" min="0" max="30000000" step="100000">
+                                <input type="text" class="range-input__number body-regular js-number-input" value="5000000" id="creditCalculatorLoanAmountInput" >
+                                <input type="range" id="creditCalculatorLoanAmountRange" min="0" max="30000000" step="100000" value="5000000">
                                 <div class="range-input__progress"></div>
                             </div>
                             <div class="range-input__captions">
@@ -625,8 +625,8 @@
                         <div class="range-input">
                             <div class="range-input__label body-regular">Срок кредита</div>
                             <div class="range-input__input">
-                                <input type="text" class="range-input__number body-regular" value="16" id="creditCalculatorLoanTermInput">
-                                <input type="range" id="creditCalculatorLoanTermRange" min="1" max="30" >
+                                <input type="text" class="range-input__number body-regular" value="10" id="creditCalculatorLoanTermInput">
+                                <input type="range" id="creditCalculatorLoanTermRange" min="1" max="30" value="10" >
                                 <div class="range-input__progress"></div>
                             </div>
                             <div class="range-input__captions">
@@ -637,8 +637,8 @@
                         <div class="range-input">
                             <div class="range-input__label body-regular">Ставка</div>
                             <div class="range-input__input">
-                                <input type="text" class="range-input__number body-regular" value="25" id="creditCalculatorLoanRateInput">
-                                <input type="range" id="creditCalculatorLoanRateRange" min="1" max="48" >
+                                <input type="text" class="range-input__number body-regular" value="11" id="creditCalculatorLoanRateInput">
+                                <input type="range" id="creditCalculatorLoanRateRange" min="1" max="48" value="11">
                                 <div class="range-input__progress"></div>
                             </div>
                             <div class="range-input__captions">
@@ -766,13 +766,13 @@
                         <div class="inner-caption-input">
                             <div class="inner-caption-input__label body-regular">Сумма кредита</div>
                             <div class="inner-caption-input__wrapper" data-caption="руб.">
-                                <input type="text" inputmode="numeric" id="repaymentCalculatorLoanAmountInput" class="calculator__input body-regular js-number-input">
+                                <input type="text" inputmode="numeric" value="1500000" id="repaymentCalculatorLoanAmountInput" class="calculator__input body-regular js-number-input">
                             </div>
                         </div>
                         <div class="inner-caption-input">
                             <div class="inner-caption-input__label body-regular">Срок кредита</div>
                             <div class="inner-caption-input__wrapper" data-caption="лет">
-                                <input type="text" inputmode="numeric" id="repaymentCalculatorTermInput" class="calculator__input body-regular js-number-input">
+                                <input type="text" inputmode="numeric" id="repaymentCalculatorTermInput" value="5" class="calculator__input body-regular js-number-input">
                             </div>
                         </div>
                     </div>
@@ -780,39 +780,39 @@
                         <div class="inner-caption-input">
                             <div class="inner-caption-input__label body-regular">Ставка, годовых</div>
                             <div class="inner-caption-input__wrapper" data-caption="%">
-                                <input type="text" inputmode="numeric" id="repaymentCalculatorRateInput" class="calculator__input body-regular js-number-input">
+                                <input type="text" inputmode="numeric" id="repaymentCalculatorRateInput" value="21" class="calculator__input body-regular js-number-input">
                             </div>
                         </div>
                         <div class="">
                             <div class="inner-caption-input__label body-regular">Дата получения</div>
-                            <input type="date" id="repaymentCalculatorDateInput" class="calculator__input body-regular">
+                            <input type="date" id="repaymentCalculatorDateInput" value="2023-12-08" class="calculator__input body-regular">
                         </div>
                     </div>
                     <div class="calculator__inputs-row">
                         <div class="inner-caption-input">
                             <div class="inner-caption-input__label body-regular">Ежемесячный платёж без досрочного погашения</div>
                             <div class="inner-caption-input__wrapper" data-caption="руб.">
-                                <input type="text" inputmode="numeric" id="repaymentCalculatorDefaultMonthlyPaymentInput" class="calculator__input body-regular js-number-input">
+                                <input type="text" inputmode="numeric" value="40579" id="repaymentCalculatorDefaultMonthlyPaymentInput" class="calculator__input body-regular js-number-input">
                             </div>
                         </div>
                     </div>
                     <div class="calculator__inputs-row">
                         <div>
-                            <div class="inner-caption-input__label body-regular">Ежемесячный платёж без досрочного погашения</div>
+                            <div class="inner-caption-input__label body-regular">Тип досрочного погашения</div>
                             <div class="radio-inputs">
                                 <label class="radio body-regular">
-                                    <input type="radio" name="radio" id="repaymentCalculatorOncePaymentRadio" class="calculator__input body-regular" checked>
+                                    <input type="radio" name="radio" id="repaymentCalculatorOncePaymentRadio" class="calculator__input body-regular">
                                     Единоразовый
                                 </label>
                                 <label class="radio body-regular">
-                                    <input type="radio" name="radio" id="repaymentCalculatorMonthlyPaymentRadio" class="calculator__input body-regular">
+                                    <input type="radio" name="radio" id="repaymentCalculatorMonthlyPaymentRadio" class="calculator__input body-regular" checked>
                                     Ежемесячный
                                 </label>
                             </div>
                             
                         </div>
                     </div>
-                    <div class="calculator__inputs-row">
+                    <div class="calculator__inputs-row" style="display: none;">
                         <div class="inner-caption-input">
                             <div class="inner-caption-input__label body-regular">Единоразовая сумма досрочного погашения</div>
                             <div class="inner-caption-input__wrapper" data-caption="руб.">
@@ -820,7 +820,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="calculator__inputs-row" style="display: none;">
+                    <div class="calculator__inputs-row">
                         <div class="inner-caption-input">
                             <div class="inner-caption-input__label body-regular">Ежемесячная сумма досрочного погашения</div>
                             <div class="inner-caption-input__wrapper" data-caption="руб.">
@@ -896,8 +896,8 @@
                         <div class="range-input">
                             <div class="range-input__label body-regular">Сумма кредита</div>
                             <div class="range-input__input">
-                                <input type="text" class="range-input__number body-regular js-number-input" value="15000000" id="businessCalculatorLoanAmountInput" >
-                                <input type="range" id="businessCalculatorlLoanAmountRange" min="0" max="30000000" step="100000">
+                                <input type="text" class="range-input__number body-regular js-number-input" value="10000000" id="businessCalculatorLoanAmountInput" >
+                                <input type="range" id="businessCalculatorlLoanAmountRange" min="0" max="30000000" value="10000000" step="100000">
                                 <div class="range-input__progress"></div>
                             </div>
                             <div class="range-input__captions">
@@ -910,8 +910,8 @@
                         <div class="range-input">
                             <div class="range-input__label body-regular">Срок кредита</div>
                             <div class="range-input__input">
-                                <input type="text" class="range-input__number body-regular" value="16" id="businessCalculatorLoanTermInput">
-                                <input type="range" id="businessCalculatorLoanTermRange" min="1" max="30" >
+                                <input type="text" class="range-input__number body-regular" value="10" id="businessCalculatorLoanTermInput">
+                                <input type="range" id="businessCalculatorLoanTermRange" min="1" max="30" value="10" >
                                 <div class="range-input__progress"></div>
                             </div>
                             <div class="range-input__captions">
@@ -922,8 +922,8 @@
                         <div class="range-input">
                             <div class="range-input__label body-regular">Ставка</div>
                             <div class="range-input__input">
-                                <input type="text" class="range-input__number body-regular" value="25" id="businessCalculatorLoanRateInput">
-                                <input type="range" id="businessCalculatorlLoanRateRange" min="1" max="48" >
+                                <input type="text" class="range-input__number body-regular" value="11" id="businessCalculatorLoanRateInput">
+                                <input type="range" id="businessCalculatorlLoanRateRange" min="1" max="48" value="11">
                                 <div class="range-input__progress"></div>
                             </div>
                             <div class="range-input__captions">
@@ -988,8 +988,8 @@
                         <div class="range-input">
                             <div class="range-input__label body-regular">Сумма вклада</div>
                             <div class="range-input__input">
-                                <input type="text" class="range-input__number body-regular js-number-input" value="15000000" id="depositCalculatorLoanAmountInput" >
-                                <input type="range" id="depositCalculatorLoanAmountRange" min="0" max="30000000" step="100000">
+                                <input type="text" class="range-input__number body-regular js-number-input" value="5000000" id="depositCalculatorLoanAmountInput" >
+                                <input type="range" id="depositCalculatorLoanAmountRange" min="0" max="30000000" step="100000" value="5000000">
                                 <div class="range-input__progress"></div>
                             </div>
                             <div class="range-input__captions">
@@ -1002,8 +1002,8 @@
                         <div class="range-input">
                             <div class="range-input__label body-regular">Срок вклада</div>
                             <div class="range-input__input">
-                                <input type="text" class="range-input__number body-regular js-number-input" value="16" id="depositCalculatorLoanTermInput">
-                                <input type="range" id="depositCalculatorLoanTermRange" min="1" max="30" >
+                                <input type="text" class="range-input__number body-regular js-number-input" value="5" id="depositCalculatorLoanTermInput">
+                                <input type="range" id="depositCalculatorLoanTermRange" min="1" max="30" value="5">
                                 <div class="range-input__progress"></div>
                             </div>
                             <div class="range-input__captions">
@@ -1014,8 +1014,8 @@
                         <div class="range-input">
                             <div class="range-input__label body-regular">Ставка</div>
                             <div class="range-input__input">
-                                <input type="text" class="range-input__number body-regular js-number-input" value="25" id="depositCalculatorLoanRateInput">
-                                <input type="range" id="depositCalculatorLoanRateRange" min="1" max="48" >
+                                <input type="text" class="range-input__number body-regular js-number-input" value="10" id="depositCalculatorLoanRateInput">
+                                <input type="range" id="depositCalculatorLoanRateRange" min="1" max="48" value="10">
                                 <div class="range-input__progress"></div>
                             </div>
                             <div class="range-input__captions">
