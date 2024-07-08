@@ -222,16 +222,32 @@ function repaymentCalculatorChangeInput() {
     }
 }    
 
+function monthDiff(d1, d2) {
+    var months;
+
+    months = (d2.getFullYear() - d1.getFullYear()) * 12;
+    months -= d1.getMonth();
+    months += d2.getMonth() + 1;
+    return months <= 0 ? 0 : months;
+}
+
 function repaymentCalculatorCalculate() {
     repaymentCalculatorChangeInput()
 
     let p = Number(rangeInput.getNumberValue(repaymentCalculatorLoanAmountInput[0])),
         n = Number(rangeInput.getNumberValue(repaymentCalculatorTermInput[0])),
-        r = Number(rangeInput.getNumberValue(repaymentCalculatorRateInput[0])),
+        r = Number(rangeInput.getNumberValue(repaymentCalculatorRateInput[0])) / 100,
         m = Number(rangeInput.getNumberValue(repaymentCalculatorDefaultMonthlyPaymentInput[0])),
-        e, remainingDebt
+        e, t, rest
     if (repaymentCalculatorOncePaymentRadio[0].checked) {
         e = Number(rangeInput.getNumberValue(repaymentCalculatorOncePaymentInput[0]))
+        t = monthDiff(new Date(repaymentCalculatorDateInput.val()), new Date())
+
+        let percentages = 0
+        for (let i = 1; i <= t; i++) {
+            percentages += Math.pow(1 + r / 12, t - i)
+        }
+        rest = p * Math.pow(1 + r / 12, t) - m * percentages - e
     } else {
         e = Number(rangeInput.getNumberValue(repaymentCalculatorAdditionalMontlyPaymentInput[0]))
     }
@@ -245,24 +261,36 @@ function repaymentCalculatorCalculate() {
         overpaymentPercentage ? Math.round(overpaymentPercentage) : "0"
     )
 
-    let earlyRepaymentOverpayment
+    let termEarlyRepayment = -1
     if (repaymentCalculatorOncePaymentRadio[0].checked) {
-        earlyRepaymentOverpayment = m * ((p - e) / m) - (p - e)
+        termEarlyRepayment = Math.round(
+            Math.log(m / (m - (rest * r / 12))) / Math.log(1 + r / 12)
+        )
     } else {
-        earlyRepaymentOverpayment = (m + e) * n * 12 - p
-    }
-    repaymentCalculatorEarlyRepaymentOverpayment.html(
-        earlyRepaymentOverpayment ? rangeInput.addSpaces(earlyRepaymentOverpayment) : "0"
-    )
+        let remainingDebt = p
+        while (true) {
+            
+            let percentages = remainingDebt * r / 12,
+                repayment = (m + e) - percentages
 
-    let termEarlyRepayment
-    if (repaymentCalculatorOncePaymentRadio[0].checked) {
-        termEarlyRepayment = (p - e) / m
-    } else {
-        termEarlyRepayment = p / (m + e)
+            remainingDebt = remainingDebt - repayment
+            termEarlyRepayment++
+
+            if (remainingDebt <= 0 || repayment <= 0) { break }
+        }
     }
     repaymentCalculatorTermEarlyRepayment.html(
         termEarlyRepayment ? Math.round(termEarlyRepayment) : "0"
+    )
+
+    let earlyRepaymentOverpayment
+    if (repaymentCalculatorOncePaymentRadio[0].checked) {
+        earlyRepaymentOverpayment = m * (t + termEarlyRepayment) - p + e
+    } else {
+        earlyRepaymentOverpayment = (m + e) * termEarlyRepayment - p
+    }
+    repaymentCalculatorEarlyRepaymentOverpayment.html(
+        earlyRepaymentOverpayment ? rangeInput.addSpaces(earlyRepaymentOverpayment) : "0"
     )
 
     if (repaymentCalculatorOncePaymentRadio[0].checked) {
@@ -277,9 +305,9 @@ function repaymentCalculatorCalculate() {
 
     let result
     if (repaymentCalculatorOncePaymentRadio[0].checked) {
-        result = (m * n * 12 - p) - (m * Math.round((p - e) / m) - (p - e))
+        result = (m * n * 12) - (m * (t + termEarlyRepayment) + e)
     } else {
-        result = (m * n * 12 - p) - ((m + e) * Math.round(p / (m + e)) - p)
+        result = (m * n * 12) - ((m + e) * termEarlyRepayment)
     }
     repaymentCalculatorResult.html(
         result ? formatResult(result) : "0"
