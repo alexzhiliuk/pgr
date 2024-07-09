@@ -8,6 +8,15 @@ $(".js-number-input").each(function(i, el) {
     let currentValue = rangeInput.getNumberValue(el)
     $(el).val(rangeInput.addSpaces(currentValue))
 })
+$("[type='number']").on("input", function(e) {
+    if (rangeInput.getNumberValue(e.target) == "") { 
+        $(this).val("") 
+        return 
+    }
+    if (Number(rangeInput.getNumberValue(e.target)) < Number($(this).attr("min"))) {
+        $(this).val($(this).attr("min"))
+    }
+})
 
 // Табы калькулятора
 $(".calculator__type").each(function(i, el) {
@@ -24,7 +33,27 @@ $(".calculator__type").on("click", function() {
     let calculatorId = $(this).attr("data-calculator-id")
     $(".calculator__container").removeClass("calculator__container_active")
     $(`.calculator__container[data-calculator-id=${calculatorId}]`).addClass("calculator__container_active")
+
+    window.location.hash = `#${$(`.calculator__container[data-calculator-id=${calculatorId}]`).attr('id')}`
+    $(window).scrollTop($(this).parents(".section").offset().top - 40)
 })
+
+if ($(".calculator_tabs").length) {
+    let hash = window.location.hash,
+        $calculator = $(`${hash}`)
+    
+    if ($calculator.length) {
+        let calculatorId = $calculator.attr("data-calculator-id")
+
+        $(".calculator__container").removeClass("calculator__container_active")
+        $(`.calculator__container[data-calculator-id=${calculatorId}]`).addClass("calculator__container_active")
+        
+        $(".calculator__type").removeClass("calculator__type_active")
+        $(`.calculator__type[data-calculator-id=${calculatorId}]`).addClass("calculator__type_active")
+
+        $(window).scrollTop($calculator.parents(".section").offset().top - 40)
+    }
+}
 
 // Удаление доп. поля
 $(".calculator__remove-row").click(function() {
@@ -263,9 +292,11 @@ function repaymentCalculatorCalculate() {
 
     let termEarlyRepayment = -1
     if (repaymentCalculatorOncePaymentRadio[0].checked) {
+        
         termEarlyRepayment = Math.round(
             Math.log(m / (m - (rest * r / 12))) / Math.log(1 + r / 12)
         )
+        
     } else {
         let remainingDebt = p
         while (true) {

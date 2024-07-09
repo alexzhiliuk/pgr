@@ -2223,6 +2223,7 @@ input::placeholder {
 .calculator, .income {
   padding-top: 40px;
   padding-bottom: 40px;
+  scroll-margin: 80px;
 }
 @media screen and (max-width: 575.98px) {
   .calculator, .income {
