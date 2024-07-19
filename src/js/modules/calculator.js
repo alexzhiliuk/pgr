@@ -337,6 +337,7 @@ function repaymentCalculatorCalculate() {
     let result
     if (repaymentCalculatorOncePaymentRadio[0].checked) {
         result = (m * n * 12) - (m * (t + termEarlyRepayment) + e)
+        result = Math.abs(result)
     } else {
         result = (m * n * 12) - ((m + e) * termEarlyRepayment)
     }
