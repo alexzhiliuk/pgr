@@ -7797,6 +7797,13 @@ input::placeholder {
   align-items: center;
   justify-content: center;
 }
+.loader__img {
+  width: clamp(100px, 14vw, 140px);
+}
+.loader__img svg {
+  width: 100%;
+  height: auto;
+}
 .loader__img svg > *:not(:first-child) {
   animation: blink 1s linear 0s infinite;
 }
