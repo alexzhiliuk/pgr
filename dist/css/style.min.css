@@ -6971,6 +6971,9 @@ input::placeholder {
   height: 100%;
   object-fit: cover;
 }
+.author-section__info {
+  overflow: hidden;
+}
 .author-section__title {
   color: #212121;
 }
@@ -7000,6 +7003,7 @@ input::placeholder {
 }
 .author-section__certificates {
   margin-top: 24px;
+  overflow-x: auto;
 }
 @media screen and (max-width: 767.98px) {
   .author-section__certificates {
@@ -7771,6 +7775,30 @@ input::placeholder {
     width: unset;
     border-radius: 0;
   }
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.loader {
+  position: fixed;
+  inset: 0;
+  z-index: 9;
+  background: rgba(255, 255, 255, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.loader__img svg > *:not(:first-child) {
+  animation: blink 1s linear 0s infinite;
 }
 
 @font-face {

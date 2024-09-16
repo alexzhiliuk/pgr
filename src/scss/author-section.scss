@@ -37,6 +37,7 @@
 
     // .author-section__info
     &__info {
+        overflow: hidden;
     }
 
     // .author-section__title
@@ -79,6 +80,8 @@
     // .author-section__certificates
     &__certificates {
         margin-top: 24px;
+
+        overflow-x: auto;
 
         @media screen and (max-width: $breakpoint768) {
             width: calc(100vw - 2*$containerMobilePadding);
