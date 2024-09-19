@@ -7805,7 +7805,7 @@ input::placeholder {
   height: auto;
 }
 .loader__img svg > *:not(:first-child) {
-  animation: blink 1s linear 0s infinite;
+  animation: blink 1.5s linear 0s infinite;
 }
 
 @font-face {

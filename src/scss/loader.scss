@@ -28,7 +28,7 @@
             width: 100%;
             height: auto;
             & > *:not(:first-child) {
-                animation: blink 1s linear 0s infinite;
+                animation: blink 1.5s linear 0s infinite;
             }
         }
     }
