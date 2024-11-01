@@ -909,7 +909,101 @@
             &::after {
                 background: linear-gradient(270deg, $surfaceTertiary 50%, rgba($surfaceTertiary, 0) 100%);
             }
+
+            &_with-form {
+
+                @media screen and (min-width: $breakpoint992) {
+                    width: 66% !important;
+                    margin-left: 0 !important;
+                }
+
+                @media screen and (min-width: $breakpoint1366) {
+                    width: 76.5% !important;
+
+                    .swiper-slide {
+                        aspect-ratio: 260 / 303;
+                    }
+                }                
+
+            }
         }
+
+        .consultation-form:not(.article-slider-form) {
+            background-color: $borderBase;
+            margin-top: 40px;
+
+            @media screen and (min-width: $breakpoint992) {
+                display: none;
+            }
+        }
+    }
+}
+
+.article-slider-form {
+    @extend .consultation-form;
+    background-color: $borderBase;
+    padding: 16px;
+    position: absolute;
+    top: 0;
+    right: 48px;
+    z-index: 3;
+
+    $gap: 24px;
+    width: calc(23% - $gap * 3 / 4);
+    min-height: 100%;
+    display: flex;
+
+    @media screen and (max-width: $breakpoint1366) {
+        right: calc(80px + 49px);
+        width: calc(29% - $gap * 2 / 3);
+    }
+
+    @media screen and (max-width: $breakpoint992) {
+        display: none;
+    }
+
+    // .article-slider-form__content
+    &__content {
+        @extend .consultation-form__content;
+        max-width: 100%;
+        min-height: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    // .article-slider-form__title
+    &__title {
+        @extend .consultation-form__title;
+        margin-bottom: 24px;
+    }
+
+    // .article-slider-form__subtitle
+    &__subtitle {
+        @extend .consultation-form__subtitle;
+    }
+
+    // .article-slider-form__form
+    &__form {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        margin-top: auto;
+
+        [type="submit"] {
+            margin-top: 8px;
+        }
+    }
+
+    // .article-slider-form__caption
+    &__caption {
+        opacity: .4;
+        color: $surfaceTertiaryInvert;
+    }
+
+    // .article-slider-form__img
+    &__img {
+        @extend .consultation-form__img;
+        display: none;
     }
 }
 

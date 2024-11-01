@@ -42,7 +42,7 @@
 
     }
 
-    &:not(.colored-card_big) {
+    &:not(.colored-card_big):not(.colored-card_slide) {
         @media screen and (max-width: $breakpoint768) {
             .colored-card__img {
                 img {
@@ -90,10 +90,39 @@
 
     }
 
+    // .colored-card_slide
+    &_slide {
+        @extend .colored-card;
+        flex: unset;
+        padding: 16px 16px 0;
+        border: 1px solid $borderBase;
+
+        .colored-card__title {
+            text-align: left;
+        }
+
+        .colored-card__subtitle {
+            text-align: left;
+        }
+
+        .colored-card__btn {
+            align-self: flex-start;
+
+            @media screen and (max-width: $breakpoint576) {
+                width: unset;
+            }
+        }
+
+        .colored-card__img {
+            height: 150px;
+        }
+    }
+
     // .colored-card__title
     &__title {
         color: $contentPrimary;
         text-align: center;
+        width: 100%;
     }
 
     // .colored-card__subtitle
