@@ -96,6 +96,8 @@
         flex: unset;
         padding: 16px 16px 0;
         border: 1px solid $borderBase;
+        transition: 0.5s ease all !important;
+        height: unset !important;
 
         .colored-card__title {
             text-align: left;

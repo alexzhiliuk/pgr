@@ -851,6 +851,7 @@
     border-top: 1px solid $borderBase;
     border-bottom: 1px solid $borderBase;
     background-color: $surfaceTertiary;
+    overflow: hidden;
 
     // .recommended-articles__title
     &__title {
@@ -873,7 +874,6 @@
     .article-slider {
 
         // .article-slider__btn
-    
         &__btn {
 
             background-color: $surfaceTertiary;
@@ -925,6 +925,20 @@
                     }
                 }                
 
+            }
+        }
+
+        &_pb {
+            $padding: 40px;
+            .article-slider__container {
+                padding-top: $padding !important;
+                padding-bottom: $padding !important;
+                margin-top: -$padding !important;
+                margin-bottom: -$padding !important;
+            }
+            .article-slider-form {
+                top: $padding;
+                min-height: calc(100% - 2 * $padding);
             }
         }
 

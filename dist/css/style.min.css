@@ -396,7 +396,10 @@ button {
 
 @media (hover: hover) {
   .zoom:hover {
-    transform: scale3d(1.03, 1.03, 1.03);
+    scale: 1.03 1.03 1.03;
+  }
+  .zoom_shadow:hover {
+    box-shadow: 0px 100px 80px rgba(48, 48, 48, 0.07), 0px 23px 31px rgba(48, 48, 48, 0.05), 0px 8px 12px rgba(48, 48, 48, 0.04), 0px 3px 3px rgba(48, 48, 48, 0.03);
   }
 }
 
@@ -1853,6 +1856,8 @@ input::placeholder {
   flex: unset;
   padding: 16px 16px 0;
   border: 1px solid #E1E6EF;
+  transition: 0.5s ease all !important;
+  height: unset !important;
 }
 .colored-card_slide .colored-card__title {
   text-align: left;
@@ -6734,6 +6739,7 @@ input::placeholder {
   border-top: 1px solid #E1E6EF;
   border-bottom: 1px solid #E1E6EF;
   background-color: #F1F3F9;
+  overflow: hidden;
 }
 .recommended-articles__title {
   margin-bottom: 32px;
@@ -6786,6 +6792,16 @@ input::placeholder {
   .recommended-articles .article-slider__container_with-form .swiper-slide {
     aspect-ratio: 260/303;
   }
+}
+.recommended-articles .article-slider_pb .article-slider__container, .recommended-articles .article-slider_pb .can-be-interesting-slider__container {
+  padding-top: 40px !important;
+  padding-bottom: 40px !important;
+  margin-top: -40px !important;
+  margin-bottom: -40px !important;
+}
+.recommended-articles .article-slider_pb .article-slider-form {
+  top: 40px;
+  min-height: calc(100% - 80px);
 }
 .recommended-articles .article-slider .consultation-form:not(.article-slider-form), .recommended-articles .article-slider .article-slider-form:not(.article-slider-form), .recommended-articles .can-be-interesting-slider .consultation-form:not(.article-slider-form), .recommended-articles .can-be-interesting-slider .article-slider-form:not(.article-slider-form) {
   background-color: #E1E6EF;
