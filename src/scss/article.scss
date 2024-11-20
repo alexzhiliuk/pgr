@@ -482,6 +482,78 @@
     .article-footer {
         margin-top: 40px;
     }
+
+    .recommended-articles {
+
+        &__blur {
+            max-width: 1356px;
+            width: 100%;
+            position: absolute;
+            left: 50%;
+            height: 250px;
+
+
+            @media screen and (max-width: $breakpoint1200) {
+                &::before {
+                    display: none;
+                }
+            }
+            @media screen and (max-width: $breakpoint992) {
+                &::after {
+                    display: none;
+                }
+            }
+
+            &_top{
+                top: -1px;
+                translate: -50% -100%;
+
+                &::before,
+                &::after  {
+                    background: linear-gradient(0deg, #FFF 10%, rgba(241, 243, 249, 0) 100%);
+                }
+
+            }
+
+            &_bottom {
+                bottom: -1px;
+                translate: -50% 100%;
+
+                &::before,
+                &::after  {
+                    background: linear-gradient(180deg, #FFF 10%, rgba(241, 243, 249, 0) 100%);
+                }
+
+            }
+            
+            &::before {
+                content: '';
+                position: absolute;
+                left: 0;
+                top: 0;
+                bottom: 0;
+                width: 250px;
+                
+                @media screen and (max-width: 1356px) {
+                    left: 50px;
+                }
+            }
+
+            &::after {
+                content: '';
+                position: absolute;
+                right: 0;
+                top: 0;
+                bottom: 0;
+                width: 250px;
+
+                @media screen and (max-width: 1356px) {
+                    right: 50px;
+                }
+            }
+        }
+
+    }
 }
 
 .article-nav {
@@ -851,7 +923,7 @@
     border-top: 1px solid $borderBase;
     border-bottom: 1px solid $borderBase;
     background-color: $surfaceTertiary;
-    overflow: hidden;
+    // overflow: hidden;
 
     // .recommended-articles__title
     &__title {
@@ -921,7 +993,7 @@
                     width: 76.5% !important;
 
                     .swiper-slide {
-                        aspect-ratio: 260 / 303;
+                        // aspect-ratio: 260 / 303;
                     }
                 }                
 
@@ -935,6 +1007,14 @@
                 padding-bottom: $padding !important;
                 margin-top: -$padding !important;
                 margin-bottom: -$padding !important;
+
+                &::before {
+                    bottom: 10px;
+                }
+    
+                &::after {
+                    bottom: 10px;
+                }
             }
             .article-slider-form {
                 top: $padding;
