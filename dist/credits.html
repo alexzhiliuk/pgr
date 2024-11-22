@@ -601,14 +601,16 @@
                     <div class="calculator__inputs-row">
                         <div class="range-input">
                             <div class="range-input__label body-regular">Срок кредита</div>
-                            <div class="range-input__input">
-                                <input type="text" class="range-input__number body-regular" value="10" id="creditCalculatorLoanTermInput">
-                                <input type="range" id="creditCalculatorLoanTermRange" min="1" max="30" value="10" >
+                            <div class="range-input__input inner-caption-input" data-term>
+                                <input type="range" id="creditCalculatorLoanTermRange" min="6" max="360" value="120" >
+                                <div class="inner-caption-input__wrapper" data-caption="10 лет">
+                                    <input type="text" class="range-input__number body-regular" value="120" id="creditCalculatorLoanTermInput">
+                                </div>
                                 <div class="range-input__progress"></div>
                             </div>
                             <div class="range-input__captions">
-                                <div class="range-input__caption caption-regular">1 год</div>
-                                <div class="range-input__caption caption-regular">30 лет</div>
+                                <div class="range-input__caption caption-regular">6 мес.</div>
+                                <div class="range-input__caption caption-regular">360 мес.</div>
                             </div>
                         </div>
                         <div class="range-input">

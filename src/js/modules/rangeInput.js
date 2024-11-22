@@ -18,28 +18,28 @@ $(".range-input input[type='range']").on('input', function() {
     let maxValue = $(this).attr('max'),
         currentValue = $(this).val()
     
-    $(this).parent().children(".range-input__progress").css("width", `${currentValue / maxValue * 100}%`)
+    $(this).parent().find(".range-input__progress").css("width", `${currentValue / maxValue * 100}%`)
 
-    $(this).parent().children(".range-input__number").val(addSpaces(currentValue))
+    $(this).parent().find(".range-input__number").val(addSpaces(currentValue))
 })
 
 $(".range-input input[type='range']").each(function(i, el) {
     let maxValue = $(el).attr('max'),
         currentValue = $(el).val()
 
-    $(el).parent().children(".range-input__progress").css("width", `${currentValue / maxValue * 100}%`) 
+    $(el).parent().find(".range-input__progress").css("width", `${currentValue / maxValue * 100}%`) 
 })
 
 $(".range-input__number").on('input', function(e) {
     let currentValue = getNumberValue(e.target),
-        rangeInput = $(this).parent().children("input[type='range']"),
+        rangeInput = $(this).parents(".range-input__input").find("input[type='range']"),
         maxValue = rangeInput.attr('max')
 
     if (!currentValue) currentValue = rangeInput.attr("min")
     if (Number(currentValue) > Number(maxValue)) currentValue = maxValue
     $(this).val(addSpaces(currentValue))
     
-    $(this).parent().children(".range-input__progress").css("width", `${currentValue / maxValue * 100}%`)
+    $(this).parents(".range-input__input").find(".range-input__progress").css("width", `${currentValue / maxValue * 100}%`)
 
     rangeInput.val(currentValue)
 })

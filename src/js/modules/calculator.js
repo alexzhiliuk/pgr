@@ -18,6 +18,31 @@ $("[type='number']").on("input", function(e) {
     }
 })
 
+// Поля с годами/месяцами
+function getYearsLabel(number) {
+    if (number < 1) return "года"
+    number = Math.ceil(number)
+    const pluralRules = new Intl.PluralRules('ru');
+    const form = pluralRules.select(number);
+    
+    const forms = {
+      one: 'год',      
+      few: 'года',     
+      many: 'лет',     
+      other: 'лет',    
+    };
+    
+    return forms[form] || forms.other;
+}
+$("[data-term] input").on("input", function() {
+    let months = Number(rangeInput.getNumberValue(this)),
+        years = months / 12
+    
+    years = years % 1 ? years.toFixed(1) : years.toFixed(0)
+
+    $(this).parents("[data-term]").find("[data-caption]").attr("data-caption", `${years} ${getYearsLabel(years)}`)
+})
+
 // Табы калькулятора
 $(".calculator__type").each(function(i, el) {
     $(el).attr("data-calculator-id", i)
@@ -91,7 +116,7 @@ function calculatingCreditCalculatorMonthlyPayment(p, r, n) {
 
 $("#creditCalculatorLoanTermRange, #creditCalculatorLoanAmountRange, #creditCalculatorLoanRateRange").on("input", function() {
     let monthlyRate = loanRateRange.val() / 12 / 100
-    let paymentsNumber = loanTermRange.val() * 12
+    let paymentsNumber = loanTermRange.val()
     let loanAmount = loanAmountRange.val()
     
     let monthlyPayment = calculatingCreditCalculatorMonthlyPayment(loanAmount, monthlyRate, paymentsNumber)
@@ -102,7 +127,7 @@ $("#creditCalculatorLoanTermRange, #creditCalculatorLoanAmountRange, #creditCalc
 
 $("#creditCalculatorLoanTermInput, #creditCalculatorLoanAmountInput, #creditCalculatorLoanRateInput").on("input", function() {
     let monthlyRate = Number(loadRateInput.val()) / 12 / 100
-    let paymentsNumber = Number(loanTermInput.val()) * 12
+    let paymentsNumber = Number(loanTermInput.val())
     let loanAmount = Number(rangeInput.getNumberValue(loanAmountInput[0]))
     
     let monthlyPayment = calculatingCreditCalculatorMonthlyPayment(loanAmount, monthlyRate, paymentsNumber)
@@ -112,7 +137,7 @@ $("#creditCalculatorLoanTermInput, #creditCalculatorLoanAmountInput, #creditCalc
 
 // Изначальный расчет
 let monthlyRate = loanRateRange.val() / 12 / 100
-let paymentsNumber = loanTermRange.val() * 12
+let paymentsNumber = loanTermRange.val()
 let loanAmount = loanAmountRange.val()
 let monthlyPayment = calculatingCreditCalculatorMonthlyPayment(loanAmount, monthlyRate, paymentsNumber)
 $("#creditCalculatorMonthlyPayment").html(formatResult(monthlyPayment))
@@ -182,7 +207,7 @@ function refinancingCalculatorCalculateResult(p, r, n) {
     // p - сумма кредита
     // r - месячная процентная ставка
     // n - срок кредита
-    return (p * (r / 12)) / (1 - Math.pow(1 + (r / 12), -1 * n * 12))
+    return (p * (r / 12)) / (1 - Math.pow(1 + (r / 12), -1 * n))
     // return (p * r * Math.pow(1 + r, n)) / (Math.pow(1 + r, n) - 1)
 }
 
@@ -282,10 +307,10 @@ function repaymentCalculatorCalculate() {
     }
 
     repaymentCalculatorOverpayment.html(
-        rangeInput.addSpaces(m * n * 12 - p)
+        rangeInput.addSpaces(m * n - p)
     )
 
-    let overpaymentPercentage = (m * n * 12 - p) / p * 100
+    let overpaymentPercentage = (m * n - p) / p * 100
     repaymentCalculatorOverpaymentPercentage.html(
         overpaymentPercentage ? Math.round(overpaymentPercentage) : "0"
     )
@@ -336,10 +361,10 @@ function repaymentCalculatorCalculate() {
 
     let result
     if (repaymentCalculatorOncePaymentRadio[0].checked) {
-        result = (m * n * 12) - (m * (t + termEarlyRepayment) + e)
+        result = (m * n) - (m * (t + termEarlyRepayment) + e)
         result = Math.abs(result)
     } else {
-        result = (m * n * 12) - ((m + e) * termEarlyRepayment)
+        result = (m * n) - ((m + e) * termEarlyRepayment)
     }
     repaymentCalculatorResult.html(
         result ? formatResult(result) : "0"
@@ -364,7 +389,7 @@ function businessCalculatorCalculateResult(p, r, n) {
     // p - сумма кредита
     // r - месячная процентная ставка
     // n - срок кредита
-    return (p * r / 12) / (1 - Math.pow(1 + r / 12, -1 * n * 12))
+    return (p * r / 12) / (1 - Math.pow(1 + r / 12, -1 * n))
 }
 
 
@@ -399,7 +424,7 @@ function depositCalculatorCalculateResult(p, r, n) {
     // r - месячная процентная ставка
     // n - срок вклада
     
-    return p * (1 + r * n) - p
+    return p * (1 + r * n / 12) - p
 }
 
 function depositCalculatorCalculate() {

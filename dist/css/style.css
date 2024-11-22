@@ -2529,6 +2529,13 @@ input::placeholder {
   position: relative;
   width: 100%;
 }
+.range-input__input input[type=number] {
+  -moz-appearance: textfield;
+}
+.range-input__input input[type=number]::-webkit-outer-spin-button, .range-input__input input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
 .range-input__input input[type=range] {
   background: none;
   padding: 0;

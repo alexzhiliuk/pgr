@@ -59,14 +59,16 @@
                     <div class="calculator__inputs-row">
                         <div class="range-input">
                             <div class="range-input__label body-regular">Срок кредита</div>
-                            <div class="range-input__input">
-                                <input type="text" class="range-input__number body-regular" value="10" id="creditCalculatorLoanTermInput">
-                                <input type="range" id="creditCalculatorLoanTermRange" min="1" max="30" value="10" >
+                            <div class="range-input__input inner-caption-input" data-term>
+                                <input type="range" id="creditCalculatorLoanTermRange" min="6" max="360" value="120" >
+                                <div class="inner-caption-input__wrapper" data-caption="10 лет">
+                                    <input type="text" class="range-input__number body-regular" value="120" id="creditCalculatorLoanTermInput">
+                                </div>
                                 <div class="range-input__progress"></div>
                             </div>
                             <div class="range-input__captions">
-                                <div class="range-input__caption caption-regular">1 год</div>
-                                <div class="range-input__caption caption-regular">30 лет</div>
+                                <div class="range-input__caption caption-regular">6 мес.</div>
+                                <div class="range-input__caption caption-regular">360 мес.</div>
                             </div>
                         </div>
                         <div class="range-input">
@@ -174,13 +176,12 @@
                                 <input type="text" id="refinancingCalculatorTotalAmountInput" inputmode="numeric" class="calculator__input body-regular js-number-input" disabled>
                             </div>
                         </div>
-                        <div class="inner-caption-input">
-                            <div class="inner-caption-input__label body-regular">Срок кредита</div>
-                            <div class="inner-caption-input__wrapper" data-caption="лет">
-                                <input type="number" placeholder="1" min="1" value="10" id="refinancingCalculatorTermInput" inputmode="numeric" class="calculator__input body-regular ">
+                        <div class="inner-caption-input" data-term>
+                            <div class="inner-caption-input__label body-regular">Срок кредита, мес.</div>
+                            <div class="inner-caption-input__wrapper" data-caption="10 лет">
+                                <input type="text" placeholder="6" min="6" value="120" id="refinancingCalculatorTermInput" inputmode="numeric" class="calculator__input body-regular js-number-input">
                             </div>
-                        </div>
-                        
+                        </div> 
                     </div>
                 </div>
             </div>
@@ -204,10 +205,10 @@
                                 <input type="text" inputmode="numeric" value="1500000" id="repaymentCalculatorLoanAmountInput" class="calculator__input body-regular js-number-input" placeholder="0">
                             </div>
                         </div>
-                        <div class="inner-caption-input">
-                            <div class="inner-caption-input__label body-regular">Срок кредита</div>
-                            <div class="inner-caption-input__wrapper" data-caption="лет">
-                                <input type="number" placeholder="1" min="1" inputmode="numeric" id="repaymentCalculatorTermInput" value="5" class="calculator__input body-regular">
+                        <div class="inner-caption-input" data-term>
+                            <div class="inner-caption-input__label body-regular">Срок кредита, мес</div>
+                            <div class="inner-caption-input__wrapper" data-caption="5 лет">
+                                <input type="text" placeholder="6" min="6" inputmode="numeric" id="repaymentCalculatorTermInput" value="60" class="calculator__input body-regular js-number-input">
                             </div>
                         </div>
                     </div>
@@ -344,14 +345,16 @@
                     <div class="calculator__inputs-row">
                         <div class="range-input">
                             <div class="range-input__label body-regular">Срок кредита</div>
-                            <div class="range-input__input">
-                                <input type="text" class="range-input__number body-regular" value="10" id="businessCalculatorLoanTermInput">
-                                <input type="range" id="businessCalculatorLoanTermRange" min="1" max="30" value="10" >
+                            <div class="range-input__input" data-term>
+                                <input type="range" id="businessCalculatorLoanTermRange" min="6" max="360" value="120" >
+                                <div class="inner-caption-input__wrapper" data-caption="10 лет">
+                                    <input type="text" class="range-input__number body-regular" value="120" id="businessCalculatorLoanTermInput">
+                                </div>
                                 <div class="range-input__progress"></div>
                             </div>
                             <div class="range-input__captions">
-                                <div class="range-input__caption caption-regular">1 год</div>
-                                <div class="range-input__caption caption-regular">30 лет</div>
+                                <div class="range-input__caption caption-regular">6 мес.</div>
+                                <div class="range-input__caption caption-regular">360 мес.</div>
                             </div>
                         </div>
                         <div class="range-input">
@@ -436,14 +439,16 @@
                     <div class="calculator__inputs-row">
                         <div class="range-input">
                             <div class="range-input__label body-regular">Срок вклада</div>
-                            <div class="range-input__input">
-                                <input type="text" class="range-input__number body-regular js-number-input" value="5" id="depositCalculatorLoanTermInput">
-                                <input type="range" id="depositCalculatorLoanTermRange" min="1" max="30" value="5">
+                            <div class="range-input__input" data-term>
+                                <input type="range" id="depositCalculatorLoanTermRange" min="6" max="360" value="60">
+                                <div class="inner-caption-input__wrapper" data-caption="5 лет">
+                                    <input type="text" class="range-input__number body-regular js-number-input" value="60" id="depositCalculatorLoanTermInput">
+                                </div>
                                 <div class="range-input__progress"></div>
-                            </div>
+                            </div>        
                             <div class="range-input__captions">
-                                <div class="range-input__caption caption-regular">1 год</div>
-                                <div class="range-input__caption caption-regular">30 лет</div>
+                                <div class="range-input__caption caption-regular">6 мес.</div>
+                                <div class="range-input__caption caption-regular">360 мес.</div>
                             </div>
                         </div>
                         <div class="range-input">
